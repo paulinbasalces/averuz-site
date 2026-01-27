@@ -1,34 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // Menu Mobile com ARIA
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', !isHidden);
-        });
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
 
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
-    // Scroll Animations Observer
-    const observer = new IntersectionObserver((entries) => {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!prefersReducedMotion) {
+    const animatedElements = document.querySelectorAll(".animate-fade-in-up");
+
+    const observer = new IntersectionObserver(
+      entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
-            }
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            observer.unobserve(entry.target);
+          }
         });
-    }, { threshold: 0.1 });
+      },
+      { threshold: 0.15 }
+    );
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    animatedElements.forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll(".animate-fade-in-up").forEach(el => {
+      el.style.opacity = "1";
+    });
+  }
 });
-
