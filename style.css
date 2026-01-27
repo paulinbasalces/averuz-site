@@ -8,8 +8,8 @@ html {
 
 body {
   font-family: "Lexend", sans-serif;
-  background-color: #F7F8FA;
-  color: #0F172A;
+  background-color: #f7f8fa;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -23,6 +23,26 @@ h6 {
 }
 
 /* ======================================================
+   TOKENS VISUAIS (CANVA)
+====================================================== */
+
+:root {
+  --radius-card: 14px;
+  --radius-soft: 10px;
+
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --shadow-hover: 0 14px 32px rgba(15, 23, 42, 0.10);
+
+  --border-soft: 1px solid rgba(15, 23, 42, 0.06);
+
+  --bg-card: #ffffff;
+  --bg-section-light: #ffffff;
+  --bg-section-soft: #f9fafb;
+
+  --transition-base: all 0.25s ease;
+}
+
+/* ======================================================
    NAVEGAÇÃO
 ====================================================== */
 
@@ -33,7 +53,7 @@ h6 {
 }
 
 .nav-link:hover {
-  color: #4A0A7E;
+  color: #4a0a7e;
 }
 
 .mobile-link {
@@ -48,32 +68,100 @@ h6 {
 ====================================================== */
 
 .btn-primary {
-  background-color: #D99A08;
-  color: #0F172A;
+  background-color: #d99a08;
+  color: #0f172a;
   font-family: "Sora", sans-serif;
   font-weight: 700;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  border-radius: var(--radius-soft);
+  transition: var(--transition-base);
 }
 
 .btn-primary:hover {
-  filter: brightness(1.05);
   transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 /* ======================================================
-   RODAPÉ
+   CARDS / CAIXAS (FIDELIDADE CANVA)
+====================================================== */
+
+.card,
+.card-soft,
+.box,
+.feature-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  border: var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-base);
+}
+
+.card:hover,
+.card-soft:hover,
+.box:hover,
+.feature-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   FUNDOS DE SEÇÃO
+====================================================== */
+
+.section-light {
+  background: var(--bg-section-light);
+}
+
+.section-soft {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 100%
+  );
+}
+
+/* Seções roxas do Canva */
+
+.section-primary {
+  background: linear-gradient(
+    180deg,
+    #2b1f6a 0%,
+    #1e1b4b 100%
+  );
+  color: #ffffff;
+}
+
+/* ======================================================
+   PADRÃO DE DOTS (CANVA)
+====================================================== */
+
+.bg-dots {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* ======================================================
+   HOVERS E INTERAÇÕES SUAVES
+====================================================== */
+
+a,
+button {
+  transition: var(--transition-base);
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+/* ======================================================
+   RODAPÉ (TIPOGRAFIA E VISUAL CANVA)
 ====================================================== */
 
 footer {
   font-family: "Lexend", sans-serif;
-}
-
-footer p,
-footer li,
-footer a {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
 }
 
 footer h3 {
@@ -83,42 +171,36 @@ footer h3 {
   color: #ffffff;
 }
 
-footer ul li a:hover {
+footer p,
+footer li,
+footer a {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer a:hover {
   color: #ffffff;
 }
 
-/* ÍCONES SOCIAIS */
+/* Ícones sociais (SVG inline do Canva) */
 
-.footer-social {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.footer-social a {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.footer-social a:hover {
-  background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-2px);
-}
-
-.footer-social svg {
+footer svg {
   width: 18px;
   height: 18px;
   fill: #ffffff;
 }
 
 /* ======================================================
-   ANIMAÇÕES (FIDELIDADE CANVA)
+   LOGO BRANCA NO RODAPÉ
+====================================================== */
+
+.footer-logo-white {
+  filter: brightness(0) invert(1);
+}
+
+/* ======================================================
+   ANIMAÇÕES – ESTADO VISUAL (SEM CRIAR NOVAS)
 ====================================================== */
 
 [data-animate] {
@@ -133,17 +215,3 @@ footer ul li a:hover {
     opacity 0.8s ease,
     transform 0.8s ease;
 }
-
-/* ======================================================
-   FUNDO DECORATIVO
-====================================================== */
-
-.bg-dots {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
-}
-
-/* LOGO BRANCA NO RODAPÉ (MESMO ASSET) */
-.footer-logo-white {
-  filter: brightness(0) invert(1);
-}
-
