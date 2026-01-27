@@ -1,25 +1,4 @@
 /* ======================================================
-   TOKENS GLOBAIS
-====================================================== */
-
-:root {
-  --bg-primary: #F7F8FA;
-  --bg-card: #FFFFFF;
-  --bg-dark: #0F172A;
-
-  --brand-primary: #4A0A7E;
-  --brand-accent: #D99A08;
-
-  --success: #2FA37C;
-  --error: #D10B68;
-
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-
-  --border-subtle: #E2E8F0;
-}
-
-/* ======================================================
    BASE
 ====================================================== */
 
@@ -29,8 +8,8 @@ html {
 
 body {
   font-family: "Lexend", sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: #F7F8FA;
+  color: #0F172A;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -39,30 +18,29 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.font-display {
+h6 {
   font-family: "Sora", sans-serif;
 }
 
 /* ======================================================
-   LINKS DE NAVEGAÇÃO
+   NAVEGAÇÃO
 ====================================================== */
 
 .nav-link {
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #334155;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: var(--brand-primary);
+  color: #4A0A7E;
 }
 
 .mobile-link {
   display: block;
   padding: 0.5rem 0;
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: #334155;
 }
 
 /* ======================================================
@@ -70,11 +48,11 @@ h6,
 ====================================================== */
 
 .btn-primary {
-  background-color: var(--brand-accent);
-  color: var(--bg-dark);
+  background-color: #D99A08;
+  color: #0F172A;
   font-family: "Sora", sans-serif;
   font-weight: 700;
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -82,80 +60,82 @@ h6,
   transform: translateY(-1px);
 }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--brand-primary);
-  border: 2px solid var(--brand-primary);
-  font-family: "Sora", sans-serif;
-  font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease;
+/* ======================================================
+   RODAPÉ
+====================================================== */
+
+footer {
+  font-family: "Lexend", sans-serif;
 }
 
-.btn-secondary:hover {
-  background-color: var(--brand-primary);
+footer p,
+footer li,
+footer a {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: #ffffff;
 }
 
-/* ======================================================
-   CARDS
-====================================================== */
+footer ul li a:hover {
+  color: #ffffff;
+}
 
-.card-elevated {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+/* ÍCONES SOCIAIS */
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  fill: #ffffff;
 }
 
 /* ======================================================
-   ANIMAÇÕES
+   ANIMAÇÕES (FIDELIDADE CANVA)
 ====================================================== */
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-.pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
+[data-animate] {
   opacity: 0;
-  animation: fade-in-up 0.8s ease-out forwards;
+  transform: translateY(20px);
+}
+
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 /* ======================================================
-   FUNDOS DECORATIVOS
+   FUNDO DECORATIVO
 ====================================================== */
 
 .bg-dots {
