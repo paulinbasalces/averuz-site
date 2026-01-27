@@ -1,22 +1,34 @@
+/* ======================================================
+   TOKENS GLOBAIS
+====================================================== */
+
 :root {
   --bg-primary: #F7F8FA;
   --bg-card: #FFFFFF;
-  --bg-authority: #231961;
+  --bg-dark: #0F172A;
+
   --brand-primary: #4A0A7E;
   --brand-accent: #D99A08;
+
   --success: #2FA37C;
   --error: #D10B68;
+
   --text-primary: #0F172A;
   --text-secondary: #475569;
+
   --border-subtle: #E2E8F0;
 }
+
+/* ======================================================
+   BASE
+====================================================== */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
@@ -29,20 +41,44 @@ h4,
 h5,
 h6,
 .font-display {
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
-/* Botões */
+/* ======================================================
+   LINKS DE NAVEGAÇÃO
+====================================================== */
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-primary);
+}
+
+.mobile-link {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* ======================================================
+   BOTÕES
+====================================================== */
+
 .btn-primary {
   background-color: var(--brand-accent);
-  color: var(--bg-authority);
-  font-family: 'Sora', sans-serif;
+  color: var(--bg-dark);
+  font-family: "Sora", sans-serif;
   font-weight: 700;
-  transition: all 0.2s ease;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.05);
   transform: translateY(-1px);
 }
 
@@ -50,23 +86,34 @@ h6,
   background: transparent;
   color: var(--brand-primary);
   border: 2px solid var(--brand-primary);
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Cards */
+.btn-secondary:hover {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+}
+
+/* ======================================================
+   CARDS
+====================================================== */
+
 .card-elevated {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* Animações */
+/* ======================================================
+   ANIMAÇÕES
+====================================================== */
+
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
@@ -107,7 +154,10 @@ h6,
   animation: fade-in-up 0.8s ease-out forwards;
 }
 
-/* Fundo pontilhado */
+/* ======================================================
+   FUNDOS DECORATIVOS
+====================================================== */
+
 .bg-dots {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z' fill='%23fff' fill-opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
 }
