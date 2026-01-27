@@ -1,5 +1,5 @@
 /* ======================================================
-   BASE
+   RESET BASE (SEM ALTERAR LAYOUT)
 ====================================================== */
 
 html {
@@ -23,119 +23,63 @@ h6 {
 }
 
 /* ======================================================
-   TOKENS VISUAIS (CANVA)
+   AJUSTE GLOBAL DE CAIXAS (PADRÃO CANVA)
+   Atua apenas onde já existe bg + rounded + shadow
 ====================================================== */
 
-:root {
-  --radius-card: 14px;
-  --radius-soft: 10px;
-
-  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
-  --shadow-hover: 0 14px 32px rgba(15, 23, 42, 0.10);
-
-  --border-soft: 1px solid rgba(15, 23, 42, 0.06);
-
-  --bg-card: #ffffff;
-  --bg-section-light: #ffffff;
-  --bg-section-soft: #f9fafb;
-
-  --transition-base: all 0.25s ease;
+[class*="bg-white"][class*="rounded"][class*="shadow"] {
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-/* ======================================================
-   NAVEGAÇÃO
-====================================================== */
-
-.nav-link {
-  font-weight: 500;
-  color: #334155;
-  transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-  color: #4a0a7e;
-}
-
-.mobile-link {
-  display: block;
-  padding: 0.5rem 0;
-  font-size: 0.95rem;
-  color: #334155;
-}
-
-/* ======================================================
-   BOTÕES
-====================================================== */
-
-.btn-primary {
-  background-color: #d99a08;
-  color: #0f172a;
-  font-family: "Sora", sans-serif;
-  font-weight: 700;
-  border-radius: var(--radius-soft);
-  transition: var(--transition-base);
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-}
-
-/* ======================================================
-   CARDS / CAIXAS (FIDELIDADE CANVA)
-====================================================== */
-
-.card,
-.card-soft,
-.box,
-.feature-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-card);
-  border: var(--border-soft);
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition-base);
-}
-
-.card:hover,
-.card-soft:hover,
-.box:hover,
-.feature-card:hover {
-  box-shadow: var(--shadow-hover);
+[class*="bg-white"][class*="rounded"][class*="shadow"]:hover {
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10) !important;
   transform: translateY(-2px);
 }
 
 /* ======================================================
-   FUNDOS DE SEÇÃO
+   CAIXAS SEM SHADOW (LISTAS, ALERTAS, BLOCS)
 ====================================================== */
 
-.section-light {
-  background: var(--bg-section-light);
+[class*="bg-white"][class*="rounded"]:not([class*="shadow"]) {
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
-.section-soft {
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f8fafc 100%
-  );
+/* ======================================================
+   FUNDOS DE SEÇÃO CLAROS
+====================================================== */
+
+[class*="bg-[#F7F8FA]"],
+[class*="bg-[#f7f8fa]"] {
+  background-color: #f7f8fa !important;
 }
 
-/* Seções roxas do Canva */
+[class*="bg-white"]:not([class*="rounded"]) {
+  background-color: #ffffff !important;
+}
 
-.section-primary {
+/* ======================================================
+   SEÇÕES ROXAS (CANVA)
+====================================================== */
+
+[class*="bg-[#2"] {
   background: linear-gradient(
     180deg,
     #2b1f6a 0%,
     #1e1b4b 100%
-  );
+  ) !important;
   color: #ffffff;
 }
 
 /* ======================================================
-   PADRÃO DE DOTS (CANVA)
+   PADRÃO DE DOTS (FUNDO ROXO)
 ====================================================== */
 
-.bg-dots {
+[class*="bg-[#2"][class*="bg-dots"],
+[class*="bg-[#2"][class*="relative"] {
   background-image: radial-gradient(
     rgba(255, 255, 255, 0.08) 1px,
     transparent 1px
@@ -144,32 +88,24 @@ h6 {
 }
 
 /* ======================================================
-   HOVERS E INTERAÇÕES SUAVES
+   BOTÕES (SEM CRIAR CLASSES)
 ====================================================== */
 
-a,
-button {
-  transition: var(--transition-base);
+button,
+a[class*="bg-[#D99A08]"] {
+  border-radius: 10px;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-a:hover {
-  opacity: 0.9;
+button:hover,
+a[class*="bg-[#D99A08]"]:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
 }
 
 /* ======================================================
-   RODAPÉ (TIPOGRAFIA E VISUAL CANVA)
+   RODAPÉ – TIPOGRAFIA E CONTRASTE
 ====================================================== */
-
-footer {
-  font-family: "Lexend", sans-serif;
-}
-
-footer h3 {
-  font-family: "Sora", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff;
-}
 
 footer p,
 footer li,
@@ -179,20 +115,34 @@ footer a {
   color: rgba(255, 255, 255, 0.7);
 }
 
+footer h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
 footer a:hover {
   color: #ffffff;
 }
 
-/* Ícones sociais (SVG inline do Canva) */
+/* ======================================================
+   SVGs DE REDES SOCIAIS (INLINE DO CANVA)
+====================================================== */
 
 footer svg {
   width: 18px;
   height: 18px;
   fill: #ffffff;
+  opacity: 0.9;
+}
+
+footer svg:hover {
+  opacity: 1;
 }
 
 /* ======================================================
-   LOGO BRANCA NO RODAPÉ
+   LOGO BRANCA NO RODAPÉ (MESMO ASSET)
 ====================================================== */
 
 .footer-logo-white {
@@ -200,10 +150,10 @@ footer svg {
 }
 
 /* ======================================================
-   ANIMAÇÕES – ESTADO VISUAL (SEM CRIAR NOVAS)
+   ANIMAÇÕES – APENAS O QUE JÁ EXISTIA
 ====================================================== */
 
-[data-animate] {
+[class*="opacity-0"][class*="translate-y"] {
   opacity: 0;
   transform: translateY(20px);
 }
@@ -215,4 +165,3 @@ footer svg {
     opacity 0.8s ease,
     transform 0.8s ease;
 }
-
