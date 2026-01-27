@@ -1,168 +1,145 @@
 /* ======================================================
-   RESET BASE (SEM ALTERAR LAYOUT)
+   TOKENS VISUAIS
 ====================================================== */
+:root {
+  --bg-page: #f7f8fa;
+  --bg-card: #ffffff;
+  --bg-dark: #0f172a;
 
-html {
-  scroll-behavior: smooth;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-invert: #ffffff;
+
+  --brand: #4a0a7e;
+  --accent: #d99a08;
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 6px 18px rgba(15,23,42,.06);
+  --shadow-md: 0 10px 28px rgba(15,23,42,.08);
+  --shadow-lg: 0 18px 48px rgba(15,23,42,.14);
+
+  --ease: cubic-bezier(.22,.61,.36,1);
 }
+
+/* ======================================================
+   BASE
+====================================================== */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Lexend", sans-serif;
-  background-color: #f7f8fa;
-  color: #0f172a;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Sora", sans-serif;
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
 }
 
 /* ======================================================
-   AJUSTE GLOBAL DE CAIXAS (PADRÃO CANVA)
-   Atua apenas onde já existe bg + rounded + shadow
+   ESTRUTURA COMUM
 ====================================================== */
-
-[class*="bg-white"][class*="rounded"][class*="shadow"] {
-  border-radius: 14px !important;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06) !important;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+section {
+  position: relative;
 }
 
-[class*="bg-white"][class*="rounded"][class*="shadow"]:hover {
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10) !important;
-  transform: translateY(-2px);
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 4rem 1.25rem;
 }
 
 /* ======================================================
-   CAIXAS SEM SHADOW (LISTAS, ALERTAS, BLOCS)
+   CARDS / CAIXAS
 ====================================================== */
+.card,
+.box {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
 
-[class*="bg-white"][class*="rounded"]:not([class*="shadow"]) {
-  border-radius: 14px;
-  border: 1px solid rgba(15, 23, 42, 0.06);
+.card:hover,
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 /* ======================================================
-   FUNDOS DE SEÇÃO CLAROS
+   DESTAQUE
 ====================================================== */
-
-[class*="bg-[#F7F8FA]"],
-[class*="bg-[#f7f8fa]"] {
-  background-color: #f7f8fa !important;
-}
-
-[class*="bg-white"]:not([class*="rounded"]) {
-  background-color: #ffffff !important;
+.card.is-featured {
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--brand);
 }
 
 /* ======================================================
-   SEÇÕES ROXAS (CANVA)
+   BOTÕES
 ====================================================== */
-
-[class*="bg-[#2"] {
-  background: linear-gradient(
-    180deg,
-    #2b1f6a 0%,
-    #1e1b4b 100%
-  ) !important;
-  color: #ffffff;
-}
-
-/* ======================================================
-   PADRÃO DE DOTS (FUNDO ROXO)
-====================================================== */
-
-[class*="bg-[#2"][class*="bg-dots"],
-[class*="bg-[#2"][class*="relative"] {
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 24px 24px;
-}
-
-/* ======================================================
-   BOTÕES (SEM CRIAR CLASSES)
-====================================================== */
-
+.button,
 button,
-a[class*="bg-[#D99A08]"] {
-  border-radius: 10px;
-  transition: transform 0.2s ease, filter 0.2s ease;
+a.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--text-main);
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), filter .2s;
 }
 
-button:hover,
-a[class*="bg-[#D99A08]"]:hover {
-  transform: translateY(-1px);
+.button:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
   filter: brightness(1.05);
 }
 
 /* ======================================================
-   RODAPÉ – TIPOGRAFIA E CONTRASTE
+   FUNDOS
 ====================================================== */
-
-footer p,
-footer li,
-footer a {
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-footer h3 {
-  font-family: "Sora", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-footer a:hover {
-  color: #ffffff;
-}
+.bg-light { background: #ffffff; }
+.bg-soft  { background: linear-gradient(180deg,#ffffff,#f1f5f9); }
+.bg-dark  { background: linear-gradient(180deg,#2b1f6a,#1e1b4b); color: var(--text-invert); }
 
 /* ======================================================
-   SVGs DE REDES SOCIAIS (INLINE DO CANVA)
+   FOOTER
 ====================================================== */
-
-footer svg {
-  width: 18px;
-  height: 18px;
-  fill: #ffffff;
-  opacity: 0.9;
+footer {
+  background: var(--bg-dark);
+  color: rgba(255,255,255,.75);
 }
 
-footer svg:hover {
-  opacity: 1;
-}
-
-/* ======================================================
-   LOGO BRANCA NO RODAPÉ (MESMO ASSET)
-====================================================== */
+footer h3 { color: #fff; }
 
 .footer-logo-white {
   filter: brightness(0) invert(1);
 }
 
 /* ======================================================
-   ANIMAÇÕES – APENAS O QUE JÁ EXISTIA
+   ANIMAÇÕES (EQUIVALENTE CANVA)
 ====================================================== */
-
-[class*="opacity-0"][class*="translate-y"] {
+.reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(24px);
 }
 
-.animate-in {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
