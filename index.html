@@ -14,22 +14,16 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://averuz.ia.br/" />
 
-  <!-- PERFORMANCE: preconnect essenciais -->
+  <!-- Performance básica -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
-
-  <!-- TAILWIND (dependência transitória para manter layout) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CSS LOCAL -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- JS -->
   <script src="main.js" defer></script>
 </head>
 
 <body class="bg-white text-slate-900">
 
-  <!-- LINK DE PULAR PARA CONTEÚDO (A11Y) -->
   <a
     href="#conteudo-principal"
     class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded z-50"
@@ -37,21 +31,17 @@
     Pular para o conteúdo principal
   </a>
 
-  <!-- =========================
-       HEADER / NAVEGAÇÃO
-  ========================== -->
+  <!-- HEADER -->
   <header role="banner" class="w-full border-b">
     <nav
       class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
       aria-label="Navegação principal"
     >
-
       <a href="#topo" class="flex items-center">
         <img
           src="img/averuz-ia-logo.png"
           alt="Averuz"
           class="h-8"
-          loading="eager"
         />
       </a>
 
@@ -68,21 +58,23 @@
       <ul
         id="menu"
         class="hidden md:flex gap-6"
-        role="menubar"
       >
-        <li role="none"><a role="menuitem" href="#solucoes">Soluções</a></li>
-        <li role="none"><a role="menuitem" href="#como-funciona">Como funciona</a></li>
-        <li role="none"><a role="menuitem" href="#planos">Planos</a></li>
-        <li role="none"><a role="menuitem" href="#contato">Contato</a></li>
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
-
     </nav>
   </header>
 
   <div id="topo"></div>
 
   <!-- MAIN -->
-  <main id="main-content" class="w-full">
+  <main
+    id="conteudo-principal"
+    tabindex="-1"
+    class="w-full"
+  >
 
    <!-- HERO SECTION -->
    <section class="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="hero-headline">
@@ -799,22 +791,20 @@
 
   </main>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER (RESTAURADO AO PADRÃO DO CANVA) -->
   <footer
     id="contato"
     role="contentinfo"
-    class="bg-slate-900 text-white mt-16"
+    class="bg-slate-900 text-white"
   >
-    <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
 
+      <!-- Coluna 1 -->
       <div>
         <img
           src="img/averuz-ia-logo.png"
           alt="Averuz"
           class="h-8 mb-4 invert"
-          loading="lazy"
         />
         <p class="text-sm text-slate-300">
           Plataforma completa de atendimento e vendas com inteligência artificial
@@ -822,7 +812,9 @@
         </p>
       </div>
 
+      <!-- Coluna 2 -->
       <nav aria-label="Navegação do rodapé">
+        <h2 class="text-sm font-semibold mb-3">Navegação</h2>
         <ul class="space-y-2 text-sm">
           <li><a href="#solucoes">Soluções</a></li>
           <li><a href="#como-funciona">Como funciona</a></li>
@@ -831,11 +823,55 @@
         </ul>
       </nav>
 
-      <div class="text-sm text-slate-400">
-        <p>© 2026 Averuz. Todos os direitos reservados.</p>
-        <p>CNPJ: 58.345.111/0001-10</p>
+      <!-- Coluna 3 -->
+      <div>
+        <h2 class="text-sm font-semibold mb-3">Institucional</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Política de Cookies</a></li>
+          <li><a href="#">Acessibilidade</a></li>
+        </ul>
       </div>
 
+      <!-- Coluna 4 -->
+      <div>
+        <h2 class="text-sm font-semibold mb-3">Novidades</h2>
+        <form
+          action="#"
+          method="post"
+          aria-label="Assinar novidades"
+          class="flex flex-col gap-3"
+        >
+          <label for="email-news" class="sr-only">E-mail</label>
+          <input
+            id="email-news"
+            type="email"
+            placeholder="Digite seu e-mail"
+            class="px-3 py-2 rounded text-black"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-slate-700 hover:bg-slate-600 text-white py-2 rounded"
+          >
+            Assinar
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-700 mt-8 py-6 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-4">
+        <div>
+          © 2026 Averuz. Todos os direitos reservados.<br />
+          CNPJ: 58.345.111/0001-10
+        </div>
+        <a href="#topo" class="underline">
+          Voltar ao topo ↑
+        </a>
+      </div>
     </div>
   </footer>
 
