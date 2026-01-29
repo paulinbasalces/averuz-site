@@ -14,60 +14,55 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://averuz.ia.br/" />
 
-  <!-- CSS -->
+  <!-- TAILWIND CDN (OBRIGATÓRIO PARA NÃO QUEBRAR O LAYOUT) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- CSS LOCAL (PODE FICAR NEUTRO POR ENQUANTO) -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- JS -->
   <script src="main.js" defer></script>
 </head>
 
-<body>
+<body class="bg-white text-slate-900">
 
   <!-- =========================
        HEADER / NAVEGAÇÃO
   ========================== -->
-  <header>
-    <nav aria-label="Navegação principal">
-      <div class="nav-wrapper">
+  <header class="w-full border-b">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+         aria-label="Navegação principal">
 
-        <a href="#topo" class="logo">
-          <img
-            src="img/averuz-ia-logo.png"
-            alt="Averuz"
-            width="120"
-            height="40"
-          />
-        </a>
+      <a href="#topo" class="flex items-center">
+        <img
+          src="img/averuz-ia-logo.png"
+          alt="Averuz"
+          class="h-8"
+        />
+      </a>
 
-        <button
-          id="menu-toggle"
-          aria-controls="menu"
-          aria-expanded="false"
-          aria-label="Abrir menu"
-        >
-          Menu
-        </button>
+      <button
+        id="menu-toggle"
+        aria-controls="menu"
+        aria-expanded="false"
+        aria-label="Abrir menu"
+        class="md:hidden"
+      >
+        Menu
+      </button>
 
-        <ul id="menu" class="nav-list">
-          <li><a href="#solucoes">Soluções</a></li>
-          <li><a href="#como-funciona">Como funciona</a></li>
-          <li><a href="#planos">Planos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-
-      </div>
+      <ul id="menu" class="hidden md:flex gap-6">
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#planos">Planos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- Âncora de topo -->
   <div id="topo"></div>
 
-  <!-- =========================
-       MAIN — CONTEÚDO
-       >>> COLE AQUI O CONTEÚDO ATUAL <<<
-       NÃO ALTERAR FORA DESTE BLOCO
-  ========================== -->
-
+  
   <!-- MAIN -->
   <main id="main-content" class="w-full">
 
@@ -789,25 +784,23 @@
   <!-- =========================
        FOOTER
   ========================== -->
-  <footer id="contato">
-    <div class="footer-wrapper">
+  <footer id="contato" class="bg-slate-900 text-white mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
 
-      <div class="footer-brand">
+      <div>
         <img
           src="img/averuz-ia-logo.png"
           alt="Averuz"
-          class="footer-logo-white"
-          width="120"
-          height="40"
+          class="h-8 mb-4 invert"
         />
-        <p>
+        <p class="text-sm text-slate-300">
           Plataforma completa de atendimento e vendas com inteligência artificial
           para empresas que querem crescer.
         </p>
       </div>
 
       <nav aria-label="Navegação do rodapé">
-        <ul>
+        <ul class="space-y-2 text-sm">
           <li><a href="#solucoes">Soluções</a></li>
           <li><a href="#como-funciona">Como funciona</a></li>
           <li><a href="#planos">Planos</a></li>
@@ -815,7 +808,7 @@
         </ul>
       </nav>
 
-      <div class="footer-legal">
+      <div class="text-sm text-slate-400">
         <p>© 2026 Averuz. Todos os direitos reservados.</p>
         <p>CNPJ: 58.345.111/0001-10</p>
       </div>
