@@ -14,10 +14,13 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://averuz.ia.br/" />
 
-  <!-- TAILWIND CDN (OBRIGATÓRIO PARA NÃO QUEBRAR O LAYOUT) -->
+  <!-- PERFORMANCE: preconnect essenciais -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+
+  <!-- TAILWIND (dependência transitória para manter layout) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CSS LOCAL (PODE FICAR NEUTRO POR ENQUANTO) -->
+  <!-- CSS LOCAL -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- JS -->
@@ -26,18 +29,29 @@
 
 <body class="bg-white text-slate-900">
 
+  <!-- LINK DE PULAR PARA CONTEÚDO (A11Y) -->
+  <a
+    href="#conteudo-principal"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded z-50"
+  >
+    Pular para o conteúdo principal
+  </a>
+
   <!-- =========================
        HEADER / NAVEGAÇÃO
   ========================== -->
-  <header class="w-full border-b">
-    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
-         aria-label="Navegação principal">
+  <header role="banner" class="w-full border-b">
+    <nav
+      class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      aria-label="Navegação principal"
+    >
 
       <a href="#topo" class="flex items-center">
         <img
           src="img/averuz-ia-logo.png"
           alt="Averuz"
           class="h-8"
+          loading="eager"
         />
       </a>
 
@@ -45,24 +59,28 @@
         id="menu-toggle"
         aria-controls="menu"
         aria-expanded="false"
-        aria-label="Abrir menu"
+        aria-label="Abrir menu de navegação"
         class="md:hidden"
       >
         Menu
       </button>
 
-      <ul id="menu" class="hidden md:flex gap-6">
-        <li><a href="#solucoes">Soluções</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
-        <li><a href="#planos">Planos</a></li>
-        <li><a href="#contato">Contato</a></li>
+      <ul
+        id="menu"
+        class="hidden md:flex gap-6"
+        role="menubar"
+      >
+        <li role="none"><a role="menuitem" href="#solucoes">Soluções</a></li>
+        <li role="none"><a role="menuitem" href="#como-funciona">Como funciona</a></li>
+        <li role="none"><a role="menuitem" href="#planos">Planos</a></li>
+        <li role="none"><a role="menuitem" href="#contato">Contato</a></li>
       </ul>
+
     </nav>
   </header>
 
   <div id="topo"></div>
 
-  
   <!-- MAIN -->
   <main id="main-content" class="w-full">
 
@@ -784,7 +802,11 @@
   <!-- =========================
        FOOTER
   ========================== -->
-  <footer id="contato" class="bg-slate-900 text-white mt-16">
+  <footer
+    id="contato"
+    role="contentinfo"
+    class="bg-slate-900 text-white mt-16"
+  >
     <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
 
       <div>
@@ -792,6 +814,7 @@
           src="img/averuz-ia-logo.png"
           alt="Averuz"
           class="h-8 mb-4 invert"
+          loading="lazy"
         />
         <p class="text-sm text-slate-300">
           Plataforma completa de atendimento e vendas com inteligência artificial
