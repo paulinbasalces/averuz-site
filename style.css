@@ -1,72 +1,90 @@
 /* ======================================================
    Averuz — V1.1
-   Escopo: HERO + MENU DESKTOP
-   Mobile ignorado propositalmente
+   Desktop only
+   Escopo: Menu + Hero
 ====================================================== */
 
 @media (min-width: 1024px) {
 
+  /* RESET MÍNIMO */
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f172a;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   /* =======================
-     HEADER / MENU DESKTOP
+     HEADER / MENU
   ======================= */
 
   header {
     background: #ffffff;
-    position: relative;
-    z-index: 50;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
-  header nav {
+  header .container {
+    max-width: 1200px;
+    margin: 0 auto;
     height: 80px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
   }
 
-  /* links do menu */
-  header ul#menu a {
+  header ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  header ul a {
     font-weight: 500;
     color: #0f172a;
-    text-decoration: none;
   }
 
-  header ul#menu a:hover {
+  header ul a:hover {
     color: #4a0a7e;
   }
 
-  /* CTA do menu (Assinar agora) */
-  header a.btn-primary,
-  header a.cta-primary {
+  /* CTA MENU */
+  header .btn-primary {
     padding: 10px 18px;
     border-radius: 8px;
     background: #d99a08;
     color: #0f172a;
     font-weight: 700;
-    text-decoration: none;
-  }
-
-  header a.btn-primary:hover,
-  header a.cta-primary:hover {
-    filter: brightness(1.05);
   }
 
   /* =======================
-     HERO (primeira dobra real)
+     HERO
   ======================= */
 
-  main > section:first-of-type {
+  #hero-desktop {
     min-height: calc(100vh - 80px);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
     background: linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
+    padding: 96px 24px;
   }
 
-  main > section:first-of-type > div {
+  #hero-desktop > div {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 96px 24px 72px;
   }
 
-  /* título */
-  main > section:first-of-type h1 {
+  .hero-content h1 {
     font-size: 3.25rem;
     line-height: 1.05;
     font-weight: 700;
@@ -74,13 +92,11 @@
     margin-bottom: 24px;
   }
 
-  main > section:first-of-type h1 span,
-  main > section:first-of-type strong {
+  .hero-content h1 span {
     color: #a855f7;
   }
 
-  /* texto */
-  main > section:first-of-type p {
+  .hero-content p {
     max-width: 640px;
     font-size: 1.125rem;
     line-height: 1.6;
@@ -88,30 +104,38 @@
     margin-bottom: 40px;
   }
 
-  /* CTAs do hero */
-  main > section:first-of-type a {
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+  }
+
+  /* =======================
+     BOTÕES (ÚNICA FONTE)
+  ======================= */
+
+  .btn-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: 14px 28px;
     border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  /* CTA principal */
-  main > section:first-of-type a:first-of-type {
     background: #d99a08;
     color: #0f172a;
+    font-weight: 700;
   }
 
-  /* CTA secundário */
-  main > section:first-of-type a + a {
-    margin-left: 16px;
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 10px;
     color: #ffffff;
     opacity: 0.9;
   }
 
-  main > section:first-of-type a:hover {
+  .btn-primary:hover,
+  .btn-secondary:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
   }
