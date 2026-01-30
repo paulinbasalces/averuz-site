@@ -1,11 +1,12 @@
-// menu mobile — simples, previsível, sem efeito colateral
+// Menu mobile — compatível com Tailwind (md:flex / hidden)
 const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu-mobile");
+const menu = document.getElementById("menu");
 
 if (toggle && menu) {
   toggle.addEventListener("click", () => {
-    const aberto = menu.classList.contains("hidden");
-    menu.classList.toggle("hidden");
-    toggle.setAttribute("aria-expanded", String(aberto));
+    const isHidden = menu.classList.contains("hidden");
+
+    menu.classList.toggle("hidden", !isHidden);
+    toggle.setAttribute("aria-expanded", String(isHidden));
   });
 }
