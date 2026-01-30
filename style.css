@@ -1,109 +1,77 @@
 /* ======================================================
-   AVERUZ — STYLE.CSS
-   Versão: 1.1
-   Escopo:
-   - Desktop first
-   - Hero + primeira dobra
-   - Menu desktop estável
-   - Mobile ignorado propositalmente
+   Averuz — V1.1
+   Escopo: HERO + MENU DESKTOP
+   Mobile propositalmente ignorado
 ====================================================== */
 
-/* =========================
-   RESET MÍNIMO
-========================= */
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Inter, Arial, sans-serif;
-  color: #0f172a;
-  background: #ffffff;
-}
-
-/* =========================
-   HEADER / MENU DESKTOP
-========================= */
-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #0f172a;
-  font-weight: 500;
-}
-
-header nav a:hover {
-  color: #4a0a7e;
-}
-
-/* garante que o menu desktop nunca suma */
-@media (min-width: 768px) {
-  #menu {
-    display: flex !important;
-    gap: 24px;
-    align-items: center;
-  }
-
-  #menu-toggle {
-    display: none;
-  }
-}
-
-/* =========================
-   HERO / PRIMEIRA DOBRA
-   (âncora visual do Canva)
-========================= */
 @media (min-width: 1024px) {
 
-  /* primeira seção do main = hero */
-  main > section:first-of-type {
+  /* -----------------------
+     HEADER / MENU DESKTOP
+  ----------------------- */
+  header {
+    background: #ffffff;
+    position: relative;
+    z-index: 50;
+  }
+
+  header nav {
+    height: 80px;
+  }
+
+  header ul#menu {
+    display: flex;
+    gap: 32px;
+  }
+
+  header ul#menu a {
+    font-weight: 500;
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  header ul#menu a:hover {
+    color: #4a0a7e;
+  }
+
+  /* -----------------------
+     HERO DESKTOP
+  ----------------------- */
+  #hero-desktop {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    background: linear-gradient(
-      180deg,
-      #2b1f6a 0%,
-      #1e1b4b 100%
-    );
+    background: linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
   }
 
-  /* wrapper interno típico do Canva */
-  main > section:first-of-type > div {
+  #hero-desktop > div {
     max-width: 1200px;
     margin: 0 auto;
     padding: 96px 24px 72px;
-    width: 100%;
   }
 
-  /* título */
-  main > section:first-of-type h1 {
+  #hero-desktop h1 {
     font-size: 3.25rem;
     line-height: 1.05;
     font-weight: 700;
     color: #ffffff;
-    margin: 0 0 24px;
+    margin-bottom: 24px;
   }
 
-  /* subtítulo */
-  main > section:first-of-type p {
+  #hero-desktop h1 span,
+  #hero-desktop strong {
+    color: #a855f7;
+  }
+
+  #hero-desktop p {
     max-width: 640px;
     font-size: 1.125rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 40px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 40px;
   }
 
-  /* CTA principal */
-  main > section:first-of-type a {
+  #hero-desktop .cta-primary {
     display: inline-flex;
     align-items: center;
     padding: 14px 28px;
@@ -112,40 +80,10 @@ header nav a:hover {
     color: #0f172a;
     font-weight: 700;
     text-decoration: none;
-    transition: transform 0.2s ease, filter 0.2s ease;
   }
 
-  main > section:first-of-type a:hover {
+  #hero-desktop .cta-primary:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
   }
-}
-
-/* =========================
-   SEÇÕES SEGUINTES
-   (não interfere no layout)
-========================= */
-section {
-  width: 100%;
-}
-
-/* =========================
-   FOOTER (já validado)
-========================= */
-footer a {
-  color: #e5e7eb;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   ACESSIBILIDADE BÁSICA
-========================= */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid #4a0a7e;
-  outline-offset: 2px;
 }
