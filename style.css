@@ -139,3 +139,77 @@ a:focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
+
+
+/* ======================================================
+   V1.1 — DESKTOP ONLY
+   Hero + Primeira dobra (base Canva)
+   Mobile ignorado propositalmente
+====================================================== */
+
+/* trava o layout só no desktop */
+@media (min-width: 1024px) {
+
+  /* container principal da primeira dobra */
+  section:first-of-type,
+  .section-hero,
+  .hero,
+  .canva-hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
+  }
+
+  /* wrapper interno típico do Canva */
+  section:first-of-type > div,
+  .section-hero > div,
+  .hero > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 96px 24px 72px;
+  }
+
+  /* título principal */
+  section:first-of-type h1,
+  .section-hero h1,
+  .hero h1 {
+    font-size: 3.25rem;
+    line-height: 1.05;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  /* subtítulo */
+  section:first-of-type p,
+  .section-hero p,
+  .hero p {
+    max-width: 640px;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 40px;
+  }
+
+  /* CTA principal */
+  section:first-of-type a,
+  .section-hero a,
+  .hero a {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    border-radius: 10px;
+    background: #d99a08;
+    color: #0f172a;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  section:first-of-type a:hover,
+  .section-hero a:hover,
+  .hero a:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+  }
+}
