@@ -14,16 +14,19 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://averuz.ia.br/" />
 
-  <!-- Performance básica -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+  <!-- Tailwind CDN (mantido para layout atual) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- CSS local (V1.1) -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- JS -->
   <script src="main.js" defer></script>
 </head>
 
 <body class="bg-white text-slate-900">
 
+  <!-- A11Y: pular para conteúdo -->
   <a
     href="#conteudo-principal"
     class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded z-50"
@@ -31,8 +34,10 @@
     Pular para o conteúdo principal
   </a>
 
-  <!-- HEADER -->
-  <header role="banner" class="w-full border-b">
+  <!-- =========================
+       HEADER / MENU
+  ========================== -->
+  <header class="w-full border-b">
     <nav
       class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
       aria-label="Navegação principal"
@@ -69,9 +74,31 @@
 
   <div id="topo"></div>
 
-  <!-- MAIN -->
-<!-- MAIN -->
-<main id="conteudo-principal" role="main" tabindex="-1" class="w-full">
+  <!-- =========================
+       HERO / PRIMEIRA DOBRA
+  ========================== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Atendimento que vende. Tecnologia que aproxima.</h1>
+      <p>
+        A Averuz integra canais, automatiza conversas e transforma cada contato
+        em oportunidade real de venda com inteligência artificial.
+      </p>
+      <a href="#planos" class="cta-primary">
+        Ver planos
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================
+       MAIN — CONTEÚDO
+       >>> COLE AQUI TODO O CONTEÚDO ATUAL <<<
+  ========================== -->
+  <main
+    id="conteudo-principal"
+    tabindex="-1"
+    class="w-full"
+  >
 
   <!-- HERO SECTION -->
   <section class="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="hero-headline">
@@ -653,17 +680,17 @@
   </div>
 </section>
 
-</main>
-  
-  <!-- FOOTER (RESTAURADO AO PADRÃO DO CANVA) -->
+  </main>
+
+  <!-- =========================
+       FOOTER (APROVADO)
+  ========================== -->
   <footer
     id="contato"
-    role="contentinfo"
     class="bg-slate-900 text-white"
   >
     <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
 
-      <!-- Coluna 1 -->
       <div>
         <img
           src="img/averuz-ia-logo.png"
@@ -676,7 +703,6 @@
         </p>
       </div>
 
-      <!-- Coluna 2 -->
       <nav aria-label="Navegação do rodapé">
         <h2 class="text-sm font-semibold mb-3">Navegação</h2>
         <ul class="space-y-2 text-sm">
@@ -687,7 +713,6 @@
         </ul>
       </nav>
 
-      <!-- Coluna 3 -->
       <div>
         <h2 class="text-sm font-semibold mb-3">Institucional</h2>
         <ul class="space-y-2 text-sm">
@@ -698,15 +723,9 @@
         </ul>
       </div>
 
-      <!-- Coluna 4 -->
       <div>
         <h2 class="text-sm font-semibold mb-3">Novidades</h2>
-        <form
-          action="#"
-          method="post"
-          aria-label="Assinar novidades"
-          class="flex flex-col gap-3"
-        >
+        <form class="flex flex-col gap-3">
           <label for="email-news" class="sr-only">E-mail</label>
           <input
             id="email-news"
