@@ -14,10 +14,10 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://averuz.ia.br/" />
 
-  <!-- Tailwind CDN (mantido para layout atual) -->
+  <!-- Tailwind (mantido para não quebrar layout existente) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CSS local (V1.1) -->
+  <!-- CSS local -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- JS -->
@@ -26,7 +26,7 @@
 
 <body class="bg-white text-slate-900">
 
-  <!-- A11Y: pular para conteúdo -->
+  <!-- Acessibilidade -->
   <a
     href="#conteudo-principal"
     class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded z-50"
@@ -75,30 +75,12 @@
   <div id="topo"></div>
 
   <!-- =========================
-       HERO / PRIMEIRA DOBRA
-  ========================== -->
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>Atendimento que vende. Tecnologia que aproxima.</h1>
-      <p>
-        A Averuz integra canais, automatiza conversas e transforma cada contato
-        em oportunidade real de venda com inteligência artificial.
-      </p>
-      <a href="#planos" class="cta-primary">
-        Ver planos
-      </a>
-    </div>
-  </section>
-
-  <!-- =========================
        MAIN — CONTEÚDO
-       >>> COLE AQUI TODO O CONTEÚDO ATUAL <<<
+       COLE TODO O CONTEÚDO DO CANVA AQUI
+       (incluindo a hero ORIGINAL)
   ========================== -->
-  <main
-    id="conteudo-principal"
-    tabindex="-1"
-    class="w-full"
-  >
+<!-- MAIN -->
+<main id="conteudo-principal" role="main" tabindex="-1" class="w-full">
 
   <!-- HERO SECTION -->
   <section class="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="hero-headline">
@@ -680,7 +662,7 @@
   </div>
 </section>
 
-  </main>
+</main>
 
   <!-- =========================
        FOOTER (APROVADO)
