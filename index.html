@@ -6,23 +6,30 @@
 
   <title>Averuz — Atendimento que vende</title>
 
-  <meta name="description" content="Averuz conecta seus canais, automatiza conversas e transforma cada contato em venda com IA." />
+  <meta
+    name="description"
+    content="Averuz conecta seus canais, automatiza conversas e transforma cada contato em oportunidade real de venda com inteligência artificial."
+  />
 
+  <!-- Tailwind mantido apenas para o resto do site -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- CSS real do projeto -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body id="topo">
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER / MENU DESKTOP
+  ========================== -->
   <header>
     <nav class="container">
       <a href="#topo" class="logo">
         <img src="img/averuz-ia-logo.png" alt="Averuz" />
       </a>
 
-      <ul id="menu">
+      <ul class="menu">
         <li><a href="#solucoes">Soluções</a></li>
         <li><a href="#como-funciona">Como funciona</a></li>
         <li><a href="#planos">Planos</a></li>
@@ -31,10 +38,14 @@
     </nav>
   </header>
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN
+  ========================== -->
   <main>
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO DESKTOP
+    ========================== -->
     <section id="hero-desktop">
       <div class="hero-content">
 
@@ -53,12 +64,17 @@
           <a href="#planos" class="btn-primary">Assinar agora</a>
           <a href="#planos" class="btn-secondary">Ver planos</a>
         </div>
+
       </div>
 
       <div class="hero-mock">
         <!-- mock / imagem do produto -->
       </div>
     </section>
+
+    <!-- RESTANTE DO SITE
+         permanece exatamente como você já tem -->
+    
 
 <!-- Hero Visual - Dashboard with Animations -->
       <div class="relative float-animation">
@@ -761,82 +777,6 @@
     <!-- ================================================= -->
 
   </main>
-
-  <!-- =========================
-       FOOTER (ESTRUTURA VALIDADA)
-  ========================== -->
-  <footer
-    id="contato"
-    class="bg-slate-900 text-white"
-  >
-    <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
-
-      <div>
-        <img
-          src="img/averuz-ia-logo.png"
-          alt="Averuz"
-          class="h-8 mb-4 invert"
-        />
-        <p class="text-sm text-slate-300">
-          Plataforma completa de atendimento e vendas com inteligência artificial
-          para empresas que querem crescer.
-        </p>
-      </div>
-
-      <nav aria-label="Navegação do rodapé">
-        <h2 class="text-sm font-semibold mb-3">Navegação</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#solucoes">Soluções</a></li>
-          <li><a href="#como-funciona">Como funciona</a></li>
-          <li><a href="#planos">Planos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-
-      <div>
-        <h2 class="text-sm font-semibold mb-3">Institucional</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#">Termos de Uso</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Política de Cookies</a></li>
-          <li><a href="#">Acessibilidade</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-sm font-semibold mb-3">Novidades</h2>
-        <form class="flex flex-col gap-3">
-          <label for="email-news" class="sr-only">E-mail</label>
-          <input
-            id="email-news"
-            type="email"
-            placeholder="Digite seu e-mail"
-            class="px-3 py-2 rounded text-black"
-            required
-          />
-          <button
-            type="submit"
-            class="bg-slate-700 hover:bg-slate-600 text-white py-2 rounded"
-          >
-            Assinar
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="border-t border-slate-700 mt-8 py-6 text-sm text-slate-400">
-      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-4">
-        <div>
-          © 2026 Averuz. Todos os direitos reservados.<br />
-          CNPJ: 58.345.111/0001-10
-        </div>
-        <a href="#topo" class="underline">
-          Voltar ao topo ↑
-        </a>
-      </div>
-    </div>
-  </footer>
 
 </body>
 </html>
