@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Averuz — Atendimento que vende. Tecnologia que aproxima.</title>
 
-  <meta
-    name="description"
-    content="Averuz conecta seus canais, automatiza conversas e transforma cada contato em oportunidade real de venda com inteligência artificial."
-  />
-
+  <meta name="description" content="Averuz conecta seus canais, automatiza conversas e transforma cada contato em oportunidade real de venda com inteligência artificial." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://averuz.ia.br/" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CSS -->
+  <!-- CSS local -->
   <link rel="stylesheet" href="style.css" />
 
   <!-- JS -->
@@ -26,6 +22,7 @@
 
 <body class="bg-white text-slate-900">
 
+  <!-- Acessibilidade -->
   <a
     href="#conteudo-principal"
     class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded z-50"
@@ -33,45 +30,74 @@
     Pular para o conteúdo principal
   </a>
 
-  <!-- HEADER -->
-  <header class="w-full border-b">
+  <!-- =========================
+       HEADER / MENU
+  ========================== -->
+  <header class="w-full border-b bg-white">
     <nav
-      class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"
       aria-label="Navegação principal"
     >
+      <!-- Logo -->
       <a href="#topo" class="flex items-center">
         <img
           src="img/averuz-ia-logo.png"
           alt="Averuz"
-          class="h-8"
+          class="h-9 w-auto"
         />
       </a>
 
-      <!-- Botão só no mobile -->
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#solucoes" class="font-medium hover:text-[#4A0A7E]">Soluções</a></li>
+        <li><a href="#como-funciona" class="font-medium hover:text-[#4A0A7E]">Como funciona</a></li>
+        <li><a href="#planos" class="font-medium hover:text-[#4A0A7E]">Planos</a></li>
+        <li><a href="#contato" class="font-medium hover:text-[#4A0A7E]">Contato</a></li>
+      </ul>
+
+      <!-- CTA Desktop -->
+      <a
+        href="#planos"
+        class="hidden md:inline-flex bg-[#D99A08] text-slate-900 font-bold px-6 py-2.5 rounded-lg"
+      >
+        Assinar agora
+      </a>
+
+      <!-- Botão Mobile -->
       <button
         id="menu-toggle"
-        aria-controls="menu"
+        aria-controls="menu-mobile"
         aria-expanded="false"
-        aria-label="Abrir menu de navegação"
-        class="md:hidden"
+        aria-label="Abrir menu"
+        class="md:hidden text-slate-900 font-medium"
       >
         Menu
       </button>
+    </nav>
 
-      <!-- MENU -->
-      <ul
-        id="menu"
-        class="md:flex md:static md:flex-row md:gap-6 hidden flex-col gap-4"
-      >
+    <!-- Menu Mobile -->
+    <div
+      id="menu-mobile"
+      class="hidden md:hidden border-t bg-white"
+    >
+      <ul class="flex flex-col px-4 py-6 gap-4">
         <li><a href="#solucoes">Soluções</a></li>
         <li><a href="#como-funciona">Como funciona</a></li>
         <li><a href="#planos">Planos</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li>
+          <a
+            href="#planos"
+            class="inline-flex justify-center bg-[#D99A08] text-slate-900 font-bold px-4 py-3 rounded-lg"
+          >
+            Assinar agora
+          </a>
+        </li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <div id="topo"></div>
+<div id="topo"></div>
 
   <!-- MAIN -->
   <main
@@ -79,7 +105,6 @@
     tabindex="-1"
     class="w-full"
   >
-
 
    <!-- HERO SECTION -->
    <section class="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="hero-headline">
@@ -796,12 +821,11 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer
-    id="contato"
-    class="bg-slate-900 text-white"
-  >
-    <div class="max-w-7xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4">
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer id="contato" class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-16 grid gap-12 md:grid-cols-4">
 
       <div>
         <img
@@ -809,15 +833,15 @@
           alt="Averuz"
           class="h-8 mb-4 invert"
         />
-        <p class="text-sm text-slate-300">
+        <p class="text-sm text-slate-400">
           Plataforma completa de atendimento e vendas com inteligência artificial
           para empresas que querem crescer.
         </p>
       </div>
 
-      <nav aria-label="Navegação do rodapé">
-        <h2 class="text-sm font-semibold mb-3">Navegação</h2>
-        <ul class="space-y-2 text-sm">
+      <nav>
+        <h2 class="text-xs font-bold uppercase mb-4 text-slate-500">Navegação</h2>
+        <ul class="space-y-3 text-sm text-slate-400">
           <li><a href="#solucoes">Soluções</a></li>
           <li><a href="#como-funciona">Como funciona</a></li>
           <li><a href="#planos">Planos</a></li>
@@ -826,46 +850,34 @@
       </nav>
 
       <div>
-        <h2 class="text-sm font-semibold mb-3">Institucional</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#">Termos de Uso</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Política de Cookies</a></li>
-          <li><a href="#">Acessibilidade</a></li>
+        <h2 class="text-xs font-bold uppercase mb-4 text-slate-500">Institucional</h2>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li>Termos de Uso</li>
+          <li>Política de Privacidade</li>
+          <li>Política de Cookies</li>
+          <li>Acessibilidade</li>
         </ul>
       </div>
 
       <div>
-        <h2 class="text-sm font-semibold mb-3">Novidades</h2>
+        <h2 class="text-xs font-bold uppercase mb-4 text-slate-500">Novidades</h2>
         <form class="flex flex-col gap-3">
-          <label for="email-news" class="sr-only">E-mail</label>
           <input
-            id="email-news"
             type="email"
             placeholder="Digite seu e-mail"
             class="px-3 py-2 rounded text-black"
-            required
           />
-          <button
-            type="submit"
-            class="bg-slate-700 hover:bg-slate-600 text-white py-2 rounded"
-          >
+          <button class="bg-slate-700 hover:bg-slate-600 py-2 rounded">
             Assinar
           </button>
         </form>
       </div>
-
     </div>
 
-    <div class="border-t border-slate-700 mt-8 py-6 text-sm text-slate-400">
-      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between gap-4">
-        <div>
-          © 2026 Averuz. Todos os direitos reservados.<br />
-          CNPJ: 58.345.111/0001-10
-        </div>
-        <a href="#topo" class="underline">
-          Voltar ao topo ↑
-        </a>
+    <div class="border-t border-slate-700 py-6 text-sm text-slate-400">
+      <div class="max-w-7xl mx-auto px-4 flex justify-between">
+        <span>© 2026 Averuz. Todos os direitos reservados.</span>
+        <a href="#topo" class="underline">Voltar ao topo</a>
       </div>
     </div>
   </footer>
