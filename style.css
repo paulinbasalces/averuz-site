@@ -1,201 +1,109 @@
 /* ======================================================
-   V1.1 — HERO + PRIMEIRA DOBRA + MENU
-   Escopo fechado: sem tocar no resto do site
+   AVERUZ — STYLE.CSS
+   Versão: 1.1
+   Escopo:
+   - Desktop first
+   - Hero + primeira dobra
+   - Menu desktop estável
+   - Mobile ignorado propositalmente
 ====================================================== */
 
-/* -------- Tokens visuais (somente o necessário) -------- */
-:root {
-  --brand: #4a0a7e;
-  --accent: #d99a08;
-  --ink: #0f172a;
-  --ink-muted: #475569;
-
-  --radius-sm: 10px;
-  --radius-md: 14px;
-
-  --shadow-soft: 0 10px 28px rgba(15,23,42,.10);
-  --ease: cubic-bezier(.22,.61,.36,1);
+/* =========================
+   RESET MÍNIMO
+========================= */
+* {
+  box-sizing: border-box;
 }
 
-/* -------- Header / Menu -------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Inter, Arial, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+/* =========================
+   HEADER / MENU DESKTOP
+========================= */
 header {
   background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-header nav {
-  min-height: 72px;
+header nav a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
 }
 
-header a {
-  color: var(--ink);
+header nav a:hover {
+  color: #4a0a7e;
 }
 
-header a:hover {
-  color: var(--brand);
-}
-
-#menu-toggle {
-  padding: .5rem .75rem;
-  border-radius: var(--radius-sm);
-}
-
-#menu-toggle:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-}
-
-/* Menu desktop */
+/* garante que o menu desktop nunca suma */
 @media (min-width: 768px) {
-  #menu a {
-    font-weight: 500;
+  #menu {
+    display: flex !important;
+    gap: 24px;
+    align-items: center;
+  }
+
+  #menu-toggle {
+    display: none;
   }
 }
 
-/* Menu mobile */
-#menu.hidden {
-  display: none;
-}
-
-#menu:not(.hidden) {
-  position: absolute;
-  top: 72px;
-  right: 1rem;
-  left: 1rem;
-  background: #ffffff;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  padding: 1rem;
-}
-
-/* -------- Hero / Primeira dobra -------- */
-.hero {
-  position: relative;
-  min-height: calc(100vh - 72px);
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
-  color: #ffffff;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5rem 1.25rem 4rem;
-}
-
-.hero h1 {
-  font-family: "Sora", system-ui, sans-serif;
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 640px;
-  font-size: 1.125rem;
-  color: rgba(255,255,255,.85);
-  margin-bottom: 2rem;
-}
-
-/* CTA primário */
-.hero .cta-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .9rem 1.25rem;
-  background: var(--accent);
-  color: var(--ink);
-  font-weight: 700;
-  border-radius: var(--radius-sm);
-  transition: transform .2s var(--ease), box-shadow .2s var(--ease), filter .2s;
-}
-
-.hero .cta-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
-  filter: brightness(1.05);
-}
-
-.hero .cta-primary:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 2px;
-}
-
-/* -------- Responsivo -------- */
-@media (max-width: 767px) {
-  .hero-inner {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-/* -------- Acessibilidade visual mínima -------- */
-a:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-}
-
-
-/* ======================================================
-   V1.1 — DESKTOP ONLY
-   Hero + Primeira dobra (base Canva)
-   Mobile ignorado propositalmente
-====================================================== */
-
-/* trava o layout só no desktop */
+/* =========================
+   HERO / PRIMEIRA DOBRA
+   (âncora visual do Canva)
+========================= */
 @media (min-width: 1024px) {
 
-  /* container principal da primeira dobra */
-  section:first-of-type,
-  .section-hero,
-  .hero,
-  .canva-hero {
+  /* primeira seção do main = hero */
+  main > section:first-of-type {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
-    background: linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
+    background: linear-gradient(
+      180deg,
+      #2b1f6a 0%,
+      #1e1b4b 100%
+    );
   }
 
   /* wrapper interno típico do Canva */
-  section:first-of-type > div,
-  .section-hero > div,
-  .hero > div {
+  main > section:first-of-type > div {
     max-width: 1200px;
     margin: 0 auto;
     padding: 96px 24px 72px;
+    width: 100%;
   }
 
-  /* título principal */
-  section:first-of-type h1,
-  .section-hero h1,
-  .hero h1 {
+  /* título */
+  main > section:first-of-type h1 {
     font-size: 3.25rem;
     line-height: 1.05;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 24px;
+    margin: 0 0 24px;
   }
 
   /* subtítulo */
-  section:first-of-type p,
-  .section-hero p,
-  .hero p {
+  main > section:first-of-type p {
     max-width: 640px;
     font-size: 1.125rem;
     line-height: 1.6;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 40px;
   }
 
   /* CTA principal */
-  section:first-of-type a,
-  .section-hero a,
-  .hero a {
+  main > section:first-of-type a {
     display: inline-flex;
     align-items: center;
     padding: 14px 28px;
@@ -204,12 +112,40 @@ a:focus-visible {
     color: #0f172a;
     font-weight: 700;
     text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease;
   }
 
-  section:first-of-type a:hover,
-  .section-hero a:hover,
-  .hero a:hover {
+  main > section:first-of-type a:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
   }
+}
+
+/* =========================
+   SEÇÕES SEGUINTES
+   (não interfere no layout)
+========================= */
+section {
+  width: 100%;
+}
+
+/* =========================
+   FOOTER (já validado)
+========================= */
+footer a {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ACESSIBILIDADE BÁSICA
+========================= */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4a0a7e;
+  outline-offset: 2px;
 }
