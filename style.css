@@ -6,9 +6,10 @@
 
 @media (min-width: 1024px) {
 
-  /* -----------------------
+  /* =======================
      HEADER / MENU DESKTOP
-  ----------------------- */
+  ======================= */
+
   header {
     background: #ffffff;
     position: relative;
@@ -17,6 +18,7 @@
 
   header nav {
     height: 80px;
+    align-items: center;
   }
 
   header ul#menu {
@@ -34,23 +36,24 @@
     color: #4a0a7e;
   }
 
-  /* -----------------------
-     HERO DESKTOP
-  ----------------------- */
-  #hero-desktop {
+  /* =======================
+     HERO DESKTOP REAL
+     (baseado no HTML atual)
+  ======================= */
+
+  main > section:first-of-type {
     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     background: linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
   }
 
-  #hero-desktop > div {
+  main > section:first-of-type > div {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 96px 24px 72px;
   }
 
-  #hero-desktop h1 {
+  main > section:first-of-type h1 {
     font-size: 3.25rem;
     line-height: 1.05;
     font-weight: 700;
@@ -58,12 +61,11 @@
     margin-bottom: 24px;
   }
 
-  #hero-desktop h1 span,
-  #hero-desktop strong {
+  main > section:first-of-type h1 span {
     color: #a855f7;
   }
 
-  #hero-desktop p {
+  main > section:first-of-type p {
     max-width: 640px;
     font-size: 1.125rem;
     line-height: 1.6;
@@ -71,7 +73,7 @@
     margin-bottom: 40px;
   }
 
-  #hero-desktop .cta-primary {
+  main > section:first-of-type .btn-primary {
     display: inline-flex;
     align-items: center;
     padding: 14px 28px;
@@ -82,7 +84,7 @@
     text-decoration: none;
   }
 
-  #hero-desktop .cta-primary:hover {
+  main > section:first-of-type .btn-primary:hover {
     transform: translateY(-2px);
     filter: brightness(1.05);
   }
