@@ -4,97 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Averuz — Atendimento que vende. Tecnologia que aproxima.</title>
+  <title>Averuz — Atendimento que vende</title>
 
-  <meta
-    name="description"
-    content="Averuz conecta seus canais, automatiza conversas e transforma cada contato em oportunidade real de venda com inteligência artificial."
-  />
+  <meta name="description" content="Averuz conecta seus canais, automatiza conversas e transforma cada contato em venda com IA." />
 
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://averuz.ia.br/" />
-
-  <!-- Tailwind (mantido apenas como base atual do projeto) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- CSS do projeto -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- JS do projeto -->
-  <script src="main.js" defer></script>
 </head>
 
-<body class="bg-white text-slate-900">
+<body id="topo">
 
-  <!-- Acessibilidade -->
-  <a
-    href="#conteudo-principal"
-    class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded z-50"
-  >
-    Pular para o conteúdo principal
-  </a>
-
-  <!-- =========================
-       HEADER / MENU (DESKTOP OK)
-  ========================== -->
-  <header class="w-full border-b">
-    <nav
-      class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
-      aria-label="Navegação principal"
-    >
-      <a href="#topo" class="flex items-center">
-        <img
-          src="img/averuz-ia-logo.png"
-          alt="Averuz"
-          class="h-8"
-        />
+  <!-- HEADER -->
+  <header>
+    <nav class="container">
+      <a href="#topo" class="logo">
+        <img src="img/averuz-ia-logo.png" alt="Averuz" />
       </a>
 
-      <!-- Botão mobile (ignorado por enquanto) -->
-      <button
-        id="menu-toggle"
-        aria-controls="menu"
-        aria-expanded="false"
-        aria-label="Abrir menu de navegação"
-        class="md:hidden"
-      >
-        Menu
-      </button>
-
-      <!-- Menu desktop -->
-      <ul
-        id="menu"
-        class="hidden md:flex gap-6"
-      >
+      <ul id="menu">
         <li><a href="#solucoes">Soluções</a></li>
         <li><a href="#como-funciona">Como funciona</a></li>
         <li><a href="#planos">Planos</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#planos" class="btn-primary">Assinar agora</a></li>
       </ul>
     </nav>
   </header>
 
-<div id="topo"></div>
-
   <!-- MAIN -->
-  <main
-    id="conteudo-principal"
-    tabindex="-1"
-    class="w-full"
-  >
+  <main>
 
-   <!-- HERO SECTION -->
-   <section class="pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="hero-headline">
-    <div class="max-w-7xl mx-auto">
-     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <!-- HERO -->
+    <section id="hero-desktop">
+      <div class="hero-content">
 
-<!-- Hero Content -->
-      <div class="max-w-xl">
-       <h1 id="hero-headline" class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#1A1A1A] leading-[1.1] mb-6">Atendimento que vende.<br><span class="text-[#4A0A7E]">Escala que cresce.</span></h1>
-       <p id="hero-subheadline" class="text-lg sm:text-xl text-[#525252] leading-[1.6] mb-10">Averuz conecta seus canais, automatiza conversas e transforma cada contato em oportunidade real de venda usando inteligência artificial treinada no seu negócio.</p>
-       <div class="flex flex-col sm:flex-row gap-4"><button id="hero-cta-primary" class="btn-primary px-10 py-4 rounded-xl text-lg font-bold shadow-lg shadow-[#D99A08]/20"> Assinar agora </button> <a href="#planos" class="btn-secondary px-10 py-4 rounded-xl text-lg text-center font-semibold"> Ver planos </a>
-       </div>
+        <h1>
+          Atendimento que vende.<br />
+          <span>Escala que cresce.</span>
+        </h1>
+
+        <p>
+          Averuz conecta seus canais, automatiza conversas e transforma cada
+          contato em oportunidade real de venda usando inteligência artificial
+          treinada no seu negócio.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#planos" class="btn-primary">Assinar agora</a>
+          <a href="#planos" class="btn-secondary">Ver planos</a>
+        </div>
       </div>
+
+      <div class="hero-mock">
+        <!-- mock / imagem do produto -->
+      </div>
+    </section>
 
 <!-- Hero Visual - Dashboard with Animations -->
       <div class="relative float-animation">
