@@ -1,145 +1,141 @@
 /* ======================================================
-   TOKENS VISUAIS
+   V1.1 — HERO + PRIMEIRA DOBRA + MENU
+   Escopo fechado: sem tocar no resto do site
 ====================================================== */
+
+/* -------- Tokens visuais (somente o necessário) -------- */
 :root {
-  --bg-page: #f7f8fa;
-  --bg-card: #ffffff;
-  --bg-dark: #0f172a;
-
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --text-invert: #ffffff;
-
   --brand: #4a0a7e;
   --accent: #d99a08;
+  --ink: #0f172a;
+  --ink-muted: #475569;
 
   --radius-sm: 10px;
   --radius-md: 14px;
-  --radius-lg: 18px;
 
-  --shadow-sm: 0 6px 18px rgba(15,23,42,.06);
-  --shadow-md: 0 10px 28px rgba(15,23,42,.08);
-  --shadow-lg: 0 18px 48px rgba(15,23,42,.14);
-
+  --shadow-soft: 0 10px 28px rgba(15,23,42,.10);
   --ease: cubic-bezier(.22,.61,.36,1);
 }
 
-/* ======================================================
-   BASE
-====================================================== */
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background: var(--bg-page);
-  color: var(--text-main);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+/* -------- Header / Menu -------- */
+header {
+  background: #ffffff;
 }
 
-/* ======================================================
-   ESTRUTURA COMUM
-====================================================== */
-section {
-  position: relative;
+header nav {
+  min-height: 72px;
 }
 
-.container {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding: 4rem 1.25rem;
+header a {
+  color: var(--ink);
 }
 
-/* ======================================================
-   CARDS / CAIXAS
-====================================================== */
-.card,
-.box {
-  background: var(--bg-card);
+header a:hover {
+  color: var(--brand);
+}
+
+#menu-toggle {
+  padding: .5rem .75rem;
+  border-radius: var(--radius-sm);
+}
+
+#menu-toggle:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* Menu desktop */
+@media (min-width: 768px) {
+  #menu a {
+    font-weight: 500;
+  }
+}
+
+/* Menu mobile */
+#menu.hidden {
+  display: none;
+}
+
+#menu:not(.hidden) {
+  position: absolute;
+  top: 72px;
+  right: 1rem;
+  left: 1rem;
+  background: #ffffff;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
 }
 
-.card:hover,
-.box:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+/* -------- Hero / Primeira dobra -------- */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(180deg, #2b1f6a 0%, #1e1b4b 100%);
+  color: #ffffff;
 }
 
-/* ======================================================
-   DESTAQUE
-====================================================== */
-.card.is-featured {
-  box-shadow: var(--shadow-lg);
-  border: 2px solid var(--brand);
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 1.25rem 4rem;
 }
 
-/* ======================================================
-   BOTÕES
-====================================================== */
-.button,
-button,
-a.button {
+.hero h1 {
+  font-family: "Sora", system-ui, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 640px;
+  font-size: 1.125rem;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 2rem;
+}
+
+/* CTA primário */
+.hero .cta-primary {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: .5rem;
-  padding: .85rem 1.25rem;
-  border-radius: var(--radius-sm);
+  padding: .9rem 1.25rem;
   background: var(--accent);
-  color: var(--text-main);
+  color: var(--ink);
   font-weight: 700;
-  text-decoration: none;
+  border-radius: var(--radius-sm);
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), filter .2s;
 }
 
-.button:hover,
-button:hover {
+.hero .cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-soft);
   filter: brightness(1.05);
 }
 
-/* ======================================================
-   FUNDOS
-====================================================== */
-.bg-light { background: #ffffff; }
-.bg-soft  { background: linear-gradient(180deg,#ffffff,#f1f5f9); }
-.bg-dark  { background: linear-gradient(180deg,#2b1f6a,#1e1b4b); color: var(--text-invert); }
-
-/* ======================================================
-   FOOTER
-====================================================== */
-footer {
-  background: var(--bg-dark);
-  color: rgba(255,255,255,.75);
+.hero .cta-primary:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
-footer h3 { color: #fff; }
-
-.footer-logo-white {
-  filter: brightness(0) invert(1);
-}
-
-/* ======================================================
-   ANIMAÇÕES (EQUIVALENTE CANVA)
-====================================================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
+/* -------- Responsivo -------- */
+@media (max-width: 767px) {
+  .hero-inner {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
   }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* -------- Acessibilidade visual mínima -------- */
+a:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
