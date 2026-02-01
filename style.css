@@ -1,24 +1,27 @@
-/* style.css - Clean & Visual */
+:root {
+  /* Paleta Extraída do Arquivo Canva.txt */
+  --brand-wine: #6B1F3A;
+  --brand-mustard: #D19A29;
+  --brand-paper: #F5F2EC;
+  --brand-dark: #1F2933;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Lexend', sans-serif; }
+.font-display { font-family: 'Sora', sans-serif; }
 
+/* Animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* style.css - Clean & Visual */
 /* Definindo Variáveis para consistência */
 :root {
   --brand-navy: #1B144D;
   --brand-purple: #4A0A7E;
   --brand-yellow: #FFB800;
-}
-
-/* Suavidade na rolagem */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Fontes */
-body {
-  font-family: 'Lexend', sans-serif;
-}
-
-.font-display {
-  font-family: 'Sora', sans-serif;
 }
 
 /* Animações Sutis que o Canva usa */
@@ -29,15 +32,6 @@ body {
 
 .animate-slide-up {
   animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes pulse-slow {
