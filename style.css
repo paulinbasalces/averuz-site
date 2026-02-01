@@ -1,37 +1,50 @@
+/* style.css - Clean & Visual */
+
+/* Definindo Variáveis para consistência */
 :root {
-  --brand-primary: #4A0A7E;
-  --brand-accent: #FFB800;
-  --bg-navy: #1B144D;
+  --brand-navy: #1B144D;
+  --brand-purple: #4A0A7E;
+  --brand-yellow: #FFB800;
 }
 
+/* Suavidade na rolagem */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fontes */
 body {
   font-family: 'Lexend', sans-serif;
-  color: #1E293B;
 }
 
-h1, h2, h3 { font-family: 'Sora', sans-serif; }
-
-/* Textura Grid do Canva */
-.bg-navy-pattern {
-  background-color: var(--bg-navy);
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 30px 30px;
+.font-display {
+  font-family: 'Sora', sans-serif;
 }
 
-/* Sombra Suave */
-.dashboard-mock {
-  box-shadow: 0 40px 80px -20px rgba(35, 25, 97, 0.15);
-}
-
-/* Animações */
+/* Animações Sutis que o Canva usa */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+
+.animate-slide-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-.animate-float { animation: float 4s ease-in-out infinite; }
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-bounce-slow {
+  animation: float 4s ease-in-out infinite reverse;
+}
