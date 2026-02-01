@@ -64,6 +64,14 @@ body {
   --transition-slow: 0.8s ease-out;
 }
 
+/* No seu style.css */
+.dashboard-mock {
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02),
+    0 40px 80px -20px rgba(35, 25, 97, 0.08); /* Sombra azulada sutil */
+}
+
 /* ============================================================================
    TIPOGRAFIA
    ============================================================================ */
