@@ -28,10 +28,19 @@ body {
 
 :root {
   /* BACKGROUNDS */
-  --bg-primary: #F7F8FA;           /* Cinza muito claro */
+  --brand-primary: #231961; /* Navy mais profundo */
   --bg-card: #FFFFFF;              /* Branco puro */
-  --bg-authority: #231961;         /* Azul marinho escuro */
+  --bg-authority: #1B144D;
   --bg-authority-soft: #E6E8F5;    /* Roxo muito claro */
+  --brand-accent: #FFB800;  /* Amarelo Canva mais saturado */
+}
+
+/* Textura para o bloco azul escuro "Averuz resolve isso" */
+.bg-navy-pattern {
+  background-color: var(--bg-authority);
+  background-image: radial-gradient(#ffffff10 1px, transparent 1px);
+  background-size: 24px 24px; /* O grid sutil do Canva */
+}
 
   /* BRAND */
   --brand-primary: #4A0A7E;        /* Roxo escuro - primário */
@@ -65,6 +74,11 @@ body {
 
 .font-display {
   font-family: 'Sora', sans-serif;
+}
+/* Ajuste fino de tipografia */
+h1, h2 {
+  letter-spacing: -0.02em;
+  font-weight: 800; /* Canva usa o peso máximo no título */
 }
 
 h1, h2, h3, h4, h5, h6 {
