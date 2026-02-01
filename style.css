@@ -66,21 +66,6 @@ body {
   --brand-dark: #1F2933;
 }
 
-/* Animações */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.animate-float { animation: float 6s ease-in-out infinite; }
-
-/* style.css - Clean & Visual */
-/* Definindo Variáveis para consistência */
-:root {
-  --brand-navy: #1B144D;
-  --brand-purple: #4A0A7E;
-  --brand-yellow: #FFB800;
-}
-
 /* Animações Sutis que o Canva usa */
 .animate-slide-up {
   animation: fadeInUp 0.8s ease-out forwards;
