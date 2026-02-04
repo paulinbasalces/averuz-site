@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.toggle('hidden');
     });
   }
-});
 
-  // Header Shadow on Scroll
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('shadow-sm');
-    } else {
-      navbar.classList.remove('shadow-sm');
-    }
-  });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add('shadow-sm');
+      } else {
+        navbar.classList.remove('shadow-sm');
+      }
+    });
+  }
 });
