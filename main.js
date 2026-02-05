@@ -1,5 +1,14 @@
 // main.js - Menu Mobile e Interações
 document.addEventListener('DOMContentLoaded', () => {
+  const brandLogo = document.getElementById('brand-logo');
+  const brandFallback = document.getElementById('brand-logo-fallback');
+  if (brandLogo && brandFallback) {
+    brandLogo.addEventListener('error', () => {
+      brandLogo.classList.add('hidden');
+      brandFallback.classList.remove('hidden');
+    });
+  }
+
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   if (btn && menu) {
