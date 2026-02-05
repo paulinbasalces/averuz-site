@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
@@ -12,9 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="main.js" defer></script>
   
   <script>
     tailwind.config = {
@@ -75,7 +73,6 @@
       </div>
       
       <button id="mobile-menu-btn" class="md:hidden text-brand-purple" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-      <button id="mobile-menu-btn" class="md:hidden text-brand-purple">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
       </button>
     </div>
@@ -1008,16 +1005,13 @@
               <li><a href="/termos-de-uso" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Termos de Uso</a></li>
               <li><a href="/politica-de-privacidade" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Política de Privacidade</a></li>
               <li><a href="/acessibilidade" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Acessibilidade</a></li>
-              <li><a href="/termos-de-uso" class="text-base text-white/70 hover:text-white transition-colors">Termos de Uso</a></li>
-              <li><a href="/politica-de-privacidade" class="text-base text-white/70 hover:text-white transition-colors">Política de Privacidade</a></li>
-              <li><a href="/acessibilidade" class="text-base text-white/70 hover:text-white transition-colors">Acessibilidade</a></li>
             </ul>
           </nav>
           <div>
             <h3 class="font-display font-semibold text-base text-white mb-3">Novidades</h3>
             <p class="text-sm text-white/85 mb-4 leading-relaxed">Receba atualizações sobre o produto.</p>
             <form id="newsletter-form-substack" class="flex flex-col gap-2">
-              <label for="newsletter-email-substack" class="sr-only">Digite seu e-mail</label>
+              <label for="newsletter-email-substack" class="text-sm text-white/85">Digite seu e-mail <span aria-hidden="true">*</span></label>
               <input type="email" id="newsletter-email-substack" placeholder="Digite seu e-mail" autocomplete="email" required class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-2 focus:outline-white text-sm">
               <button type="submit" id="newsletter-submit-btn" class="px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-medium transition-colors text-sm">Assinar</button>
               <div id="newsletter-success-msg" role="status" aria-live="polite" class="hidden px-4 py-3 rounded-lg bg-[#2FA37C]/20 border border-[#2FA37C]/40 text-sm text-white">✓ Cadastro realizado com sucesso!</div>
@@ -1026,8 +1020,8 @@
         </div>
         <div class="border-t border-white/15 pt-8">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="text-center sm:text-left"><p class="text-base text-white/60">© 2026 Averuz. Todos os direitos reservados.</p><p class="text-sm text-white/40 mt-1">CNPJ: 58.345.111/0001-10</p></div>
-            <a href="#top" id="back-to-top" class="text-sm font-medium text-white/70 hover:text-white transition-colors flex items-center gap-2">Voltar ao topo <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></a>
+            <div class="text-center sm:text-left"><p class="text-base text-white/85">© 2026 Averuz. Todos os direitos reservados.</p><p class="text-sm text-white/85 mt-1">CNPJ: 58.345.111/0001-10</p></div>
+            <a href="#top" id="back-to-top" class="text-sm font-medium text-white/85 hover:text-white transition-colors flex items-center gap-2 py-2">Voltar ao topo <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></a>
           </div>
         </div>
       </div>
