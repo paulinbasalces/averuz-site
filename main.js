@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btn && menu) {
     btn.addEventListener('click', () => {
       menu.classList.toggle('hidden');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      btn.setAttribute('aria-label', isExpanded ? 'Abrir menu' : 'Fechar menu');
     });
   }
 
