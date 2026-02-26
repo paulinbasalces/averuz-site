@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Averuz. Atendimento que vende. Tecnologia que aproxima.</title>
+  <title>Atendimento que vende. Escala que cresce. | Averuz</title>
   <meta name="description" content="Plataforma completa de atendimento e vendas com inteligência artificial para empresas que querem crescer.">
   <meta name="keywords" content="vendas, atendimento, IA, CRM, whatsapp business, automação">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
   
   <script>
     tailwind.config = {
@@ -35,6 +34,8 @@
       }
     }
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="main.js" defer></script>
   
   <style>
     /* Animações Customizadas */
@@ -51,40 +52,41 @@
 
 <body class="bg-white text-brand-dark font-body antialiased overflow-x-hidden flex flex-col min-h-screen">
 
-  <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+  <header id="navbar" class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-2xl font-black font-display tracking-tight text-brand-purple">
-        AVERUZ<span class="text-brand-gold">.</span>
+      <a href="#top" class="inline-flex items-center gap-2 min-w-[180px]" aria-label="Averuz - voltar ao topo">
+        <img id="brand-logo" src="./img/averuz-ia-logo.png" alt="Logo da Averuz" class="h-11 w-auto md:h-12 object-contain" loading="eager" decoding="async">
+        <span id="brand-logo-fallback" class="hidden text-2xl font-black font-display tracking-tight text-brand-purple">AVERUZ<span class="text-brand-gold">.</span></span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#solucoes" class="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors">Soluções</a>
-        <a href="#como-funciona" class="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors">Como funciona</a>
-        <a href="#planos" class="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors">Planos</a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Menu principal">
+        <a href="#solucoes" class="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors inline-flex items-center py-2">Soluções</a>
+        <a href="#como-funciona" class="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors inline-flex items-center py-2">Como funciona</a>
+        <a href="#planos" class="text-sm font-medium text-gray-600 hover:text-brand-purple transition-colors inline-flex items-center py-2">Planos</a>
       </nav>
 
       <div class="hidden md:block">
-        <a href="#planos" class="bg-brand-gold hover:bg-[#B88206] text-white text-sm font-bold px-6 py-3 rounded-xl transition-transform hover:scale-105 shadow-lg shadow-brand-gold/20">
+        <a href="#planos" class="btn-primary inline-flex items-center justify-center text-sm font-bold px-6 py-3 rounded-xl">
           Assinar
         </a>
       </div>
       
-      <button class="md:hidden text-brand-purple" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <button id="mobile-menu-btn" class="md:hidden text-brand-purple" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
       </button>
     </div>
     
     <div class="hidden bg-white border-t border-gray-100 p-6 absolute w-full shadow-xl" id="mobile-menu">
-      <div class="flex flex-col gap-4">
-        <a href="#solucoes" class="text-base font-medium">Soluções</a>
-        <a href="#como-funciona" class="text-base font-medium">Como funciona</a>
-        <a href="#planos" class="text-base font-medium">Planos</a>
+      <nav class="flex flex-col gap-4" aria-label="Menu mobile">
+        <a href="#solucoes" class="text-base font-medium inline-flex items-center py-2">Soluções</a>
+        <a href="#como-funciona" class="text-base font-medium inline-flex items-center py-2">Como funciona</a>
+        <a href="#planos" class="text-base font-medium inline-flex items-center py-2">Planos</a>
         <a href="#planos" class="bg-brand-gold text-white text-center font-bold px-6 py-3 rounded-lg">Assinar</a>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <main class="pt-20 flex-grow">
+  <main id="top" class="pt-20 flex-grow">
 
     <section class="relative overflow-hidden pt-16 pb-20 lg:pt-32 lg:pb-32 bg-brand-paper">
       <div class="max-w-7xl mx-auto px-6">
@@ -95,16 +97,25 @@
               Atendimento que vende.<br>
               <span class="text-[#4A0A7E]">Escala que cresce.</span>
             </h1>
-            <p class="text-lg sm:text-xl text-[#525252] leading-[1.6] mb-10">
-              Averuz conecta seus canais, automatiza conversas e transforma cada contato em oportunidade real de venda usando inteligência artificial treinada no seu negócio.
+            <p class="text-lg sm:text-xl text-[#374151] leading-[1.7] mb-10">
+              Averuz conecta seus canais, preenche o CRM com IA e organiza o funil de vendas para que cada contato vire uma oportunidade real – sem burocracia e sem perder tempo pulando entre telas.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#planos" class="bg-[#D99A08] hover:bg-[#B88206] text-white px-10 py-4 rounded-xl text-lg font-bold shadow-lg shadow-[#D99A08]/20 text-center transition-all">
-                Assinar agora
-              </a>
-              <a href="#planos" class="bg-white border-2 border-[#4A0A7E] text-[#4A0A7E] hover:bg-purple-50 px-10 py-4 rounded-xl text-lg text-center font-semibold transition-colors">
-                Ver planos
-              </a>
+            <p class="text-base text-[#334155] mb-8 leading-relaxed">
+              Da primeira mensagem ao fechamento, a Averuz cuida dos fluxos e você cuida das pessoas.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <a href="#planos" class="bg-[#D99A08] hover:bg-[#B88206] text-white px-10 py-4 rounded-xl text-lg font-bold shadow-lg shadow-[#D99A08]/20 text-center transition-all block">
+                  Começar agora
+                </a>
+                <p class="text-sm text-[#334155] leading-relaxed mt-2">Ative a Averuz e agilize seu atendimento hoje mesmo.</p>
+              </div>
+              <div>
+                <a href="#planos" class="bg-white border-2 border-[#4A0A7E] text-[#4A0A7E] hover:bg-purple-50 px-10 py-4 rounded-xl text-lg text-center font-semibold transition-colors block">
+                  Ver um fluxo na prática
+                </a>
+                <p class="text-sm text-[#334155] leading-relaxed mt-2">Fale com a Averuz para ver um fluxo de vendas montado para o seu negócio.</p>
+              </div>
             </div>
           </div>
 
@@ -113,23 +124,23 @@
               <div class="flex items-center justify-between mb-5 pb-4 border-b border-[#F0F0F0]">
                 <div class="flex items-center gap-2">
                   <div class="w-2.5 h-2.5 rounded-full bg-[#2FA37C] pulse-glow"></div>
-                  <span class="text-sm font-medium text-[#525252]">Sistema ativo</span>
+                  <span class="text-sm font-medium text-[#374151]">Sistema ativo</span>
                 </div>
-                <span class="text-xs text-[#9CA3AF]">Atualizado agora</span>
+                <span class="text-xs text-[#4B5563]">Atualizado agora</span>
               </div>
               
               <div class="grid grid-cols-3 gap-3 mb-5">
                 <div class="bg-[#F8F9FA] rounded-xl p-4 border border-[#E8E8E8]">
                   <p class="font-display font-bold text-2xl text-[#1A1A1A] mb-1">847</p>
-                  <p class="text-xs text-[#6B7280] leading-tight">Conversas hoje</p>
+                  <p class="text-xs text-[#4B5563] leading-relaxed">Conversas hoje</p>
                 </div>
                 <div class="bg-[#F8F9FA] rounded-xl p-4 border border-[#E8E8E8]">
-                  <p class="font-display font-bold text-2xl text-[#2FA37C] mb-1">94%</p>
-                  <p class="text-xs text-[#6B7280] leading-tight">Resolvidas por IA</p>
+                  <p class="font-display font-bold text-2xl text-[#1D7A5A] mb-1">94%</p>
+                  <p class="text-xs text-[#4B5563] leading-relaxed">Resolvidas por IA</p>
                 </div>
                 <div class="bg-[#F8F9FA] rounded-xl p-4 border border-[#E8E8E8]">
-                  <p class="font-display font-bold text-2xl text-[#D99A08] mb-1">R$ 48k</p>
-                  <p class="text-xs text-[#6B7280] leading-tight">Vendas geradas</p>
+                  <p class="font-display font-bold text-2xl text-[#B26A00] mb-1">R$ 48k</p>
+                  <p class="text-xs text-[#4B5563] leading-relaxed">Vendas geradas</p>
                 </div>
               </div>
               
@@ -141,9 +152,9 @@
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between mb-1.5">
                       <span class="font-semibold text-sm text-[#1A1A1A]">Maria Clara</span>
-                      <span class="text-xs text-[#2FA37C] font-medium bg-[#2FA37C]/10 px-2 py-0.5 rounded-md">IA respondeu</span>
+                      <span class="text-xs text-[#1D7A5A] font-medium bg-[#2FA37C]/10 px-2 py-0.5 rounded-md">IA respondeu</span>
                     </div>
-                    <p class="text-sm text-[#6B7280] leading-relaxed">Quero saber mais sobre o plano Pro...</p>
+                    <p class="text-sm text-[#4B5563] leading-relaxed">Quero saber mais sobre o plano Pro...</p>
                   </div>
                 </div>
                 
@@ -154,9 +165,9 @@
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between mb-1.5">
                       <span class="font-semibold text-sm text-[#1A1A1A]">Ricardo Ferreira</span>
-                      <span class="text-xs text-[#D99A08] font-medium bg-[#D99A08]/10 px-2 py-0.5 rounded-md">Negociação</span>
+                      <span class="text-xs text-[#8A4F00] font-medium bg-[#D99A08]/10 px-2 py-0.5 rounded-md">Negociação</span>
                     </div>
-                    <p class="text-sm text-[#6B7280] leading-relaxed">Fechado! Vou assinar o anual...</p>
+                    <p class="text-sm text-[#4B5563] leading-relaxed">Fechado! Vou assinar o anual...</p>
                   </div>
                 </div>
                 
@@ -167,7 +178,7 @@
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center justify-between mb-1.5">
                       <span class="font-semibold text-sm text-[#1A1A1A]">Julia Lima</span>
-                      <span class="text-xs text-[#2FA37C] font-medium bg-[#2FA37C]/10 px-2 py-0.5 rounded-md flex items-center gap-1">
+                      <span class="text-xs text-[#1D7A5A] font-medium bg-[#2FA37C]/10 px-2 py-0.5 rounded-md flex items-center gap-1">
                         <span class="w-1.5 h-1.5 bg-[#2FA37C] rounded-full animate-pulse"></span> IA respondeu em 2s
                       </span>
                     </div>
@@ -190,10 +201,10 @@
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 animate-on-scroll animated">
       <h2 id="solucoes-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#231961] mb-5">
-        Um sistema completo para vender mais
+        Um sistema completo para vender mais – sem perder nenhum contato pelo caminho
       </h2>
-      <p class="text-lg sm:text-xl text-[#475569] leading-relaxed">
-        Quatro pilares integrados que transformam sua operação de vendas em uma máquina previsível e escalável.
+      <p class="text-lg sm:text-xl text-[#334155] leading-relaxed">
+        Quatro pilares integrados que tiram o peso operacional da sua equipe e transformam atendimento em vendas previsíveis.
       </p>
     </div>
 
@@ -208,7 +219,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Centralize conversas</h3>
-        <p class="text-[#475569] text-sm leading-relaxed">Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel.</p>
+        <p class="text-[#334155] text-sm leading-relaxed">Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel e cada mensagem já fica ligada ao contato certo no CRM.</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white animate-scale-on-scroll animate-delay-2 animated">
@@ -219,7 +230,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Organize o funil</h3>
-        <p class="text-[#475569] text-sm leading-relaxed">Visualize cada lead do primeiro contato ao fechamento. CRM que mostra onde a venda está.</p>
+        <p class="text-[#334155] text-sm leading-relaxed">Visualize cada lead do primeiro contato ao fechamento. A IA ajuda a manter o CRM atualizado, mostrando onde cada venda está e qual é o próximo passo.</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white animate-scale-on-scroll animate-delay-3 animated">
@@ -230,7 +241,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Automatize follow-ups</h3>
-        <p class="text-[#475569] text-sm leading-relaxed">Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos.</p>
+        <p class="text-[#334155] text-sm leading-relaxed">Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos. Você define as regras; a Averuz lembra, envia e movimenta o funil.</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white border-2 border-[#D99A08]/20 animate-scale-on-scroll animate-delay-4 animated">
@@ -241,7 +252,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Ative a IA</h3>
-        <p class="text-[#475569] text-sm leading-relaxed">Treine um agente com seus produtos. Ele responde, qualifica e entrega leads prontos.</p>
+        <p class="text-[#334155] text-sm leading-relaxed">Treine um agente com seus produtos e forma de vender. Ele responde dúvidas comuns, qualifica leads e entrega para sua equipe apenas as conversas com real chance de fechar.</p>
       </div>
     </div>
   </div>
@@ -257,7 +268,7 @@
       <div class="card-elevated rounded-2xl p-6 order-2 lg:order-1 animate-slide-left animated">
         <div class="flex items-center justify-between mb-4">
           <span class="text-sm font-medium text-[#D10B68]">⚠️ Sistema sobrecarregado</span>
-          <span class="text-xs text-[#475569]">127 mensagens não lidas</span>
+          <span class="text-xs text-[#334155]">127 mensagens não lidas</span>
         </div>
         
         <div class="space-y-3">
@@ -307,7 +318,7 @@
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#475569]">Leads sem resposta que viram vendas perdidas</p>
+            <p class="text-lg text-[#334155] leading-relaxed">Leads sem resposta que viram vendas perdidas</p>
           </div>
           
           <div class="flex items-start gap-3">
@@ -316,7 +327,7 @@
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#475569]">Follow-ups esquecidos que custam dinheiro</p>
+            <p class="text-lg text-[#334155] leading-relaxed">Follow-ups esquecidos que custam dinheiro</p>
           </div>
           
           <div class="flex items-start gap-3">
@@ -325,7 +336,7 @@
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#475569]">Equipe sobrecarregada sem tempo para vender</p>
+            <p class="text-lg text-[#334155] leading-relaxed">Equipe sobrecarregada sem tempo para vender</p>
           </div>
           
           <div class="flex items-start gap-3">
@@ -334,7 +345,7 @@
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#475569]">Clientes frustrados que não voltam mais</p>
+            <p class="text-lg text-[#334155] leading-relaxed">Clientes frustrados que não voltam mais</p>
           </div>
         </div>
       </div>
@@ -366,9 +377,9 @@
 
     <div class="text-xl sm:text-2xl lg:text-3xl text-white leading-[1.5] font-light max-w-4xl mx-auto">
       <p class="animate-fade-in-up animate-delay-1">Seus canais conectados.<br class="hidden sm:block"></p>
-      <p class="animate-fade-in-up animate-delay-2">Sua IA treinada.<br class="hidden sm:block"></p>
-      <p class="animate-fade-in-up animate-delay-3">Sua operação organizada.<br class="hidden sm:block"></p>
-      <p class="block mt-8 sm:mt-10 text-[#D99A08] font-normal animate-fade-in-up animate-delay-4">Você vendendo mais.</p>
+      <p class="animate-fade-in-up animate-delay-2">Sua IA preenchendo o CRM e organizando o funil.<br class="hidden sm:block"></p>
+      <p class="animate-fade-in-up animate-delay-3">Seu atendimento rodando com follow-ups automáticos.<br class="hidden sm:block"></p>
+      <p class="block mt-8 sm:mt-10 text-[#F5B84C] font-normal animate-fade-in-up animate-delay-4">Você focado em conversar e fechar vendas, não em caçar informação.</p>
     </div>
   </div>
 </section>
@@ -389,7 +400,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Central de conversas unificada</h3>
-        <p class="text-[#475569] leading-relaxed">Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
+        <p class="text-[#334155] leading-relaxed">Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#D99A08]">
@@ -399,7 +410,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Agente de atendimento com IA</h3>
-        <p class="text-[#475569] leading-relaxed">Responde perguntas comuns, qualifica leads identificando intenção de compra e encaminha conversas prontas para sua equipe fechar.</p>
+        <p class="text-[#334155] leading-relaxed">Responde perguntas comuns, qualifica leads identificando intenção de compra e atualiza o cadastro no CRM com dados relevantes, encaminhando conversas prontas para sua equipe fechar.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#4A0A7E]">
@@ -409,7 +420,7 @@
           </svg>
         </div>
         <h3 class="font-display font-bold text-xl text-[#231961] mb-3">CRM completo para vendas</h3>
-        <p class="text-[#475569] leading-relaxed">Cada lead vira um registro com histórico de conversas, etapa no funil e próximas ações. Organize contatos, acompanhe negociações e veja seu pipeline crescer.</p>
+        <p class="text-[#334155] leading-relaxed">Cada lead vira um registro com histórico de conversas, etapa no funil e próximas ações. A IA ajuda a manter esses dados atualizados à medida que as conversas acontecem.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7">
@@ -419,7 +430,7 @@
           </svg>
         </div>
         <h3 class="font-display font-semibold text-lg text-[#231961] mb-2">Funil de conversão visual</h3>
-        <p class="text-sm text-[#475569] leading-relaxed">Veja quantos leads estão em cada etapa: novo contato, em negociação, proposta enviada, fechamento. Identifique gargalos e ajuste sua estratégia.</p>
+        <p class="text-sm text-[#334155] leading-relaxed">Veja quantos leads estão em cada etapa: novo contato, em negociação, proposta enviada, fechamento. Identifique gargalos e ajuste sua estratégia.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7">
@@ -429,7 +440,7 @@
           </svg>
         </div>
         <h3 class="font-display font-semibold text-lg text-[#231961] mb-2">Automações programáveis</h3>
-        <p class="text-sm text-[#475569] leading-relaxed">Crie sequências automáticas: envie lembretes após 24h sem resposta, mova leads entre etapas, dispare mensagens de boas-vindas. Trabalha sozinho 24/7.</p>
+        <p class="text-sm text-[#334155] leading-relaxed">Crie sequências automáticas: envie lembretes após 24h sem resposta, mova leads entre etapas, dispare mensagens de boas-vindas. Trabalha sozinho 24/7.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7">
@@ -439,7 +450,7 @@
           </svg>
         </div>
         <h3 class="font-display font-semibold text-lg text-[#231961] mb-2">Relatórios de desempenho</h3>
-        <p class="text-sm text-[#475569] leading-relaxed">Acompanhe volume de conversas, tempo médio de resposta, taxa de conversão por canal, leads gerados e vendas fechadas. Dados atualizados em tempo real.</p>
+        <p class="text-sm text-[#334155] leading-relaxed">Acompanhe volume de conversas, tempo médio de resposta, taxa de conversão por canal, leads gerados e vendas fechadas. Dados atualizados em tempo real.</p>
       </li>
       
     </ul>
@@ -449,7 +460,10 @@
     <section id="como-funciona" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="como-funciona-heading">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-      <h2 id="como-funciona-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#231961] mb-4">Como funciona</h2>
+      <h2 id="como-funciona-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#231961] mb-4">Como a Averuz trabalha por você</h2>
+      <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+        A Averuz integra seus canais, usa IA para manter o CRM em dia e automatiza partes do fluxo de vendas, para que sua equipe foque onde faz mais diferença: nas conversas.
+      </p>
     </div>
     
     <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
@@ -460,7 +474,7 @@
             01
           </div>
           <h3 class="font-display font-bold text-lg text-[#231961] mb-3">Seus canais conectados</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Mensagens unificadas de múltiplos canais em um único painel.</p>
+          <p class="text-base text-[#334155] leading-relaxed">Mensagens unificadas de múltiplos canais em um único painel. Cada novo contato vira um registro no CRM sem esforço manual.</p>
         </div>
         <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#4A0A7E]/30 to-transparent" aria-hidden="true"></div>
       </li>
@@ -471,7 +485,7 @@
             02
           </div>
           <h3 class="font-display font-bold text-lg text-[#231961] mb-3">IA treinada no seu negócio</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Ela aprende seus produtos, preços e como você vende.</p>
+          <p class="text-base text-[#334155] leading-relaxed">A IA aprende seus produtos, preços, objeções mais comuns e forma de falar. A partir disso, extrai dados das conversas e preenche os campos importantes do CRM e do funil.</p>
         </div>
         <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#231961]/30 to-transparent" aria-hidden="true"></div>
       </li>
@@ -482,7 +496,7 @@
             03
           </div>
           <h3 class="font-display font-bold text-lg text-[#231961] mb-3">Atendimento automático funcionando</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Respostas instantâneas, leads qualificados e oportunidades organizadas.</p>
+          <p class="text-base text-[#334155] leading-relaxed">Respostas instantâneas, leads qualificados e fluxos de follow-up disparando sozinhos. Você acompanha o funil em tempo real e intervém quando faz diferença.</p>
         </div>
         <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#2FA37C]/30 to-transparent" aria-hidden="true"></div>
       </li>
@@ -493,11 +507,41 @@
             04
           </div>
           <h3 class="font-display font-bold text-lg text-[#231961] mb-3">Você vendendo mais</h3>
-          <p class="text-base text-[#475569] leading-relaxed">Sua equipe recebe leads prontos e foca em fechar negócios.</p>
+          <p class="text-base text-[#334155] leading-relaxed">Sua equipe recebe leads quentes, com histórico e contexto organizados. Menos tempo alimentando sistema, mais tempo conversando e fechando negócios.</p>
         </div>
       </li>
       
     </ol>
+  </div>
+</section>
+
+    <!-- ONBOARDING GUIDADO -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="onboarding-heading">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10 sm:mb-12">
+      <h2 id="onboarding-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#231961] mb-5">Onboarding guiado e fluxos feitos para o seu jeito de vender</h2>
+      <p class="text-base sm:text-lg text-[#334155] leading-relaxed mb-5">Você não precisa descobrir tudo sozinho. No onboarding, montamos junto com você os fluxos de atendimento e vendas, os campos essenciais do CRM e os modelos de mensagens que fazem sentido para o seu jeito de falar.</p>
+      <p class="text-base sm:text-lg text-[#334155] leading-relaxed">Em seguida, ajustamos a inteligência artificial para preencher o CRM do jeito que sua operação precisa. À medida que você usa a plataforma, revisamos seus fluxos, afinamos automações e simplificamos mensagens para manter tudo acessível, rápido e fácil de entender para a sua equipe e para quem conversa com você.</p>
+    </div>
+    <div class="text-center">
+      <a href="#contato" class="btn-secondary inline-flex items-center justify-center px-8 py-3 rounded-xl">Quero configurar meu fluxo com ajuda da Averuz</a>
+    </div>
+  </div>
+</section>
+
+    <!-- VIDEO DEMO -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F8FA]" aria-labelledby="video-demo-heading">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10 sm:mb-12">
+      <h2 id="video-demo-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#231961] mb-4">Veja a Averuz em ação em poucos minutos</h2>
+      <p class="text-base sm:text-lg text-[#334155] leading-relaxed">Assista a uma demonstração rápida e veja como a IA preenche o CRM, organiza o funil e ajuda sua equipe a responder mais rápido sem burocracia.</p>
+    </div>
+    <div class="w-full overflow-hidden rounded-2xl shadow-lg border border-[#E6E8F5] bg-black">
+      <video class="w-full aspect-video" controls preload="metadata" aria-label="Vídeo: como usar a plataforma Averuz" title="Vídeo: como usar a plataforma Averuz">
+        <source src="img/averuz-demo.mp4" type="video/mp4">
+        Seu navegador não suporta reprodução de vídeo.
+      </video>
+    </div>
   </div>
 </section>
     
@@ -512,25 +556,25 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 sm:mb-16">
       
       <div class="card-elevated rounded-2xl p-6 animate-scale-on-scroll animate-delay-1 animated">
-        <p class="text-sm font-medium text-[#475569] mb-3 uppercase tracking-wide">Conversão</p>
-        <p class="font-display font-bold text-5xl text-[#2FA37C] mb-3" aria-label="Aumento de 42 por cento">+42%</p>
+        <p class="text-sm font-medium text-[#334155] mb-3 uppercase tracking-wide">Conversão</p>
+        <p class="font-display font-bold text-5xl text-[#1D7A5A] mb-3" aria-label="Aumento de 42 por cento">+42%</p>
         <p class="text-base text-[#0F172A] leading-relaxed">Mais leads convertidos em clientes após implementação do sistema</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-6 animate-scale-on-scroll animate-delay-2 animated">
-        <p class="text-sm font-medium text-[#475569] mb-3 uppercase tracking-wide">Tempo de resposta</p>
+        <p class="text-sm font-medium text-[#334155] mb-3 uppercase tracking-wide">Tempo de resposta</p>
         <p class="font-display font-bold text-5xl text-[#4A0A7E] mb-3" aria-label="Redução de 60 por cento">–60%</p>
         <p class="text-base text-[#0F172A] leading-relaxed">Menos tempo entre a mensagem do cliente e a primeira resposta</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-6 animate-scale-on-scroll animate-delay-3 animated">
-        <p class="text-sm font-medium text-[#475569] mb-3 uppercase tracking-wide">Disponibilidade</p>
-        <p class="font-display font-bold text-5xl text-[#D99A08] mb-3" aria-label="24 horas">24h</p>
+        <p class="text-sm font-medium text-[#334155] mb-3 uppercase tracking-wide">Disponibilidade</p>
+        <p class="font-display font-bold text-5xl text-[#B26A00] mb-3" aria-label="24 horas">24h</p>
         <p class="text-base text-[#0F172A] leading-relaxed">Atendimento contínuo, incluindo finais de semana e feriados</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-6 animate-scale-on-scroll animate-delay-4 animated">
-        <p class="text-sm font-medium text-[#475569] mb-3 uppercase tracking-wide">Visibilidade</p>
+        <p class="text-sm font-medium text-[#334155] mb-3 uppercase tracking-wide">Visibilidade</p>
         <p class="font-display font-bold text-5xl text-[#231961] mb-3" aria-label="100 por cento">100%</p>
         <p class="text-base text-[#0F172A] leading-relaxed">Todas as conversas e leads organizados em um único painel</p>
       </div>
@@ -553,7 +597,7 @@
           </div>
           <div>
             <p class="font-medium text-sm text-[#0F172A]">Ricardo</p>
-            <p class="text-xs text-[#475569]">CEO</p>
+            <p class="text-xs text-[#334155]">CEO</p>
           </div>
         </div>
       </div>
@@ -573,7 +617,7 @@
           </div>
           <div>
             <p class="font-medium text-sm text-[#0F172A]">Ana</p>
-            <p class="text-xs text-[#475569]">Diretora Comercial</p>
+            <p class="text-xs text-[#334155]">Diretora Comercial</p>
           </div>
         </div>
       </div>
@@ -593,7 +637,7 @@
           </div>
           <div>
             <p class="font-medium text-sm text-[#0F172A]">Carlos</p>
-            <p class="text-xs text-[#475569]">Fundador</p>
+            <p class="text-xs text-[#334155]">Fundador</p>
           </div>
         </div>
       </div>
@@ -621,7 +665,7 @@
   <div class="relative max-w-4xl mx-auto text-center">
     <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight">
       Averuz não é mais um chatbot.<br>
-      <span class="text-[#D99A08]">É sua operação de vendas funcionando sozinha.</span>
+      <span class="text-[#F5B84C]">É sua operação de vendas funcionando sozinha.</span>
     </h2>
   </div>
 </section>
@@ -632,186 +676,59 @@
     
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
       <h2 id="planos-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#231961] mb-4">Escolha seu plano</h2>
-      <p class="text-lg text-[#475569] leading-relaxed">Crescimento planejado. Transparência total. Sem surpresas.</p>
+      <p class="text-lg text-[#334155] leading-relaxed">Crescimento planejado. Transparência total. Sem surpresas.</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
       
-      <article class="card-elevated rounded-3xl p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Averuz Essencial">
+            <article class="card-elevated rounded-3xl p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Averuz Essencial">
         <header class="mb-6">
           <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Averuz Essencial</h3>
-          <p class="text-sm text-[#475569] leading-relaxed">Para começar organizando vendas e atendimento com segurança.</p>
+          <p class="text-sm text-[#334155] leading-relaxed">Para começar organizando vendas, atendimento e CRM com IA que preenche campos e mantém seu funil em dia.</p>
         </header>
         
         <div class="mb-6" aria-label="Preço mensal">
           <span id="price-start" class="font-display font-bold text-5xl text-[#0F172A]">R$ 197</span>
-          <span class="text-[#475569] text-base">/mês</span>
+          <span class="text-[#334155] text-base">/mês</span>
         </div>
 
-        <div class="mb-6 px-4 py-2.5 bg-[#2FA37C]/10 border border-[#2FA37C]/30 rounded-lg">
-          <p class="text-sm font-semibold text-[#2FA37C] text-center">✓ Teste gratuito de 7 dias</p>
-        </div>
-
-        <div class="mb-6 flex-grow">
+        <div class="mb-6 plan-card-content flex-grow">
           <ul class="space-y-2.5" role="list">
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>1 usuário incluído</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span>CRM + Funil de vendas</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span>WhatsApp integrado</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span>Automações básicas</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#475569] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#D65C5C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-              </svg>
-              <span>Agente de IA</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#475569] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#D65C5C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-              </svg>
-              <span>Conversões avançadas</span>
-            </li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Teste gratuito de 7 dias com 1 usuário incluído.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>CRM com funil de vendas e central de conversas integrada ao WhatsApp.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Automações simples de configurar para follow-ups e lembretes.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Agente de IA para responder dúvidas e preencher campos importantes do CRM.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Ferramentas focadas em aumentar conversões com mensagens claras e acessíveis.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Suporte por e-mail e WhatsApp com SLA de até 24h úteis.</span></li>
           </ul>
-
-          <div class="mt-5 pt-5 border-t border-[#E1E4E8]">
-            <div class="flex items-center gap-2 mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#475569" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
-              </svg>
-              <span class="text-xs font-semibold text-[#475569] uppercase tracking-wide">Suporte</span>
-            </div>
-            <ul class="space-y-2" role="list">
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Suporte por e-mail</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>SLA de até 24h úteis</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Suporte por WhatsApp em horário comercial</span>
-              </li>
-            </ul>
-          </div>
         </div>
+
         <button class="btn-secondary w-full py-4 rounded-xl text-base font-semibold" aria-label="Assinar plano Essencial">
           Começar teste grátis
         </button>
       </article>
 
-      <article class="card-elevated rounded-3xl p-8 flex flex-col border-2 border-[#D99A08] relative shadow-xl hover:shadow-2xl transition-shadow duration-300 transform lg:scale-105" aria-label="Plano Averuz Growth - Mais escolhido">
+            <article class="card-elevated rounded-3xl p-8 flex flex-col border-2 border-[#D99A08] relative shadow-xl hover:shadow-2xl transition-shadow duration-300 transform lg:scale-105" aria-label="Plano Averuz Growth - Mais escolhido">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#D99A08] to-[#B87D06] text-white font-display font-bold text-xs px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap" aria-label="Plano mais escolhido">
           Mais escolhido
         </div>
         <header class="mb-6">
           <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Averuz Growth</h3>
-          <p class="text-sm text-[#475569] leading-relaxed">Para vender mais sem aumentar o caos operacional.</p>
+          <p class="text-sm text-[#334155] leading-relaxed">Para vender mais sem aumentar o caos operacional.</p>
         </header>
         
         <div class="mb-6" aria-label="Preço mensal">
           <span id="price-growth" class="font-display font-bold text-5xl text-[#0F172A]">R$ 897</span>
-          <span class="text-[#475569] text-base">/mês</span>
+          <span class="text-[#334155] text-base">/mês</span>
         </div>
 
-        <div class="mb-6 flex-grow">
+        <div class="mb-6 plan-card-content flex-grow">
           <ul class="space-y-2.5" role="list">
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>Tudo do Essencial</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>5 usuários incluídos</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>Agente de Atendimento IA</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>Conversões avançadas</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span>Relatórios estratégicos</span>
-            </li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Tudo do plano Essencial.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Mais usuários incluídos para times de vendas maiores.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Mais automações ativas e etapas de funil avançadas.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Suporte prioritário e acompanhamento de implementação.</span></li>
           </ul>
-
-          <div class="mt-5 pt-5 border-t border-[#E1E4E8]">
-            <div class="flex items-center gap-2 mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#D99A08" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
-              </svg>
-              <span class="text-xs font-semibold text-[#D99A08] uppercase tracking-wide">Suporte</span>
-            </div>
-            <ul class="space-y-2" role="list">
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Suporte prioritário por e-mail</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>SLA de até 2h úteis</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Suporte por WhatsApp em horário comercial</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#D99A08" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Canal dedicado</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="mb-5 text-center">
-          <p class="text-xs text-[#475569] italic leading-relaxed">Focado em WhatsApp. Novos canais em breve.</p>
         </div>
         
         <button class="btn-primary w-full py-4 rounded-xl text-base font-bold" aria-label="Assinar plano Growth">
@@ -819,84 +736,26 @@
         </button>
       </article>
 
-      <article class="card-elevated rounded-3xl p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Averuz Premium">
+            <article class="card-elevated rounded-3xl p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Averuz Premium">
         <header class="mb-6">
           <h3 class="font-display font-bold text-xl text-[#231961] mb-3">Averuz Premium</h3>
-          <p class="text-sm text-[#475569] leading-relaxed">Para operações que exigem escala e tranquilidade.</p>
+          <p class="text-sm text-[#334155] leading-relaxed">Para operações que exigem escala e tranquilidade.</p>
         </header>
         
         <div class="mb-6" aria-label="Preço mensal">
           <span id="price-enterprise" class="font-display font-bold text-5xl text-[#0F172A]">R$ 1.997</span>
-          <span class="text-[#475569] text-base">/mês</span>
+          <span class="text-[#334155] text-base">/mês</span>
         </div>
 
-        <div class="mb-6 flex-grow">
+        <div class="mb-6 plan-card-content flex-grow">
           <ul class="space-y-2.5" role="list">
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>Tudo do Growth</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span><strong>10 usuários incluídos</strong></span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span>Ajustes assistidos</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-snug">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="#2FA37C" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-              </svg>
-              <span>Relatórios executivos</span>
-            </li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Tudo dos planos anteriores.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Volume maior de conversas e canais adicionais para sua operação.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Treinamento e ajustes de IA sob medida para o seu time e processo.</span></li>
+            <li class="flex items-start gap-2.5 text-sm text-[#0F172A] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Acesso avançado a relatórios e acompanhamento estratégico da operação.</span></li>
           </ul>
-
-          <div class="mt-5 pt-5 border-t border-[#E1E4E8]">
-            <div class="flex items-center gap-2 mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A0A7E" aria-hidden="true">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
-              </svg>
-              <span class="text-xs font-semibold text-[#4A0A7E] uppercase tracking-wide">Suporte</span>
-            </div>
-            <ul class="space-y-2" role="list">
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Suporte prioritário e consultivo por e-mail</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>SLA de até 2h úteis</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Suporte por WhatsApp em horário comercial</span>
-              </li>
-              <li class="flex items-start gap-2 text-sm text-[#0F172A] leading-snug">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#4A0A7E" class="flex-shrink-0 mt-0.5" aria-hidden="true">
-                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-                </svg>
-                <span>Atendimento estratégico</span>
-              </li>
-            </ul>
-          </div>
         </div>
         
-        <div class="mb-5 text-center">
-          <p class="text-xs text-[#475569] leading-relaxed">Adicione até 30 usuários, acima requisite um plano customizado.</p>
-        </div>
         <button class="btn-secondary w-full py-4 rounded-xl text-base font-semibold" aria-label="Assinar plano Premium">
           Assinar Premium
         </button>
@@ -905,8 +764,8 @@
     </div>
 
     <div class="text-center mt-10 space-y-3">
-      <p class="text-base text-[#475569]">Você começa simples. O crescimento acontece no seu ritmo.</p>
-      <p class="text-sm text-[#475569] max-w-2xl mx-auto leading-relaxed">Suporte proporcional ao nível da sua operação.<br>
+      <p class="text-base text-[#334155]">Você começa simples. O crescimento acontece no seu ritmo.</p>
+      <p class="text-sm text-[#334155] max-w-2xl mx-auto leading-relaxed">Suporte proporcional ao nível da sua operação.<br>
         Quanto maior o impacto do seu negócio, mais rápido a Averuz responde.</p>
     </div>
 
@@ -914,7 +773,7 @@
       <div class="card-elevated rounded-2xl p-8 bg-white">
         <div class="text-center mb-6">
           <h3 class="font-display font-bold text-xl text-[#231961] mb-2">Personalize conforme sua operação cresce</h3>
-          <p class="text-sm text-[#475569]">Expanda quando precisar. Sem trocar de plano à força.</p>
+          <p class="text-sm text-[#334155]">Expanda quando precisar. Sem trocar de plano à força.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
           <div class="flex items-center justify-between py-3 px-4 bg-[#F7F8FA] rounded-lg">
@@ -931,14 +790,14 @@
           </div>
           <div class="flex items-center justify-between py-3 px-4 bg-[#F7F8FA] rounded-lg">
             <span class="text-[#0F172A]">Treinamento extra</span>
-            <span class="font-display font-semibold text-[#475569]">Sob consulta</span>
+            <span class="font-display font-semibold text-[#334155]">Sob consulta</span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="text-center mt-12 sm:mt-16">
-      <p class="text-[#475569] mb-3 text-base">Precisa de um plano personalizado para sua operação?</p>
+      <p class="text-[#334155] mb-3 text-base">Precisa de um plano personalizado para sua operação?</p>
       <a href="#contato" class="inline-flex items-center gap-2 font-display font-semibold text-[#4A0A7E] hover:text-[#231961] transition-colors text-base focus:outline-2 focus:outline-offset-2 focus:outline-[#4A0A7E]">
         Falar com especialista 
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -964,13 +823,13 @@
 
   <div class="relative max-w-4xl mx-auto text-center">
     <h2 id="final-cta-title" class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
-      Comece a vender melhor hoje.
+      Comece a vender melhor hoje – sem sobrecarregar seu time.
     </h2>
     <p class="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-      Ative sua operação em minutos.
+      Ative sua operação em minutos e deixe a IA cuidar do CRM e do funil para você.
     </p>
     <button id="final-cta" class="btn-primary px-10 py-4 rounded-xl text-lg">
-      Assinar agora
+      Começar meu teste na Averuz
     </button>
   </div>
 </section>
@@ -983,41 +842,42 @@
             <h2 class="font-display font-bold text-xl text-white mb-3">Averuz</h2>
             <p class="text-base text-white/80 leading-relaxed mb-6">Plataforma completa de atendimento e vendas com inteligência artificial para empresas que querem crescer.</p>
             <div class="flex items-center gap-3 mb-4">
-              <a href="https://linkedin.com" target="_blank" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a> 
-              <a href="https://instagram.com" target="_blank" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn da Averuz" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg></a> 
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Averuz" class="w-11 h-11 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg></a>
             </div>
           </div>
-          <nav>
+          <nav aria-label="Navegação do rodapé">
             <h3 class="font-display font-semibold text-base text-white mb-4">Navegação</h3>
             <ul class="space-y-3">
-              <li><a href="#solucoes" class="text-base text-white/70 hover:text-white transition-colors">Soluções</a></li>
-              <li><a href="#como-funciona" class="text-base text-white/70 hover:text-white transition-colors">Como funciona</a></li>
-              <li><a href="#planos" class="text-base text-white/70 hover:text-white transition-colors">Planos</a></li>
-              <li><a href="#contato" class="text-base text-white/70 hover:text-white transition-colors">Contato</a></li>
+              <li><a href="#solucoes" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Soluções</a></li>
+              <li><a href="#como-funciona" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Como funciona</a></li>
+              <li><a href="#planos" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Planos</a></li>
+              <li><a href="#contato" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Contato</a></li>
             </ul>
           </nav>
-          <nav>
+          <nav aria-label="Links institucionais">
             <h3 class="font-display font-semibold text-base text-white mb-4">Institucional</h3>
             <ul class="space-y-3">
-              <li><a href="#" class="text-base text-white/70 hover:text-white transition-colors">Termos de Uso</a></li>
-              <li><a href="#" class="text-base text-white/70 hover:text-white transition-colors">Política de Privacidade</a></li>
-              <li><a href="#" class="text-base text-white/70 hover:text-white transition-colors">Acessibilidade</a></li>
+              <li><a href="/termos-de-uso" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Termos de Uso</a></li>
+              <li><a href="/politica-de-privacidade" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Política de Privacidade</a></li>
+              <li><a href="/acessibilidade" class="text-base text-white/85 hover:text-white transition-colors inline-flex items-center py-2">Acessibilidade</a></li>
             </ul>
           </nav>
           <div>
             <h3 class="font-display font-semibold text-base text-white mb-3">Novidades</h3>
-            <p class="text-sm text-white/70 mb-4 leading-relaxed">Receba atualizações sobre o produto.</p>
+            <p class="text-sm text-white/85 mb-4 leading-relaxed">Receba atualizações sobre o produto.</p>
             <form id="newsletter-form-substack" class="flex flex-col gap-2">
-              <input type="email" id="newsletter-email-substack" placeholder="Digite seu e-mail" class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-2 focus:outline-white text-sm">
+              <label for="newsletter-email-substack" class="text-sm text-white/85">Digite seu e-mail <span aria-hidden="true">*</span></label>
+              <input type="email" id="newsletter-email-substack" placeholder="Digite seu e-mail" autocomplete="email" required class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-2 focus:outline-white text-sm">
               <button type="submit" id="newsletter-submit-btn" class="px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-medium transition-colors text-sm">Assinar</button>
-              <div id="newsletter-success-msg" class="hidden px-4 py-3 rounded-lg bg-[#2FA37C]/20 border border-[#2FA37C]/40 text-sm text-white">✓ Cadastro realizado com sucesso!</div>
+              <div id="newsletter-success-msg" role="status" aria-live="polite" class="hidden px-4 py-3 rounded-lg bg-[#2FA37C]/20 border border-[#2FA37C]/40 text-sm text-white">✓ Cadastro realizado com sucesso!</div>
             </form>
           </div>
         </div>
         <div class="border-t border-white/15 pt-8">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="text-center sm:text-left"><p class="text-base text-white/60">© 2026 Averuz. Todos os direitos reservados.</p><p class="text-sm text-white/40 mt-1">CNPJ: 58.345.111/0001-10</p></div>
-            <a href="#" id="back-to-top" class="text-sm font-medium text-white/70 hover:text-white transition-colors flex items-center gap-2">Voltar ao topo <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></a>
+            <div class="text-center sm:text-left"><p class="text-base text-white/85">© 2026 Averuz. Todos os direitos reservados.</p><p class="text-sm text-white/85 mt-1">CNPJ: 58.345.111/0001-10</p></div>
+            <a href="#top" id="back-to-top" class="text-sm font-medium text-white/85 hover:text-white transition-colors flex items-center gap-2 py-2">Voltar ao topo <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></a>
           </div>
         </div>
       </div>
@@ -1027,15 +887,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Menu Mobile
-      const btn = document.getElementById('mobile-menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-        });
-      }
-
       // Newsletter Mock Script
       const form = document.getElementById('newsletter-form-substack');
       if (form) {
