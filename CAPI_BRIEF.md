@@ -676,7 +676,85 @@ Mudanças futuras devem ser incorporadas aqui antes de serem consideradas parte 
 
 Os demais documentos devem aprofundar decisões específicas sem contradizer este arquivo.
 
-# CAPI CRM — Brief de Marca (fonte única de verdade)
+# CapiCRM — Brief de Marca e Estado Atual do Site
+
+> Fonte de verdade para a implementação atual do site estático.
+
+**Marca:** CapiCRM  
+**Assinatura tech:** powered by Motor UAI  
+**Tom:** Mineiro Tech — direto, acolhedor, sem corporativês e sem infantilização.  
+**Mascote:** Capi, a capivara; ela não substitui o wordmark em materiais institucionais.
+
+## Mensagens
+
+- Taglines: “Deixa com a Capi.” e “Atendimento que vende. Escala que cresce.”
+- Promessa: “Inteligência artificial sem complicação.”
+- A mensagem deve ser simples, humana e objetiva.
+
+## Sistema de cores aplicado
+
+```css
+:root {
+  --brand-primary: #5B7553;
+  --brand-primary-dark: #46583F;
+  --brand-cta: #CC5500;
+  --brand-cta-dark: #A84500;
+  --cta-on-dark: #E58A4E;
+  --brand-dark: #2C2C2C;
+  --bg-cream: #F5F2EB;
+  --bg-tint: #F0F4EE;
+  --alert-bg: #FBEDE6;
+  --alert-border: #E5B49A;
+  --alert-text: #B3400F;
+}
+```
+
+- Sálvia é usada em fundos, ícones e bordas; sálvia escuro, em textos, links e eyebrows.
+- Terracota é reservada a CTAs; seu hover usa `--brand-cta-dark`.
+- Em fundos escuros, o acento terracota usa `--cta-on-dark`.
+- Alertas usam a família `--alert-*`.
+- Bordas neutras usam `#E7E1D6`.
+- Não usar roxo/dourado antigos, magenta/rosa ou hexes fora deste sistema.
+
+## Stack e regras técnicas
+
+- HTML estático em `index.html`, Tailwind via CDN, `style.css` e `main.js` vanilla.
+- Fontes mantidas: Sora (display) e Lexend (corpo).
+- `main.js` não deve ser alterado: ele mantém o menu, o scroll e o fallback da marca.
+- Preservar estrutura, responsividade, animações e classes existentes ao fazer alterações de conteúdo ou cores.
+- `.btn-primary` usa `--brand-cta`; `.btn-secondary` usa `--brand-primary-dark`.
+
+## Logo
+
+- O logo institucional aponta para `./img/capi-logo.png`.
+- Enquanto o ativo não estiver no repositório, o fallback textual “CapiCRM” é exibido pelo `main.js`.
+
+## Hero atual
+
+- H1: “Nenhum lead esquecido. Nenhuma conversa perdida.”
+- Subtítulo: “O CapiCRM centraliza seu WhatsApp, Instagram e e-mail em um só painel. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.”
+- CTA primário: “Agendar diagnóstico gratuito”.
+- CTA secundário: “Ver planos”.
+
+## Planos atuais
+
+- Solo — R$ 197: 1 usuário, 1 canal, CRM, automação e cadência básica.
+- Pro — R$ 597: 3 usuários, 2 canais, conversões, automações avançadas e relatórios; Agente IA disponível como adicional por R$ 697.
+- Escala — R$ 1.197: 5 usuários, 3 canais, Agente IA, redes sociais e café mensal.
+- Adicionais: usuário +R$ 147 (teto +1 no Solo e +2 no Pro); canal +R$ 97; Agente IA R$ 697 (somente Pro); redes sociais R$ 97 (somente Pro).
+- Rodapé: “Todos os planos incluem contatos e mensagens ilimitados.”
+
+## Prova social e conformidade
+
+- Não publicar depoimentos placeholder, avaliações fictícias, métricas de conversão ou redução de tempo sem cases reais, autorização e evidências.
+- A seção de prova social permanece removida até que haja material validado para publicação.
+
+---
+
+**CapiCRM**
+
+> Inteligência artificial sem complicação.
+
 
 ## Marca
 - Nome: CAPI CRM (CAPI = Central de Atendimento e Prospecção Inteligente)
