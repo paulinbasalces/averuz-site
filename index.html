@@ -19,11 +19,15 @@
         extend: {
           colors: {
             brand: {
-              purple: '#5B7553',    /* Cor Principal */
-              gold: '#CC5500',      /* Cor Destaque */
-              dark: '#2C2C2C',      /* Texto Escuro */
-              green: '#2FA37C',     /* Sucesso */
-              paper: '#F5F2EB'      /* Fundo Leve */
+              primary: '#5B7553',
+              'primary-dark': '#46583F',
+              cta: '#5B7553',
+              'cta-dark': '#46583F',
+              'cta-on-dark': '#E58A4E',
+              dark: '#2C2C2C',
+              cream: '#F5F2EB',
+              tint: '#F0F4EE',
+              alert: { bg: '#FBEDE6', border: '#E5B49A', text: '#B3400F' }
             }
           },
           fontFamily: {
@@ -57,7 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 </head>
 
-<body class="bg-white text-brand-dark font-body antialiased overflow-x-hidden flex flex-col min-h-screen">
+<body class="bg-white text-brand-primary-dark font-body antialiased overflow-x-hidden flex flex-col min-h-screen">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M684R8GB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -66,13 +70,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#top" class="inline-flex items-center gap-2 min-w-[180px]" aria-label="CapiCRM - voltar ao topo">
         <img id="brand-logo" src="./img/capi-logo.png" alt="Logo da CapiCRM" class="h-11 w-auto md:h-12 object-contain" loading="eager" decoding="async">
-        <span id="brand-logo-fallback" class="hidden text-2xl font-black font-display tracking-tight text-brand-primary">CapiCRM<span class="text-brand-cta">.</span></span>
+        <span id="brand-logo-fallback" class="hidden text-2xl font-black font-display tracking-tight text-brand-primary-dark">CapiCRM<span class="text-brand-primary">.</span></span>
       </a>
 
       <nav class="hidden md:flex items-center gap-8" aria-label="Menu principal">
-        <a href="#solucoes" class="text-sm font-medium text-gray-700 hover:text-brand-primary transition-colors inline-flex items-center py-2">Soluções</a>
-        <a href="#como-funciona" class="text-sm font-medium text-gray-700 hover:text-brand-primary transition-colors inline-flex items-center py-2">Como funciona</a>
-        <a href="#planos" class="text-sm font-medium text-gray-700 hover:text-brand-primary transition-colors inline-flex items-center py-2">Planos</a>
+        <a href="#solucoes" class="text-sm font-medium text-gray-700 hover:text-brand-primary-dark-dark transition-colors inline-flex items-center py-2">Soluções</a>
+        <a href="#como-funciona" class="text-sm font-medium text-gray-700 hover:text-brand-primary-dark-dark transition-colors inline-flex items-center py-2">Como funciona</a>
+        <a href="#planos" class="text-sm font-medium text-gray-700 hover:text-brand-primary-dark-dark transition-colors inline-flex items-center py-2">Planos</a>
       </nav>
 
       <div class="hidden md:block">
@@ -81,7 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </a>
       </div>
       
-      <button id="mobile-menu-btn" class="md:hidden text-brand-primary" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-btn" class="md:hidden text-brand-primary-dark" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
       </button>
     </div>
@@ -103,15 +107,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div class="max-w-xl">
-        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#2C2C2C] leading-[1.1] mb-6">
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#46583F] leading-[1.1] mb-6">
           Nenhum lead esquecido.<br>
-          <span class="text-[#5B7553]">Nenhuma conversa perdida.</span>
+          <span class="text-[#46583F]">Nenhuma conversa perdida.</span>
         </h1>
-        <p class="text-lg sm:text-xl text-[#374151] leading-[1.7] mb-10">
+        <p class="text-lg sm:text-xl text-[#46583F] leading-[1.7] mb-10">
           O CapiCRM centraliza seu WhatsApp, Instagram e e-mail em um só painel.<br>
           O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.
         </p>
-        <p class="text-base text-[#334155] mb-8 leading-relaxed">
+        <p class="text-base text-[#46583F] mb-8 leading-relaxed">
           Atendimento que vende. Escala que cresce.
         </p>
         <div class="grid sm:grid-cols-2 gap-4">
@@ -119,35 +123,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="#contato" class="bg-[#CC5500] hover:bg-[#A84500] text-white px-10 py-4 rounded-xl text-lg font-bold shadow-lg shadow-[#CC5500]/20 text-center transition-all block">
               Agendar diagnóstico gratuito
             </a>
-            <p class="text-sm text-[#334155] leading-relaxed mt-2">Sua equipe responde mais rápido.</p>
+            <p class="text-sm text-[#46583F] leading-relaxed mt-2">Sua equipe responde mais rápido.</p>
           </div>
           <div>
-            <a href="#planos" class="bg-white border-2 border-[#5B7553] text-[#5B7553] hover:bg-[#F0F4EE] px-10 py-4 rounded-xl text-lg text-center font-semibold transition-colors block">
+            <a href="#planos" class="bg-white border-2 border-[#46583F] text-[#46583F] hover:bg-[#F0F4EE] px-10 py-4 rounded-xl text-lg text-center font-semibold transition-colors block">
               Ver planos
             </a>
-            <p class="text-sm text-[#334155] leading-relaxed mt-2">A inteligência por trás do seu atendimento.</p>
+            <p class="text-sm text-[#46583F] leading-relaxed mt-2">A inteligência por trás do seu atendimento.</p>
           </div>
         </div>
       </div>
 
       <div class="relative float-animation">
-        <div class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-[#E8E8E8]">
-          <div class="flex items-center justify-between mb-5 pb-4 border-b border-[#F0F0F0]">
+        <div class="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-[#E7E1D6]">
+          <div class="flex items-center justify-between mb-5 pb-4 border-b border-[#E7E1D6]">
             <div class="flex items-center gap-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-[#2FA37C] pulse-glow"></div>
-              <span class="text-sm font-medium text-[#374151]">Sistema ativo</span>
+              <div class="w-2.5 h-2.5 rounded-full bg-[#5B7553] pulse-glow"></div>
+              <span class="text-sm font-medium text-[#46583F]">Sistema ativo</span>
             </div>
-            <span class="text-xs text-[#4B5563]">Atualizado agora</span>
+            <span class="text-xs text-[#46583F]">Atualizado agora</span>
           </div>
           <div class="grid grid-cols-3 gap-3 mb-5">
-            <div class="bg-[#F5F2EB] rounded-xl p-4 border border-[#E8E8E8]"><p class="font-display font-bold text-2xl text-[#2C2C2C] mb-1">847</p><p class="text-xs text-[#4B5563] leading-relaxed">Conversas hoje</p></div>
-            <div class="bg-[#F5F2EB] rounded-xl p-4 border border-[#E8E8E8]"><p class="font-display font-bold text-2xl text-[#1D7A5A] mb-1">94%</p><p class="text-xs text-[#4B5563] leading-relaxed">Resolvidas por IA</p></div>
-            <div class="bg-[#F5F2EB] rounded-xl p-4 border border-[#E8E8E8]"><p class="font-display font-bold text-2xl text-[#A84500] mb-1">R$ 48k</p><p class="text-xs text-[#4B5563] leading-relaxed">Vendas geradas</p></div>
+            <div class="bg-[#F5F2EB] rounded-xl p-4 border border-[#E7E1D6]"><p class="font-display font-bold text-2xl text-[#46583F] mb-1">847</p><p class="text-xs text-[#46583F] leading-relaxed">Conversas hoje</p></div>
+            <div class="bg-[#F5F2EB] rounded-xl p-4 border border-[#E7E1D6]"><p class="font-display font-bold text-2xl text-[#5B7553] mb-1">94%</p><p class="text-xs text-[#46583F] leading-relaxed">Resolvidas por IA</p></div>
+            <div class="bg-[#F5F2EB] rounded-xl p-4 border border-[#E7E1D6]"><p class="font-display font-bold text-2xl text-[#46583F] mb-1">R$ 48k</p><p class="text-xs text-[#46583F] leading-relaxed">Vendas geradas</p></div>
           </div>
           <div class="space-y-3">
-            <div class="flex items-start gap-3 bg-[#F5F2EB] rounded-xl p-4 border border-[#E8E8E8]"><div class="w-9 h-9 rounded-full bg-[#5B7553] flex items-center justify-center flex-shrink-0"><span class="text-white text-xs font-bold">MC</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="font-semibold text-sm text-[#2C2C2C]">Maria Clara</span><span class="text-xs text-[#14532D] font-medium bg-[#D1FAE5]/10 px-2 py-0.5 rounded-md">IA respondeu</span></div><p class="text-sm text-[#4B5563] leading-relaxed">Quero saber mais sobre o plano Pro...</p></div></div>
-            <div class="flex items-start gap-3 bg-[#F5F2EB] rounded-xl p-4 border border-[#E8E8E8]"><div class="w-9 h-9 rounded-full bg-[#2C2C2C] flex items-center justify-center flex-shrink-0"><span class="text-white text-xs font-bold">RF</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="font-semibold text-sm text-[#2C2C2C]">Ricardo Ferreira</span><span class="text-xs text-[#A84500] font-medium bg-[#F5F2EB]/10 px-2 py-0.5 rounded-md">Negociação</span></div><p class="text-sm text-[#4B5563] leading-relaxed">Fechado! Vou assinar o anual...</p></div></div>
-            <div class="flex items-start gap-3 bg-white rounded-xl p-4 border-2 border-[#2FA37C]/20 shadow-sm"><div class="w-9 h-9 rounded-full bg-[#CC5500] flex items-center justify-center flex-shrink-0"><span class="text-white text-xs font-bold">JL</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="font-semibold text-sm text-[#2C2C2C]">Julia Lima</span><span class="text-xs text-[#14532D] font-medium bg-[#D1FAE5]/10 px-2 py-0.5 rounded-md flex items-center gap-1"><span class="w-1.5 h-1.5 bg-[#2FA37C] rounded-full animate-pulse"></span> IA respondeu em 2s</span></div><p class="text-sm text-[#2C2C2C] font-medium leading-relaxed">Quanto custa o plano Pro?</p></div></div>
+            <div class="flex items-start gap-3 bg-[#F5F2EB] rounded-xl p-4 border border-[#E7E1D6]"><div class="w-9 h-9 rounded-full bg-[#5B7553] flex items-center justify-center flex-shrink-0"><span class="text-white text-xs font-bold">MC</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="font-semibold text-sm text-[#46583F]">Maria Clara</span><span class="text-xs text-[#5B7553] font-medium bg-[#5B7553]/10 px-2 py-0.5 rounded-md">IA respondeu</span></div><p class="text-sm text-[#46583F] leading-relaxed">Quero saber mais sobre o plano Pro...</p></div></div>
+            <div class="flex items-start gap-3 bg-[#F5F2EB] rounded-xl p-4 border border-[#E7E1D6]"><div class="w-9 h-9 rounded-full bg-[#2C2C2C] flex items-center justify-center flex-shrink-0"><span class="text-white text-xs font-bold">RF</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="font-semibold text-sm text-[#46583F]">Ricardo Ferreira</span><span class="text-xs text-[#46583F] font-medium bg-[#F5F2EB]/10 px-2 py-0.5 rounded-md">Negociação</span></div><p class="text-sm text-[#46583F] leading-relaxed">Fechado! Vou assinar o anual...</p></div></div>
+            <div class="flex items-start gap-3 bg-white rounded-xl p-4 border-2 border-[#5B7553]/20 shadow-sm"><div class="w-9 h-9 rounded-full bg-[#5B7553] flex items-center justify-center flex-shrink-0"><span class="text-white text-xs font-bold">JL</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between mb-1.5"><span class="font-semibold text-sm text-[#46583F]">Julia Lima</span><span class="text-xs text-[#5B7553] font-medium bg-[#5B7553]/10 px-2 py-0.5 rounded-md flex items-center gap-1"><span class="w-1.5 h-1.5 bg-[#5B7553] rounded-full animate-pulse"></span> IA respondeu em 2s</span></div><p class="text-sm text-[#46583F] font-medium leading-relaxed">Quanto custa o plano Pro?</p></div></div>
           </div>
         </div>
       </div>
@@ -163,16 +167,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 animate-on-scroll animated">
-      <h2 id="solucoes-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-5">
+      <h2 id="solucoes-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-5">
         Um sistema completo para vender mais – sem perder nenhum contato pelo caminho
       </h2>
-      <p class="text-lg sm:text-xl text-[#334155] leading-relaxed">
+      <p class="text-lg sm:text-xl text-[#46583F] leading-relaxed">
         Quatro pilares integrados que tiram o peso operacional da sua equipe e transformam atendimento em vendas previsíveis.
       </p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-      <div class="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#F0F4EE] via-[#CC5500]/20 to-[#F0F4EE]"></div>
+      <div class="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-[#F0F4EE] via-[#5B7553]/20 to-[#F0F4EE]"></div>
 
       <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white animate-scale-on-scroll animate-delay-1 animated">
         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F0F4EE] to-[#F0F4EE]/50 flex items-center justify-center mb-5 relative">
@@ -181,8 +185,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="#5B7553"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Centralize conversas</h3>
-        <p class="text-[#334155] text-sm leading-relaxed">Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel e cada mensagem já fica ligada ao contato certo no CRM.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Centralize conversas</h3>
+        <p class="text-[#46583F] text-sm leading-relaxed">Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel e cada mensagem já fica ligada ao contato certo no CRM.</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white animate-scale-on-scroll animate-delay-2 animated">
@@ -192,8 +196,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#5B7553"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Organize o funil</h3>
-        <p class="text-[#334155] text-sm leading-relaxed">Visualize cada lead do primeiro contato ao fechamento. A IA ajuda a manter o CRM atualizado, mostrando onde cada venda está e qual é o próximo passo.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Organize o funil</h3>
+        <p class="text-[#46583F] text-sm leading-relaxed">Visualize cada lead do primeiro contato ao fechamento. A IA ajuda a manter o CRM atualizado, mostrando onde cada venda está e qual é o próximo passo.</p>
       </div>
 
       <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white animate-scale-on-scroll animate-delay-3 animated">
@@ -203,19 +207,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="#5B7553"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Automatize follow-ups</h3>
-        <p class="text-[#334155] text-sm leading-relaxed">Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos. Você define as regras; a CapiCRM lembra, envia e movimenta o funil.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Automatize follow-ups</h3>
+        <p class="text-[#46583F] text-sm leading-relaxed">Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos. Você define as regras; a CapiCRM lembra, envia e movimenta o funil.</p>
       </div>
 
-      <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white border-2 border-[#CC5500]/20 animate-scale-on-scroll animate-delay-4 animated">
-        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#CC5500]/20 to-[#CC5500]/10 flex items-center justify-center mb-5 relative">
-          <div class="absolute inset-0 rounded-xl bg-[#CC5500]/10 animate-pulse" style="animation-delay: 0.6s;"></div>
+      <div class="card-elevated rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative z-10 bg-white border-2 border-[#46583F]/20 animate-scale-on-scroll animate-delay-4 animated">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#5B7553]/20 to-[#5B7553]/10 flex items-center justify-center mb-5 relative">
+          <div class="absolute inset-0 rounded-xl bg-[#5B7553]/10 animate-pulse" style="animation-delay: 0.6s;"></div>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="relative z-10">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#CC5500"></path>
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#5B7553"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Ative a IA</h3>
-        <p class="text-[#334155] text-sm leading-relaxed">Treine um agente com seus produtos e forma de vender. Ele responde dúvidas comuns, qualifica leads e entrega para sua equipe apenas as conversas com real chance de fechar.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Ative a IA</h3>
+        <p class="text-[#46583F] text-sm leading-relaxed">Treine um agente com seus produtos e forma de vender. Ele responde dúvidas comuns, qualifica leads e entrega para sua equipe apenas as conversas com real chance de fechar.</p>
       </div>
     </div>
   </div>
@@ -230,85 +234,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       <div class="card-elevated rounded-2xl p-6 order-2 lg:order-1 animate-slide-left animated">
         <div class="flex items-center justify-between mb-4">
-          <span class="text-sm font-medium text-[#D10B68]">⚠️ Sistema sobrecarregado</span>
-          <span class="text-xs text-[#334155]">127 mensagens não lidas</span>
+          <span class="text-sm font-medium text-[#B3400F]">⚠️ Sistema sobrecarregado</span>
+          <span class="text-xs text-[#46583F]">127 mensagens não lidas</span>
         </div>
         
         <div class="space-y-3">
-          <div class="flex items-center gap-3 p-3 bg-[#D10B68]/10 rounded-lg border border-[#D10B68]/20">
-            <div class="w-2 h-2 rounded-full bg-[#D10B68]"></div>
+          <div class="flex items-center gap-3 p-3 bg-[#FBEDE6] rounded-lg border border-[#E5B49A]">
+            <div class="w-2 h-2 rounded-full bg-[#B3400F]"></div>
             <div class="flex-1">
-              <p class="text-sm font-medium text-[#2C2C2C]">Lead esperando há 4h</p>
-              <p class="text-xs text-[#D10B68]">Sem resposta</p>
+              <p class="text-sm font-medium text-[#46583F]">Lead esperando há 4h</p>
+              <p class="text-xs text-[#B3400F]">Sem resposta</p>
             </div>
           </div>
           
-          <div class="flex items-center gap-3 p-3 bg-[#D10B68]/10 rounded-lg border border-[#D10B68]/20">
-            <div class="w-2 h-2 rounded-full bg-[#D10B68]"></div>
+          <div class="flex items-center gap-3 p-3 bg-[#FBEDE6] rounded-lg border border-[#E5B49A]">
+            <div class="w-2 h-2 rounded-full bg-[#B3400F]"></div>
             <div class="flex-1">
-              <p class="text-sm font-medium text-[#2C2C2C]">Follow-up não enviado</p>
-              <p class="text-xs text-[#D10B68]">Cliente perdido</p>
+              <p class="text-sm font-medium text-[#46583F]">Follow-up não enviado</p>
+              <p class="text-xs text-[#B3400F]">Cliente perdido</p>
             </div>
           </div>
           
-          <div class="flex items-center gap-3 p-3 bg-[#D10B68]/10 rounded-lg border border-[#D10B68]/20">
-            <div class="w-2 h-2 rounded-full bg-[#D10B68]"></div>
+          <div class="flex items-center gap-3 p-3 bg-[#FBEDE6] rounded-lg border border-[#E5B49A]">
+            <div class="w-2 h-2 rounded-full bg-[#B3400F]"></div>
             <div class="flex-1">
-              <p class="text-sm font-medium text-[#2C2C2C]">Equipe sobrecarregada</p>
-              <p class="text-xs text-[#D10B68]">Tempo médio: 3h por resposta</p>
+              <p class="text-sm font-medium text-[#46583F]">Equipe sobrecarregada</p>
+              <p class="text-xs text-[#B3400F]">Tempo médio: 3h por resposta</p>
             </div>
           </div>
           
-          <div class="flex items-center gap-3 p-3 bg-[#D10B68]/10 rounded-lg border border-[#D10B68]/20">
-            <div class="w-2 h-2 rounded-full bg-[#D10B68]"></div>
+          <div class="flex items-center gap-3 p-3 bg-[#FBEDE6] rounded-lg border border-[#E5B49A]">
+            <div class="w-2 h-2 rounded-full bg-[#B3400F]"></div>
             <div class="flex-1">
-              <p class="text-sm font-medium text-[#2C2C2C]">Cliente frustrado</p>
-              <p class="text-xs text-[#D10B68]">"Já perguntei isso 3 vezes..."</p>
+              <p class="text-sm font-medium text-[#46583F]">Cliente frustrado</p>
+              <p class="text-xs text-[#B3400F]">"Já perguntei isso 3 vezes..."</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="order-1 lg:order-2 animate-slide-right animated">
-        <h2 id="pain-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-6">
+        <h2 id="pain-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-6">
           O atendimento virou o gargalo do crescimento.
         </h2>
         
         <div class="space-y-4">
           <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-[#D10B68]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="#D10B68">
+            <div class="w-6 h-6 rounded-full bg-[#B3400F]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#B3400F">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#334155] leading-relaxed">Leads sem resposta que viram vendas perdidas</p>
+            <p class="text-lg text-[#46583F] leading-relaxed">Leads sem resposta que viram vendas perdidas</p>
           </div>
           
           <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-[#D10B68]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="#D10B68">
+            <div class="w-6 h-6 rounded-full bg-[#B3400F]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#B3400F">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#334155] leading-relaxed">Follow-ups esquecidos que custam dinheiro</p>
+            <p class="text-lg text-[#46583F] leading-relaxed">Follow-ups esquecidos que custam dinheiro</p>
           </div>
           
           <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-[#D10B68]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="#D10B68">
+            <div class="w-6 h-6 rounded-full bg-[#B3400F]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#B3400F">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#334155] leading-relaxed">Equipe sobrecarregada sem tempo para vender</p>
+            <p class="text-lg text-[#46583F] leading-relaxed">Equipe sobrecarregada sem tempo para vender</p>
           </div>
           
           <div class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-[#D10B68]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="#D10B68">
+            <div class="w-6 h-6 rounded-full bg-[#B3400F]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#B3400F">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
               </svg>
             </div>
-            <p class="text-lg text-[#334155] leading-relaxed">Clientes frustrados que não voltam mais</p>
+            <p class="text-lg text-[#46583F] leading-relaxed">Clientes frustrados que não voltam mais</p>
           </div>
         </div>
       </div>
@@ -324,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none" style="animation: ambient-flow-1 90s ease-in-out infinite;" aria-hidden="true"></div>
 
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#CC5500] rounded-full mix-blend-multiply filter blur-[128px] opacity-10 pointer-events-none" style="animation: ambient-flow-2 75s ease-in-out infinite;" aria-hidden="true"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[128px] opacity-10 pointer-events-none" style="animation: ambient-flow-2 75s ease-in-out infinite;" aria-hidden="true"></div>
 
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[140px] opacity-[0.08] pointer-events-none" style="animation: ambient-flow-3 100s ease-in-out infinite;" aria-hidden="true"></div>
 
@@ -342,7 +346,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="animate-fade-in-up animate-delay-1">Seus canais conectados.<br class="hidden sm:block"></p>
       <p class="animate-fade-in-up animate-delay-2">Sua IA preenchendo o CRM e organizando o funil.<br class="hidden sm:block"></p>
       <p class="animate-fade-in-up animate-delay-3">Seu atendimento rodando com follow-ups automáticos.<br class="hidden sm:block"></p>
-      <p class="block mt-8 sm:mt-10 text-[#F5B84C] font-normal animate-fade-in-up animate-delay-4">Você focado em conversar e fechar vendas, não em caçar informação.</p>
+      <p class="block mt-8 sm:mt-10 text-[#E58A4E] font-normal animate-fade-in-up animate-delay-4">Você focado em conversar e fechar vendas, não em caçar informação.</p>
     </div>
   </div>
 </section>
@@ -351,49 +355,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-      <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-4">O que você recebe</h2>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-4">O que você recebe</h2>
     </div>
     
     <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
       
-      <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#5B7553]">
+      <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#46583F]">
         <div class="w-12 h-12 rounded-xl bg-[#5B7553] flex items-center justify-center mb-5" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
             <path d="M4 4h16v12H5.17L4 17.17V4m0-2c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2H4z"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Central de conversas unificada</h3>
-        <p class="text-[#334155] leading-relaxed">Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Central de conversas unificada</h3>
+        <p class="text-[#46583F] leading-relaxed">Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
       </li>
 
-      <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#CC5500]">
-        <div class="w-12 h-12 rounded-xl bg-[#CC5500] flex items-center justify-center mb-5" aria-hidden="true">
+      <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#46583F]">
+        <div class="w-12 h-12 rounded-xl bg-[#5B7553] flex items-center justify-center mb-5" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Agente de atendimento com IA</h3>
-        <p class="text-[#334155] leading-relaxed">Responde perguntas comuns, qualifica leads identificando intenção de compra e atualiza o cadastro no CRM com dados relevantes, encaminhando conversas prontas para sua equipe fechar.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Agente de atendimento com IA</h3>
+        <p class="text-[#46583F] leading-relaxed">Responde perguntas comuns, qualifica leads identificando intenção de compra e atualiza o cadastro no CRM com dados relevantes, encaminhando conversas prontas para sua equipe fechar.</p>
       </li>
 
-      <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#5B7553]">
+      <li class="card-elevated rounded-2xl p-7 border-l-4 border-l-[#46583F]">
         <div class="w-12 h-12 rounded-xl bg-[#5B7553] flex items-center justify-center mb-5" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
             <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"></path>
           </svg>
         </div>
-        <h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">CRM completo para vendas</h3>
-        <p class="text-[#334155] leading-relaxed">Cada lead vira um registro com histórico de conversas, etapa no funil e próximas ações. A IA ajuda a manter esses dados atualizados à medida que as conversas acontecem.</p>
+        <h3 class="font-display font-bold text-xl text-[#46583F] mb-3">CRM completo para vendas</h3>
+        <p class="text-[#46583F] leading-relaxed">Cada lead vira um registro com histórico de conversas, etapa no funil e próximas ações. A IA ajuda a manter esses dados atualizados à medida que as conversas acontecem.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7">
-        <div class="w-11 h-11 rounded-lg bg-[#2FA37C]/10 flex items-center justify-center mb-4" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#2FA37C">
+        <div class="w-11 h-11 rounded-lg bg-[#5B7553]/10 flex items-center justify-center mb-4" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#5B7553">
             <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"></path>
           </svg>
         </div>
-        <h3 class="font-display font-semibold text-lg text-[#2C2C2C] mb-2">Funil de conversão visual</h3>
-        <p class="text-sm text-[#334155] leading-relaxed">Veja quantos leads estão em cada etapa: novo contato, em negociação, proposta enviada, fechamento. Identifique gargalos e ajuste sua estratégia.</p>
+        <h3 class="font-display font-semibold text-lg text-[#46583F] mb-2">Funil de conversão visual</h3>
+        <p class="text-sm text-[#46583F] leading-relaxed">Veja quantos leads estão em cada etapa: novo contato, em negociação, proposta enviada, fechamento. Identifique gargalos e ajuste sua estratégia.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7">
@@ -402,8 +406,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"></path>
           </svg>
         </div>
-        <h3 class="font-display font-semibold text-lg text-[#2C2C2C] mb-2">Automações programáveis</h3>
-        <p class="text-sm text-[#334155] leading-relaxed">Crie sequências automáticas: envie lembretes após 24h sem resposta, mova leads entre etapas, dispare mensagens de boas-vindas. Trabalha sozinho 24/7.</p>
+        <h3 class="font-display font-semibold text-lg text-[#46583F] mb-2">Automações programáveis</h3>
+        <p class="text-sm text-[#46583F] leading-relaxed">Crie sequências automáticas: envie lembretes após 24h sem resposta, mova leads entre etapas, dispare mensagens de boas-vindas. Trabalha sozinho 24/7.</p>
       </li>
 
       <li class="card-elevated rounded-2xl p-7">
@@ -412,8 +416,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
           </svg>
         </div>
-        <h3 class="font-display font-semibold text-lg text-[#2C2C2C] mb-2">Relatórios de desempenho</h3>
-        <p class="text-sm text-[#334155] leading-relaxed">Acompanhe volume de conversas, tempo médio de resposta, taxa de conversão por canal, leads gerados e vendas fechadas. Dados atualizados em tempo real.</p>
+        <h3 class="font-display font-semibold text-lg text-[#46583F] mb-2">Relatórios de desempenho</h3>
+        <p class="text-sm text-[#46583F] leading-relaxed">Acompanhe volume de conversas, tempo médio de resposta, taxa de conversão por canal, leads gerados e vendas fechadas. Dados atualizados em tempo real.</p>
       </li>
       
     </ul>
@@ -423,8 +427,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="como-funciona" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F5F2EB]" aria-labelledby="como-funciona-heading">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-      <h2 id="como-funciona-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-4">Como a CapiCRM trabalha por você</h2>
-      <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+      <h2 id="como-funciona-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-4">Como a CapiCRM trabalha por você</h2>
+      <p class="text-base sm:text-lg text-[#46583F] leading-relaxed">
         A CapiCRM integra seus canais, usa IA para manter o CRM em dia e automatiza partes do fluxo de vendas, para que sua equipe foque onde faz mais diferença: nas conversas.
       </p>
     </div>
@@ -432,45 +436,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
       
       <li class="relative">
-        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#5B7553]">
-          <div class="font-display font-bold text-6xl text-[#5B7553]/10 mb-4" aria-hidden="true">
+        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#46583F]">
+          <div class="font-display font-bold text-6xl text-[#46583F]/10 mb-4" aria-hidden="true">
             01
           </div>
-          <h3 class="font-display font-bold text-lg text-[#2C2C2C] mb-3">Seus canais conectados</h3>
-          <p class="text-base text-[#334155] leading-relaxed">Mensagens unificadas de múltiplos canais em um único painel. Cada novo contato vira um registro no CRM sem esforço manual.</p>
+          <h3 class="font-display font-bold text-lg text-[#46583F] mb-3">Seus canais conectados</h3>
+          <p class="text-base text-[#46583F] leading-relaxed">Mensagens unificadas de múltiplos canais em um único painel. Cada novo contato vira um registro no CRM sem esforço manual.</p>
         </div>
         <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#5B7553]/30 to-transparent" aria-hidden="true"></div>
       </li>
 
       <li class="relative">
-        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#2C2C2C]">
-          <div class="font-display font-bold text-6xl text-[#2C2C2C]/10 mb-4" aria-hidden="true">
+        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#46583F]">
+          <div class="font-display font-bold text-6xl text-[#46583F]/10 mb-4" aria-hidden="true">
             02
           </div>
-          <h3 class="font-display font-bold text-lg text-[#2C2C2C] mb-3">IA treinada no seu negócio</h3>
-          <p class="text-base text-[#334155] leading-relaxed">A IA aprende seus produtos, preços, objeções mais comuns e forma de falar. A partir disso, extrai dados das conversas e preenche os campos importantes do CRM e do funil.</p>
+          <h3 class="font-display font-bold text-lg text-[#46583F] mb-3">IA treinada no seu negócio</h3>
+          <p class="text-base text-[#46583F] leading-relaxed">A IA aprende seus produtos, preços, objeções mais comuns e forma de falar. A partir disso, extrai dados das conversas e preenche os campos importantes do CRM e do funil.</p>
         </div>
         <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#2C2C2C]/30 to-transparent" aria-hidden="true"></div>
       </li>
 
       <li class="relative">
-        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#2FA37C]">
-          <div class="font-display font-bold text-6xl text-[#2FA37C]/10 mb-4" aria-hidden="true">
+        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#5B7553]">
+          <div class="font-display font-bold text-6xl text-[#5B7553]/10 mb-4" aria-hidden="true">
             03
           </div>
-          <h3 class="font-display font-bold text-lg text-[#2C2C2C] mb-3">Atendimento automático funcionando</h3>
-          <p class="text-base text-[#334155] leading-relaxed">Respostas instantâneas, leads qualificados e fluxos de follow-up disparando sozinhos. Você acompanha o funil em tempo real e intervém quando faz diferença.</p>
+          <h3 class="font-display font-bold text-lg text-[#46583F] mb-3">Atendimento automático funcionando</h3>
+          <p class="text-base text-[#46583F] leading-relaxed">Respostas instantâneas, leads qualificados e fluxos de follow-up disparando sozinhos. Você acompanha o funil em tempo real e intervém quando faz diferença.</p>
         </div>
-        <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#2FA37C]/30 to-transparent" aria-hidden="true"></div>
+        <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[#5B7553]/30 to-transparent" aria-hidden="true"></div>
       </li>
 
       <li>
-        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#CC5500] bg-gradient-to-br from-[#CC5500]/5 to-transparent">
-          <div class="font-display font-bold text-6xl text-[#CC5500]/20 mb-4" aria-hidden="true">
+        <div class="card-elevated rounded-2xl p-7 h-full border-l-4 border-l-[#46583F] bg-gradient-to-br from-[#5B7553]/5 to-transparent">
+          <div class="font-display font-bold text-6xl text-[#46583F]/20 mb-4" aria-hidden="true">
             04
           </div>
-          <h3 class="font-display font-bold text-lg text-[#2C2C2C] mb-3">Você vendendo mais</h3>
-          <p class="text-base text-[#334155] leading-relaxed">Sua equipe recebe leads quentes, com histórico e contexto organizados. Menos tempo alimentando sistema, mais tempo conversando e fechando negócios.</p>
+          <h3 class="font-display font-bold text-lg text-[#46583F] mb-3">Você vendendo mais</h3>
+          <p class="text-base text-[#46583F] leading-relaxed">Sua equipe recebe leads quentes, com histórico e contexto organizados. Menos tempo alimentando sistema, mais tempo conversando e fechando negócios.</p>
         </div>
       </li>
       
@@ -482,9 +486,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white" aria-labelledby="onboarding-heading">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10 sm:mb-12">
-      <h2 id="onboarding-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-5">Onboarding guiado e fluxos feitos para o seu jeito de vender</h2>
-      <p class="text-base sm:text-lg text-[#334155] leading-relaxed mb-5">Você não precisa descobrir tudo sozinho. No onboarding, montamos junto com você os fluxos de atendimento e vendas, os campos essenciais do CRM e os modelos de mensagens que fazem sentido para o seu jeito de falar.</p>
-      <p class="text-base sm:text-lg text-[#334155] leading-relaxed">Em seguida, ajustamos a inteligência artificial para preencher o CRM do jeito que sua operação precisa. À medida que você usa a plataforma, revisamos seus fluxos, afinamos automações e simplificamos mensagens para manter tudo acessível, rápido e fácil de entender para a sua equipe e para quem conversa com você.</p>
+      <h2 id="onboarding-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-5">Onboarding guiado e fluxos feitos para o seu jeito de vender</h2>
+      <p class="text-base sm:text-lg text-[#46583F] leading-relaxed mb-5">Você não precisa descobrir tudo sozinho. No onboarding, montamos junto com você os fluxos de atendimento e vendas, os campos essenciais do CRM e os modelos de mensagens que fazem sentido para o seu jeito de falar.</p>
+      <p class="text-base sm:text-lg text-[#46583F] leading-relaxed">Em seguida, ajustamos a inteligência artificial para preencher o CRM do jeito que sua operação precisa. À medida que você usa a plataforma, revisamos seus fluxos, afinamos automações e simplificamos mensagens para manter tudo acessível, rápido e fácil de entender para a sua equipe e para quem conversa com você.</p>
     </div>
     <div class="text-center">
       <a href="#contato" class="btn-secondary inline-flex items-center justify-center px-8 py-3 rounded-xl">Quero configurar meu fluxo com ajuda da CapiCRM</a>
@@ -496,8 +500,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F5F2EB]" aria-labelledby="video-demo-heading">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10 sm:mb-12">
-      <h2 id="video-demo-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-4">Veja a CapiCRM em ação em poucos minutos</h2>
-      <p class="text-base sm:text-lg text-[#334155] leading-relaxed">Assista a uma demonstração rápida e veja como a IA preenche o CRM, organiza o funil e ajuda sua equipe a responder mais rápido sem burocracia.</p>
+      <h2 id="video-demo-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-4">Veja a CapiCRM em ação em poucos minutos</h2>
+      <p class="text-base sm:text-lg text-[#46583F] leading-relaxed">Assista a uma demonstração rápida e veja como a IA preenche o CRM, organiza o funil e ajuda sua equipe a responder mais rápido sem burocracia.</p>
     </div>
     <div class="w-full overflow-hidden rounded-2xl shadow-lg border border-[#F0F4EE] bg-black">
       <iframe
@@ -520,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none" style="animation: ambient-flow-1 90s ease-in-out infinite;" aria-hidden="true"></div>
 
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#CC5500] rounded-full mix-blend-multiply filter blur-[128px] opacity-10 pointer-events-none" style="animation: ambient-flow-2 75s ease-in-out infinite;" aria-hidden="true"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[128px] opacity-10 pointer-events-none" style="animation: ambient-flow-2 75s ease-in-out infinite;" aria-hidden="true"></div>
 
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[140px] opacity-[0.08] pointer-events-none" style="animation: ambient-flow-3 100s ease-in-out infinite;" aria-hidden="true"></div>
 
@@ -532,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="relative max-w-4xl mx-auto text-center">
     <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight">
       CapiCRM não é mais um chatbot.<br>
-      <span class="text-[#F5B84C]">É sua operação de vendas funcionando sozinha.</span>
+      <span class="text-[#E58A4E]">É sua operação de vendas funcionando sozinha.</span>
     </h2>
   </div>
 </section>
@@ -541,44 +545,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="planos" class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F5F2EB]" aria-labelledby="planos-heading">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-      <h2 id="planos-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#2C2C2C] mb-4">Escolha seu plano</h2>
-      <p class="text-lg text-[#334155] leading-relaxed">Planos simples para o ritmo da sua operação.</p>
+      <h2 id="planos-heading" class="font-display font-bold text-3xl sm:text-4xl text-[#46583F] mb-4">Escolha seu plano</h2>
+      <p class="text-lg text-[#46583F] leading-relaxed">Planos simples para o ritmo da sua operação.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
       <article class="card-elevated rounded-3xl p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Solo">
 
-        <header class="mb-6"><h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Solo</h3><p class="text-sm text-[#334155] leading-relaxed">Para começar com o essencial.</p></header>
-        <div class="mb-6" aria-label="Preço mensal"><span class="font-display font-bold text-5xl text-[#2C2C2C]">R$ 197</span><span class="text-[#334155] text-base">/mês</span></div>
-        <div class="mb-6 plan-card-content flex-grow"><ul class="space-y-2.5" role="list"><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>1 usuário e 1 canal.</span></li><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>CRM, automação e cadência básica.</span></li></ul></div>
+        <header class="mb-6"><h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Solo</h3><p class="text-sm text-[#46583F] leading-relaxed">Para começar com o essencial.</p></header>
+        <div class="mb-6" aria-label="Preço mensal"><span class="font-display font-bold text-5xl text-[#46583F]">R$ 197</span><span class="text-[#46583F] text-base">/mês</span></div>
+        <div class="mb-6 plan-card-content flex-grow"><ul class="space-y-2.5" role="list"><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>1 usuário e 1 canal.</span></li><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>CRM, automação e cadência básica.</span></li></ul></div>
         <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Solo" class="btn-secondary w-full py-4 rounded-xl text-base font-semibold text-center" aria-label="Escolher Solo">Escolher Solo</a>
       </article>
-      <article class="card-elevated rounded-3xl p-8 flex flex-col border-2 border-[#CC5500] relative shadow-xl hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Pro - Mais escolhido">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#CC5500] to-[#A84500] text-white font-display font-bold text-xs px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap" aria-label="Plano mais escolhido">Mais escolhido</div>
-        <header class="mb-6"><h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Pro</h3><p class="text-sm text-[#334155] leading-relaxed">Para times que querem acelerar vendas.</p></header>
-        <div class="mb-6" aria-label="Preço mensal"><span class="font-display font-bold text-5xl text-[#2C2C2C]">R$ 597</span><span class="text-[#334155] text-base">/mês</span></div>
-        <div class="mb-6 plan-card-content flex-grow"><ul class="space-y-2.5" role="list"><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#CC5500" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>3 usuários e 2 canais.</span></li><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#CC5500" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Conversões, automações avançadas e relatórios.</span></li><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#CC5500" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Agente IA disponível como adicional por R$ 697.</span></li></ul></div>
+      <article class="card-elevated rounded-3xl p-8 flex flex-col border-2 border-[#46583F] relative shadow-xl hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Pro - Mais escolhido">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#5B7553] to-[#46583F] text-white font-display font-bold text-xs px-5 py-1.5 rounded-full shadow-lg whitespace-nowrap" aria-label="Plano mais escolhido">Mais escolhido</div>
+        <header class="mb-6"><h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Pro</h3><p class="text-sm text-[#46583F] leading-relaxed">Para times que querem acelerar vendas.</p></header>
+        <div class="mb-6" aria-label="Preço mensal"><span class="font-display font-bold text-5xl text-[#46583F]">R$ 597</span><span class="text-[#46583F] text-base">/mês</span></div>
+        <div class="mb-6 plan-card-content flex-grow"><ul class="space-y-2.5" role="list"><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>3 usuários e 2 canais.</span></li><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Conversões, automações avançadas e relatórios.</span></li><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Agente IA disponível como adicional por R$ 697.</span></li></ul></div>
         <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Pro" class="btn-primary w-full py-4 rounded-xl text-base font-bold text-center" aria-label="Escolher Pro">Escolher Pro</a>
       </article>
       <article class="card-elevated rounded-3xl p-8 flex flex-col hover:shadow-2xl transition-shadow duration-300" aria-label="Plano Escala">
 
-        <header class="mb-6"><h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-3">Escala</h3><p class="text-sm text-[#334155] leading-relaxed">Para operações que precisam de mais fôlego.</p></header>
-        <div class="mb-6" aria-label="Preço mensal"><span class="font-display font-bold text-5xl text-[#2C2C2C]">R$ 1.197</span><span class="text-[#334155] text-base">/mês</span></div>
-        <div class="mb-6 plan-card-content flex-grow"><ul class="space-y-2.5" role="list"><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>5 usuários e 3 canais.</span></li><li class="flex items-start gap-2.5 text-sm text-[#2C2C2C] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Agente IA, redes sociais e café mensal.</span></li></ul></div>
+        <header class="mb-6"><h3 class="font-display font-bold text-xl text-[#46583F] mb-3">Escala</h3><p class="text-sm text-[#46583F] leading-relaxed">Para operações que precisam de mais fôlego.</p></header>
+        <div class="mb-6" aria-label="Preço mensal"><span class="font-display font-bold text-5xl text-[#46583F]">R$ 1.197</span><span class="text-[#46583F] text-base">/mês</span></div>
+        <div class="mb-6 plan-card-content flex-grow"><ul class="space-y-2.5" role="list"><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>5 usuários e 3 canais.</span></li><li class="flex items-start gap-2.5 text-sm text-[#46583F] leading-relaxed"><svg width="18" height="18" viewBox="0 0 24 24" fill="#5B7553" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg><span>Agente IA, redes sociais e café mensal.</span></li></ul></div>
         <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Escala" class="btn-secondary w-full py-4 rounded-xl text-base font-semibold text-center" aria-label="Escolher Escala">Escolher Escala</a>
       </article>
     </div>
     <div class="text-center mt-10 space-y-3">
-      <p class="text-base text-[#334155]">Todos os planos incluem contatos e mensagens ilimitados.</p>
+      <p class="text-base text-[#46583F]">Todos os planos incluem contatos e mensagens ilimitados.</p>
     </div>
     <div class="mt-16 sm:mt-20 max-w-5xl mx-auto">
       <div class="card-elevated rounded-2xl p-8 bg-white">
-        <div class="text-center mb-6"><h3 class="font-display font-bold text-xl text-[#2C2C2C] mb-2">Adicionais</h3><p class="text-sm text-[#334155]">Personalize a CapiCRM conforme sua operação cresce.</p></div>
+        <div class="text-center mb-6"><h3 class="font-display font-bold text-xl text-[#46583F] mb-2">Adicionais</h3><p class="text-sm text-[#46583F]">Personalize a CapiCRM conforme sua operação cresce.</p></div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 text-sm">
-          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#2C2C2C]">Usuário adicional</span><span class="font-display font-bold text-[#2C2C2C]">+R$ 147</span></div>
-          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#2C2C2C]">Limite de usuários</span><span class="font-display font-semibold text-[#334155]">+1 Solo • +2 Pro</span></div>
-          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#2C2C2C]">Canal adicional</span><span class="font-display font-bold text-[#2C2C2C]">+R$ 97</span></div>
-          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#2C2C2C]">Agente IA (só Pro)</span><span class="font-display font-bold text-[#2C2C2C]">R$ 697</span></div>
-          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#2C2C2C]">Redes sociais (só Pro)</span><span class="font-display font-bold text-[#2C2C2C]">R$ 97</span></div>
+          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#46583F]">Usuário adicional</span><span class="font-display font-bold text-[#46583F]">+R$ 147</span></div>
+          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#46583F]">Limite de usuários</span><span class="font-display font-semibold text-[#46583F]">+1 Solo • +2 Pro</span></div>
+          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#46583F]">Canal adicional</span><span class="font-display font-bold text-[#46583F]">+R$ 97</span></div>
+          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#46583F]">Agente IA (só Pro)</span><span class="font-display font-bold text-[#46583F]">R$ 697</span></div>
+          <div class="flex items-center justify-between py-3 px-4 bg-[#F5F2EB] rounded-lg"><span class="text-[#46583F]">Redes sociais (só Pro)</span><span class="font-display font-bold text-[#46583F]">R$ 97</span></div>
         </div>
       </div>
     </div>
@@ -591,7 +595,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M50 52a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm30 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-60 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm30-30a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm30 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-60 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm30 60a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm30 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-60 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); animation: ambient-flow-1 115s ease-in-out infinite; pointer-events: none;" aria-hidden="true"></div>
 
   <div class="absolute top-1/2 left-1/4 w-[450px] h-[450px] bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[135px] opacity-[0.05] pointer-events-none" style="animation: ambient-flow-2 95s ease-in-out infinite;" aria-hidden="true"></div>
-  <div class="absolute top-1/3 right-1/3 w-[380px] h-[380px] bg-[#CC5500] rounded-full mix-blend-multiply filter blur-[125px] opacity-[0.035] pointer-events-none" style="animation: ambient-flow-3 108s ease-in-out infinite;" aria-hidden="true"></div>
+  <div class="absolute top-1/3 right-1/3 w-[380px] h-[380px] bg-[#5B7553] rounded-full mix-blend-multiply filter blur-[125px] opacity-[0.035] pointer-events-none" style="animation: ambient-flow-3 108s ease-in-out infinite;" aria-hidden="true"></div>
 
   <svg class="absolute bottom-1/4 left-0 w-full h-auto opacity-[0.025] pointer-events-none" style="animation: ambient-flow-1 95s ease-in-out infinite;" viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M0 60C300 30 500 90 700 60C900 30 1100 90 1200 60" stroke="white" stroke-width="1.2" fill="none"></path>
@@ -646,7 +650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <label for="newsletter-email-substack" class="text-sm text-white/85">Digite seu e-mail <span aria-hidden="true">*</span></label>
               <input type="email" id="newsletter-email-substack" placeholder="Digite seu e-mail" autocomplete="email" required class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-2 focus:outline-white text-sm">
               <button type="submit" id="newsletter-submit-btn" class="px-4 py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-medium transition-colors text-sm">Assinar</button>
-              <div id="newsletter-success-msg" role="status" aria-live="polite" class="hidden px-4 py-3 rounded-lg bg-[#2FA37C]/20 border border-[#2FA37C]/40 text-sm text-white">✓ Cadastro realizado com sucesso!</div>
+              <div id="newsletter-success-msg" role="status" aria-live="polite" class="hidden px-4 py-3 rounded-lg bg-[#5B7553]/20 border border-[#5B7553]/40 text-sm text-white">✓ Cadastro realizado com sucesso!</div>
             </form>
           </div>
         </div>
