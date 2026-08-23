@@ -1,7 +1,15 @@
 :root {
-  --brand-primary: #5B7553;
-  --brand-cta: #CC5500;
-  --brand-dark: #2C2C2C;
+  --brand-primary: #5B7553;       /* sálvia: fundos, ícones, bordas */
+  --brand-primary-dark: #46583F;  /* sálvia escuro: textos, links, eyebrows */
+  --brand-cta: #CC5500;           /* terracota: SOMENTE botões de CTA */
+  --brand-cta-dark: #A84500;      /* hover do CTA */
+  --cta-on-dark: #E58A4E;         /* acento terracota sobre fundos escuros */
+  --brand-dark: #2C2C2C;          /* grafite: seções escuras */
+  --bg-cream: #F5F2EB;            /* fundo da página */
+  --bg-tint: #F0F4EE;             /* fundo claro alternado de seções */
+  --alert-bg: #FBEDE6;
+  --alert-border: #E5B49A;
+  --alert-text: #B3400F;
 }
 
 html {
@@ -19,7 +27,7 @@ body {
 /* Utilitários Customizados do seu código */
 .card-elevated {
   background: white;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #E7E1D6;
   transition: all 0.3s ease;
 }
 
@@ -58,27 +66,27 @@ body {
 
 .btn-primary {
   background: var(--brand-cta);
-  color: #fff;
+  color: #F5F2EB;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 10px 25px -10px rgba(204, 85, 0, 0.6);
+  box-shadow: 0 10px 25px -10px rgba(204,85,0,0.4);
 }
 
 .btn-primary:hover {
-  background: #A84500;
+  background: var(--brand-cta-dark);
   transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background: #fff;
-  color: var(--brand-primary);
-  border: 2px solid var(--brand-primary);
+  background: #F5F2EB;
+  color: var(--brand-primary-dark);
+  border: 2px solid var(--brand-primary-dark);
   font-weight: 600;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #F0F4EE;
+  background: var(--bg-tint);
   transform: translateY(-1px);
 }
 
