@@ -1,7 +1,7 @@
 :root {
-  --brand-purple: #4A0A7E;
-  --brand-gold: #D99A08;
-  --brand-navy: #231961;
+  --brand-primary: #5B7553;
+  --brand-cta: #CC5500;
+  --brand-dark: #2C2C2C;
 }
 
 html {
@@ -57,28 +57,28 @@ body {
 }
 
 .btn-primary {
-  background: var(--brand-gold);
+  background: var(--brand-cta);
   color: #fff;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 10px 25px -10px rgba(217, 154, 8, 0.6);
+  box-shadow: 0 10px 25px -10px rgba(204, 85, 0, 0.6);
 }
 
 .btn-primary:hover {
-  background: #b88206;
+  background: #A84500;
   transform: translateY(-1px);
 }
 
 .btn-secondary {
   background: #fff;
-  color: var(--brand-purple);
-  border: 2px solid var(--brand-purple);
+  color: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
   font-weight: 600;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: #f5f0ff;
+  background: #F0F4EE;
   transform: translateY(-1px);
 }
 
