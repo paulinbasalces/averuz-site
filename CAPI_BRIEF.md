@@ -676,6 +676,55 @@ Mudanças futuras devem ser incorporadas aqui antes de serem consideradas parte 
 
 Os demais documentos devem aprofundar decisões específicas sem contradizer este arquivo.
 
+# CAPI CRM — Brief de Marca (fonte única de verdade)
+
+## Marca
+- Nome: CAPI CRM (CAPI = Central de Atendimento e Prospecção Inteligente)
+- Assinatura tech: "powered by Motor UAI"
+- Mascote: Capi, a capivara (flat, arredondada, alegre — nunca realista)
+- Taglines: "Deixa com a Capi." • "Atendimento que vende. Escala que cresce."
+- Tom: Mineiro Tech — direto, acolhedor, zero corporativês, nunca infantil
+
+## Paleta
+- Verde Sálvia #5B7553 (primária)
+- Terracota #CC5500 (CTAs)
+- Creme #F5F2EB (fundos)
+- Grafite #2C2C2C (texto)
+
+## Tipografia
+- Títulos: Plus Jakarta Sans / Poppins • Corpo: Inter / Roboto
+
+## Hero (homepage)
+H1: Nenhum lead esquecido. Nenhuma conversa perdida.
+Sub: O CAPI CRM centraliza seu WhatsApp, Instagram e e-mail em um só painel.
+O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.
+CTA1: Agendar diagnóstico gratuito • CTA2: Ver planos
+
+## Planos
+- Solo R$197: 1 usuário, 1 canal, CRM + automação + cadência básica
+- Pro R$597 ⭐: 3 usuários, 2 canais, + conversões, automações avançadas, relatórios
+- Escala R$1.197: 5 usuários, 3 canais, + Agente IA, redes sociais, café mensal
+- Adicionais: usuário +R$147 (teto +1 Solo / +2 Pro) • canal +R$97 •
+  Agente IA R$697 (só Pro) • redes sociais R$97 (só Pro)
+- Rodapé: "Todos os planos incluem contatos e mensagens ilimitados."
+
+## Regras
+- NUNCA usar "Averuz", "UaiLeads", roxo/dourado antigo ou jargão corporativo
+- Capi nunca substitui o wordmark em material institucional
+
+## Adendo Técnico (stack atual)
+- HTML estático + Tailwind CDN + style.css (variáveis) + main.js (vanilla)
+- Fontes atuais: Sora (display) + Lexend (body) → MANTER (já combinam com a marca)
+- main.js: NÃO mexer (menu, scroll, fallback de logo já funcionam)
+- Substituições de cor (hex antigo → hex CAPI):
+  #4A0A7E → #5B7553 (sálvia)
+  #D99A08 → #CC5500 (terracota)
+  #231961 → #2C2C2C (grafite)
+  #b88206 → #A84500 (hover do CTA)
+  #f5f0ff → #F0F4EE (hover do secundário)
+  fundos claros → #F5F2EB (creme)
+- Renomear variáveis no :root para --brand-primary / --brand-cta / --brand-dark
+  e atualizar todos os usos (btn-primary, btn-secondary, etc.)
 ---
 
 **CapiCRM**
