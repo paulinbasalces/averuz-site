@@ -1,98 +1,150 @@
 :root {
-  --brand-primary: #5B7553;       /* sálvia: fundos, ícones, bordas */
-  --brand-primary-dark: #46583F;  /* sálvia escuro: textos, links, eyebrows */
-  --brand-cta: #CC5500;           /* terracota: SOMENTE botões de CTA */
-  --brand-cta-dark: #A84500;      /* hover do CTA */
-  --cta-on-dark: #E58A4E;         /* acento terracota sobre fundos escuros */
-  --brand-dark: #2C2C2C;          /* grafite: seções escuras */
-  --bg-cream: #F5F2EB;            /* fundo da página */
-  --bg-tint: #F0F4EE;             /* fundo claro alternado de seções */
-  --alert-bg: #FBEDE6;
-  --alert-border: #E5B49A;
-  --alert-text: #B3400F;
+--brand-primary: #5B7553;       /* sálvia: fundos, ícones, bordas */
+--brand-primary-dark: #46583F;  /* sálvia escuro: textos, links, eyebrows */
+--brand-cta: #CC5500;           /* terracota: SOMENTE botões de CTA */
+--brand-cta-dark: #A84500;      /* hover do CTA */
+--cta-on-dark: #E58A4E;         /* acento terracota sobre fundos escuros */
+--brand-dark: #2C2C2C;          /* grafite: seções escuras */
+--bg-cream: #F5F2EB;            /* fundo da página */
+--bg-tint: #F0F4EE;             /* fundo claro alternado de seções */
+--alert-bg: #FBEDE6;
+--alert-border: #E5B49A;
+--alert-text: #B3400F;
 }
-
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
-
 body {
-  font-family: 'Lexend', sans-serif;
+font-family: 'Lexend', sans-serif;
 }
-
 .font-display {
-  font-family: 'Sora', sans-serif;
+font-family: 'Sora', sans-serif;
 }
-
 /* Utilitários Customizados do seu código */
 .card-elevated {
-  background: white;
-  border: 1px solid #E7E1D6;
-  transition: all 0.3s ease;
+background: white;
+border: 1px solid #E7E1D6;
+transition: all 0.3s ease;
 }
-
 .card-elevated:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+transform: translateY(-4px);
+box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
 }
-
 /* Animações */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+animation: fadeInUp 0.8s ease-out both;
 }
-
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
 }
-
 .float-animation {
-  animation: float 6s ease-in-out infinite;
+animation: float 6s ease-in-out infinite;
 }
-
 .pulse-glow {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
+0%, 100% { opacity: 1; }
+50% { opacity: .5; }
 }
-
 .btn-primary {
-  background: var(--brand-cta);
-  color: #F5F2EB;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 10px 25px -10px rgba(204,85,0,0.4);
+background: var(--brand-cta);
+color: #F5F2EB;
+font-weight: 700;
+transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+box-shadow: 0 10px 25px -10px rgba(204,85,0,0.4);
 }
-
 .btn-primary:hover {
-  background: var(--brand-cta-dark);
-  transform: translateY(-1px);
+background: var(--brand-cta-dark);
+transform: translateY(-1px);
 }
-
 .btn-secondary {
-  background: #F5F2EB;
-  color: var(--brand-primary-dark);
-  border: 2px solid var(--brand-primary-dark);
-  font-weight: 600;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+background: #F5F2EB;
+color: var(--brand-primary-dark);
+border: 2px solid var(--brand-primary-dark);
+font-weight: 600;
+transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .btn-secondary:hover {
-  background: var(--bg-tint);
-  transform: translateY(-1px);
+background: var(--bg-tint);
+transform: translateY(-1px);
 }
-
 .animate-on-scroll,
 .animate-scale-on-scroll,
 .animate-slide-left,
 .animate-slide-right {
-  opacity: 1;
+opacity: 1;
+}
+
+/* ============ HERO VIVO ============ */
+.hero-bg {
+position: relative;
+overflow: hidden;
+}
+/* linhas topográficas (mar de morros), creme sobre creme */
+.hero-bg::before {
+content: "";
+position: absolute;
+inset: 0;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='440' viewBox='0 0 600 440' fill='none'%3E%3Cpath d='M0 320 Q150 260 300 320 T600 320' stroke='%23E7E1D6' stroke-width='1.5'/%3E%3Cpath d='M0 360 Q150 300 300 360 T600 360' stroke='%23E7E1D6' stroke-width='1.5'/%3E%3Cpath d='M0 400 Q150 340 300 400 T600 400' stroke='%23E7E1D6' stroke-width='1.5'/%3E%3C/svg%3E");
+background-position: center bottom;
+opacity: .55;
+pointer-events: none;
+}
+.hero-blob-sage,
+.hero-blob-terra {
+position: absolute;
+border-radius: 9999px;
+filter: blur(80px);
+pointer-events: none;
+}
+.hero-blob-sage {
+width: 480px; height: 480px;
+background: rgba(91,117,83,.14);
+top: -120px; right: -80px;
+}
+.hero-blob-terra {
+width: 380px; height: 380px;
+background: rgba(204,85,0,.10);
+bottom: -140px; left: -100px;
+}
+.eyebrow-pill {
+display: inline-flex;
+align-items: center;
+gap: .5rem;
+border: 1px solid var(--brand-primary);
+color: var(--brand-primary-dark);
+background: var(--bg-cream);
+border-radius: 9999px;
+padding: .4rem 1rem;
+font-size: .8rem;
+font-weight: 600;
+}
+/* sublinhado artesanal terracota (único acento fora dos CTAs) */
+.hl-underline {
+background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'%3E%3Cpath d='M3 9 Q75 3 150 8 T297 6' stroke='%23CC5500' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left bottom / 100% .3em;
+padding-bottom: .15em;
+}
+.trust-strip {
+color: rgba(44,44,44,.65);
+font-size: .85rem;
+}
+.capi-peek {
+position: absolute;
+width: 120px;
+left: -30px;
+bottom: -16px;
+z-index: 5;
+}
+@media (prefers-reduced-motion: reduce) {
+.float-animation,
+.animate-fade-in-up,
+.pulse-glow {
+animation: none;
+}
 }
