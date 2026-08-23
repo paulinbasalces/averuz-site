@@ -1,0 +1,35 @@
+name: Rename Averuz to CAPI
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  rename:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace brand text
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+          text = text.replace('Averuz', 'CAPI').replace('AVERUZ', 'CAPI')
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit and remove temporary workflow
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html .github/workflows/rename-capi.yml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git rm .github/workflows/rename-capi.yml
+          git commit -m "chore: rename Averuz brand text to CAPI"
+          git push
