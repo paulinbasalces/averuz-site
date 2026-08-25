@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnóstico gratuito | CAPI CRM</title>
+<meta name="description" content="Descubra em 60 segundos quanto dinheiro está escapando pelo seu WhatsApp. Diagnóstico gratuito, sem reunião e sem vendedor chato." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235B7553'/%3E%3Ctext x='30' y='45' font-family='Sora,Arial,sans-serif' font-size='34' font-weight='800' text-anchor='middle' fill='%23F5F2EB'%3EC%3C/text%3E%3Ccircle cx='50' cy='46' r='6' fill='%23CC5500'/%3E%3C/svg%3E" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body style="background: var(--bg-cream); color: var(--brand-dark);">
+
+<header class="sticky top-0 z-50 backdrop-blur" style="background: rgba(245,242,235,.95); border-bottom: 1px solid #E7E1D6;">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="index.html" class="flex items-baseline font-display" aria-label="CAPI CRM">
+      <span style="color:var(--brand-dark);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;">CAPI</span>
+      <span style="color:var(--brand-primary);font-weight:600;font-size:1.4rem;margin-left:.35rem;">CRM</span>
+      <span style="color:var(--brand-cta);font-weight:800;font-size:1.4rem;">.</span>
+    </a>
+    <a href="index.html" class="text-sm font-medium hover:opacity-70">← Voltar ao site</a>
+  </div>
+</header>
+
+<section class="hero-bg" style="background: var(--bg-cream);">
+  <div class="hero-blob-sage" aria-hidden="true"></div>
+  <div class="max-w-3xl mx-auto px-6 pt-16 pb-10 text-center relative">
+    <span class="eyebrow-pill">🦫&nbsp; Diagnóstico gratuito • 60 segundos</span>
+    <h1 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mt-6" style="color: var(--brand-dark);">
+      Quanto dinheiro está <span class="hl-underline" style="color: var(--brand-primary);">escapando</span> pelo seu WhatsApp?
+    </h1>
+    <p class="mt-4 text-lg" style="color: rgba(44,44,44,0.75);">8 perguntas. A conta aparece na hora. Sem reunião, sem cadastro chato, sem vendedor em cima de você.</p>
+  </div>
+
+  <div class="max-w-2xl mx-auto px-6 pb-20 relative">
+    <!-- FORMULÁRIO -->
+    <form id="diag-form" class="card-elevated rounded-2xl p-8 space-y-6">
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div>
+          <label class="text-sm font-semibold block mb-2" for="nome">Seu nome *</label>
+          <input id="nome" required placeholder="Como te chamamos?" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
+        </div>
+        <div>
+          <label class="text-sm font-semibold block mb-2" for="whats">Seu WhatsApp *</label>
+          <input id="whats" required type="tel" placeholder="(31) 9 0000-0000" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
+        </div>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold block mb-2" for="nicho">Com o que você trabalha?</label>
+        <select id="nicho" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
+          <option>Corretor(a) de imóveis</option>
+          <option>Clínica / Saúde / Estética</option>
+          <option>Advogado(a)</option>
+          <option>Contador(a)</option>
+          <option>Outro profissional liberal</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold block mb-2" for="leads">Quantos leads chegam por mês, mais ou menos?</label>
+        <select id="leads" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
+          <option value="5|1">Até 10</option>
+          <option value="20|2" selected>10 a 30</option>
+          <option value="65|3">30 a 100</option>
+          <option value="150|4">Mais de 100</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold block mb-2" for="resp">Sinceramente: quanto tempo pra responder quem chama fora do seu horário?</label>
+        <select id="resp" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
+          <option value="0.10|1">Menos de 1 hora</option>
+          <option value="0.20|2">Entre 1 e 4 horas</option>
+          <option value="0.30|3" selected>No dia seguinte</option>
+          <option value="0.40|4">Às vezes nem respondo</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold block mb-2" for="org">Onde você organiza seus clientes hoje?</label>
+        <select id="org" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
+          <option value="4">Memória + WhatsApp</option>
+          <option value="3" selected>Planilha</option>
+          <option value="2">CRM parado</option>
+          <option value="1">CRM ativo e atualizado</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold block mb-2" for="ticket">Sua comissão ou ticket médio?</label>
+        <select id="ticket" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
+          <option value="700">Até R$ 1 mil</option>
+          <option value="3000" selected>R$ 1 a 5 mil</option>
+          <option value="7500">R$ 5 a 10 mil</option>
+          <option value="15000">Acima de R$ 10 mil</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm font-semibold block mb-2" for="perd">Quantos clientes você perdeu nos últimos 3 meses por não acompanhar?</label>
+        <select id="perd" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
+          <option value="1">Nenhum</option>
+          <option value="2">1 a 3</option>
+          <option value="3">4 a 10</option>
+          <option value="4" selected>Não faço ideia</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-primary w-full rounded-xl px-8 py-4">Ver meu diagnóstico agora</button>
+      <p class="text-xs text-center" style="color: rgba(44,44,44,0.5);">Usamos números conservadores de propósito. Nada de conta milagrosa.</p>
+    </form>
+
+    <!-- RESULTADO -->
+    <div id="diag-result" class="hidden card-elevated rounded-2xl p-8 mt-8">
+      <p id="r-verdict" class="font-display font-bold text-2xl" style="color: var(--brand-dark);"></p>
+      <p id="r-score" class="text-sm mt-2" style="color: rgba(44,44,44,0.6);"></p>
+      <div class="rounded-xl p-6 mt-6" style="background: var(--bg-tint);">
+        <p id="r-text" class="leading-relaxed" style="color: rgba(44,44,44,0.85);"></p>
+      </div>
+      <div id="r-ctas" class="grid sm:grid-cols-2 gap-4 mt-6"></div>
+      <a id="r-whats" target="_blank" rel="noopener" class="btn-secondary rounded-xl px-6 py-4 text-center block mt-4">🦫 Receber esse diagnóstico no meu WhatsApp</a>
+      <p class="text-xs text-center mt-4" style="color: rgba(44,44,44,0.5);">A Capi chama você em poucos minutos. Enquanto isso, respira: o problema tem solução.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('diag-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var g = function (id) { return document.getElementById(id).value; };
+  var nome = g('nome').split(' ')[0];
+  var nicho = g('nicho');
+  var L = g('leads').split('|');   var leadsMid = +L[0], leadsPts = +L[1];
+  var R = g('resp').split('|');    var fator = +R[0], respPts = +R[1];
+  var orgPts = +g('org');
+  var ticket = +g('ticket');
+  var perdPts = +g('perd');
+
+  var score = leadsPts + respPts + orgPts + perdPts; // 4 a 16
+  var risco = Math.round(leadsMid * fator);
+  var recup = Math.max(1, Math.round(risco * 0.10));
+  var valor = recup * ticket;
+  var brl = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+
+  var verdict, cor, ctas;
+  if (score >= 12) {
+    verdict = '🔴 Alerta vermelho: seu WhatsApp está deixando dinheiro na mesa.';
+    cor = 'var(--alert-text)';
+    ctas =
+      '<a href="https://wa.me/5531900000000" target="_blank" rel="noopener" class="btn-primary rounded-xl px-6 py-4 text-center">Garantir vaga de Pioneiro</a>' +
+      '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
+  } else if (score >= 8) {
+    verdict = '🟡 Tá escapando dinheiro — e follow-up resolveria.';
+    cor = 'var(--brand-cta)';
+    ctas =
+      '<a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Solo" class="btn-primary rounded-xl px-6 py-4 text-center">Começar teste grátis de 7 dias</a>' +
+      '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
+  } else {
+    verdict = '🟢 No controle — mas dá pra escalar sem sofrer.';
+    cor = 'var(--brand-primary-dark)';
+    ctas =
+      '<a href="index.html#como-funciona" class="btn-primary rounded-xl px-6 py-4 text-center">Ver a CAPI em ação</a>' +
+      '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
+  }
+
+  document.getElementById('r-verdict').textContent = verdict;
+  document.getElementById('r-verdict').style.color = cor;
+  document.getElementById('r-score').textContent = 'Score de risco: ' + score + '/16 • ' + nicho;
+  document.getElementById('r-text').innerHTML =
+    nome + ', com ~<strong>' + leadsMid + ' leads/mês</strong> e esse tempo de resposta, cerca de <strong>' + risco +
+    ' leads/mês ficam em risco</strong>. Se a CAPI recuperar só 1 em cada 10 — sendo bem conservador —, no seu ticket isso é ~<strong>' +
+    brl + '/mês</strong>. O plano Solo completo custa R$ 197. A conta se paga com folga.';
+  document.getElementById('r-ctas').innerHTML = ctas;
+  document.getElementById('r-whats').href = 'https://wa.me/5531900000000?text=' + encodeURIComponent(
+    'Olá! Sou ' + nome + ' (' + nicho + '). Fiz o diagnóstico no site da CAPI: score ' + score +
+    '/16 e ~' + brl + '/mês em risco. Quero falar com a Capi. 🦫');
+
+  this.classList.add('hidden');
+  var res = document.getElementById('diag-result');
+  res.classList.remove('hidden');
+  res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+<footer class="py-10 text-center text-sm" style="background:#232323; color: rgba(245,242,235,0.6);">
+  <p>© 2026 CAPI CRM • Atendimento que vende. Escala que cresce.</p>
+</footer>
+</body>
+</html>
