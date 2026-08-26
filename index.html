@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+  <script defer data-domain="SEUDOMINIO.com.br" src="https://plausible.io/js/script.js"></script>
 </head>
 <body id="top" style="background: var(--bg-cream); color: var(--brand-dark);">
 
@@ -60,7 +61,7 @@
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <!-- TROQUE pelo seu link de WhatsApp/agenda -->
-        <a href="#contato" class="btn-primary rounded-xl px-8 py-4 text-center">Agendar diagnóstico gratuito</a>
+        <a href="diagnostico.html" class="btn-primary rounded-xl px-8 py-4 text-center">Agendar diagnóstico gratuito</a>
         <a href="#planos" class="btn-secondary rounded-xl px-8 py-4 text-center">Ver planos</a>
       </div>
       <p class="trust-strip mt-6">✔ API oficial do WhatsApp&nbsp;&nbsp;✔ Implantação em 7 dias&nbsp;&nbsp;✔ Suporte mineiro, de gente</p>
@@ -131,7 +132,28 @@
 </section>
 
 <!-- ============ 4 PILARES ============ -->
-<section id="solucoes" class="py-24" style="background: var(--bg-tint);">
+<!-- ============ PROGRAMA PIONEIRO ============ -->
+<section class="pb-16" style="background: var(--bg-cream);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="card-elevated rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border: 1px dashed var(--brand-cta);">
+      <p style="color: var(--brand-dark);">⚡ <strong>Programa Pioneiro:</strong> 5 vagas com 50% no setup + garantia de 30 dias.</p>
+      <a href="diagnostico.html" class="btn-primary rounded-xl px-6 py-3 whitespace-nowrap">Quero ser pioneiro</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELETOR DE NICHOS ============ -->
+<section class="py-10" style="background: var(--bg-tint); border-top: 1px solid #E7E1D6;">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-sm font-semibold" style="color: var(--brand-primary-dark);">A CAPI fala a língua do seu negócio:</p>
+    <div class="flex flex-wrap justify-center gap-3 mt-4">
+      <a href="diagnostico.html" class="btn-secondary rounded-full px-6 py-3">🏠 Corretores e imobiliárias</a>
+      <a href="diagnostico.html" class="btn-secondary rounded-full px-6 py-3">🦷 Clínicas e saúde</a>
+      <a href="diagnostico.html" class="rounded-full px-6 py-3 font-semibold" style="color: var(--brand-primary-dark); border: 2px dashed var(--brand-primary);">💬 Meu nicho não está aqui</a>
+    </div>
+  </div>
+</section>
+  <section id="solucoes" class="py-24" style="background: var(--bg-tint);">
   <div class="max-w-7xl mx-auto px-6">
     <h2 class="font-display font-bold text-3xl lg:text-4xl text-center max-w-3xl mx-auto" style="color: var(--brand-dark);">Um sistema completo para vender mais – sem perder nenhum contato pelo caminho</h2>
     <p class="text-center mt-4 max-w-2xl mx-auto" style="color: rgba(44,44,44,0.7);">Quatro pilares integrados que tiram o peso operacional da sua equipe e transformam atendimento em vendas previsíveis.</p>
@@ -352,7 +374,7 @@
     <h2 class="font-display font-bold text-3xl lg:text-5xl" style="color: #F5F2EB;">Comece a vender melhor hoje – sem sobrecarregar seu time.</h2>
     <p class="mt-6" style="color: rgba(245,242,235,0.8);">Ative sua operação em minutos e deixe a IA cuidar do CRM e do funil para você.</p>
     <!-- TROQUE pelo seu WhatsApp ou agenda -->
-    <a href="https://wa.me/5531900000000" class="btn-primary inline-block rounded-xl px-10 py-5 mt-8">Agendar diagnóstico gratuito</a>
+    <a href="diagnostico.html" class="btn-primary inline-block rounded-xl px-10 py-5 mt-8">Agendar diagnóstico gratuito</a>
   </div>
 </section>
 
@@ -391,6 +413,10 @@
   </div>
 </footer>
 
+  <!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/5531900000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+   class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg"
+   style="background: var(--brand-primary);">🦫</a>
 <script src="main.js"></script>
 <script>
 // Contadores do hero
