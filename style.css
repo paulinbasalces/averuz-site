@@ -164,3 +164,14 @@ z-index: 5;
 animation: none;
 }
 }
+/* ============ DIVISORES DE SEÇÃO (cada um único) ============ */
+.divider {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+.divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
