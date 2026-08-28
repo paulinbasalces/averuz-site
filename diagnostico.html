@@ -181,6 +181,11 @@ document.getElementById('diag-form').addEventListener('submit', function (e) {
     'Olá! Sou ' + nome + ' (' + nicho + '). Fiz o diagnóstico no site da CAPI: score ' + score +
     '/16 e ~' + brl + '/mês em risco. Quero falar com a Capi. 🦫');
 
+  if (window.umami) {
+  window.umami.track('formulario_enviado');
+  window.umami.track('resultado_gerado', { score: score, nicho: nicho });
+}
+  
   this.classList.add('hidden');
   var res = document.getElementById('diag-result');
   res.classList.remove('hidden');
