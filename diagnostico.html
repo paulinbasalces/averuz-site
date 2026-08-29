@@ -175,7 +175,7 @@ document.getElementById('diag-form').addEventListener('submit', function (e) {
   document.getElementById('r-verdict').textContent = verdict;
   document.getElementById('r-verdict').style.color = cor;
   document.getElementById('r-score').textContent = 'Score de risco: ' + score + '/16 • ' + nicho;
-  document.getElementById('r-text').innerHTML = nome + ', com ~<strong>' + leadsMid + ' leads/mês</strong> e esse tempo de resposta, cerca de <strong>' + risco + ' leads/mês ficam em risco</strong>. Se a CAPI recuperar só 1 em cada 10 — sendo bem conservador —, no seu ticket isso é ~<strong>' + brl + '/mês</strong>. O plano Solo completo custa R$ 197. A conta se paga com folga.';
+  document.getElementById('r-text').innerHTML = nome + ', com ~<strong>' + leadsMid + ' leads/mês</strong> e esse tempo de resposta, cerca de <strong>' + risco + ' leads/mês ficam em risco</strong>. Se a CAPI recuperar só 1 em cada 10 — sendo bem conservador —, no seu ticket isso é ~<strong>' + brl + '/mês</strong>. O plano Solo custa R$ 197 — ou seja, esse resgate paga ' + Math.max(1, Math.round(valor / 197)) + 'x o investimento.';
   document.getElementById('r-ctas').innerHTML = ctas;
   document.getElementById('r-whats').href = 'https://wa.me/5531984470001?text=' + encodeURIComponent('Olá! Sou ' + nome + ' (' + nicho + '). Fiz o diagnóstico no site da CAPI: score ' + score + '/16 e ~' + brl + '/mês em risco. Quero falar com a Capi. 🦫');
 
