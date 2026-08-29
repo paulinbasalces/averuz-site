@@ -133,60 +133,54 @@
 <script>
 document.getElementById('diag-form').addEventListener('submit', function (e) {
   e.preventDefault();
+
   var g = function (id) { return document.getElementById(id).value; };
-  var nome = g('nome').split(' ')[0];
+  var nome = (g('nome').split(' ')[0]) || 'visitante';
   var nicho = g('nicho');
-  var L = g('leads').split('|');   var leadsMid = +L[0], leadsPts = +L[1];
-  var R = g('resp').split('|');    var fator = +R[0], respPts = +R[1];
-  var orgPts = +g('org');
-  var ticket = +g('ticket');
+
+  var L = g('leads').split('|'); var leadsMid = +L[0]; var leadsPts = +L[1];
+  var R = g('resp').split('|');  var fator = +R[0];    var respPts = +R[1];
+  var orgPts  = +g('org');
+  var ticket  = +g('ticket');
   var perdPts = +g('perd');
 
-  var score = leadsPts + respPts + orgPts + perdPts; // 4 a 16
+  var score = leadsPts + respPts + orgPts + perdPts;
   var risco = Math.round(leadsMid * fator);
   var recup = Math.max(1, Math.round(risco * 0.10));
   var valor = recup * ticket;
   var brl = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
 
+  if (window.umami) {
+    window.umami.track('formulario_enviado');
+    window.umami.track('resultado_gerado', { score: score, nicho: nicho });
+  }
+
   var verdict, cor, ctas;
   if (score >= 12) {
     verdict = '🔴 Alerta vermelho: seu WhatsApp está deixando dinheiro na mesa.';
     cor = 'var(--alert-text)';
-    ctas =
-      '<a href="https://wa.me/5531984470001" target="_blank" rel="noopener" class="btn-primary rounded-xl px-6 py-4 text-center">Garantir vaga de Pioneiro</a>' +
-      '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
+    ctas = '<a href="https://wa.me/5531984470001" target="_blank" rel="noopener" class="btn-primary rounded-xl px-6 py-4 text-center">Garantir vaga de Pioneiro</a>' +
+           '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
   } else if (score >= 8) {
     verdict = '🟡 Tá escapando dinheiro — e follow-up resolveria.';
     cor = 'var(--brand-cta)';
-    ctas =
-      '<a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Solo" class="btn-primary rounded-xl px-6 py-4 text-center">Começar teste grátis de 7 dias</a>' +
-      '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
+    ctas = '<a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Solo" class="btn-primary rounded-xl px-6 py-4 text-center">Começar teste grátis de 7 dias</a>' +
+           '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
   } else {
     verdict = '🟢 No controle — mas dá pra escalar sem sofrer.';
     cor = 'var(--brand-primary-dark)';
-    ctas =
-      '<a href="index.html#como-funciona" class="btn-primary rounded-xl px-6 py-4 text-center">Ver a CAPI em ação</a>' +
-      '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
+    ctas = '<a href="index.html#como-funciona" class="btn-primary rounded-xl px-6 py-4 text-center">Ver a CAPI em ação</a>' +
+           '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
   }
 
   document.getElementById('r-verdict').textContent = verdict;
   document.getElementById('r-verdict').style.color = cor;
   document.getElementById('r-score').textContent = 'Score de risco: ' + score + '/16 • ' + nicho;
-  document.getElementById('r-text').innerHTML =
-    nome + ', com ~<strong>' + leadsMid + ' leads/mês</strong> e esse tempo de resposta, cerca de <strong>' + risco +
-    ' leads/mês ficam em risco</strong>. Se a CAPI recuperar só 1 em cada 10 — sendo bem conservador —, no seu ticket isso é ~<strong>' +
-    brl + '/mês</strong>. O plano Solo completo custa R$ 197. A conta se paga com folga.';
+  document.getElementById('r-text').innerHTML = nome + ', com ~<strong>' + leadsMid + ' leads/mês</strong> e esse tempo de resposta, cerca de <strong>' + risco + ' leads/mês ficam em risco</strong>. Se a CAPI recuperar só 1 em cada 10 — sendo bem conservador —, no seu ticket isso é ~<strong>' + brl + '/mês</strong>. O plano Solo completo custa R$ 197. A conta se paga com folga.';
   document.getElementById('r-ctas').innerHTML = ctas;
-  document.getElementById('r-whats').href = 'https://wa.me/5531984470001?text=' + encodeURIComponent(
-    'Olá! Sou ' + nome + ' (' + nicho + '). Fiz o diagnóstico no site da CAPI: score ' + score +
-    '/16 e ~' + brl + '/mês em risco. Quero falar com a Capi. 🦫');
+  document.getElementById('r-whats').href = 'https://wa.me/5531984470001?text=' + encodeURIComponent('Olá! Sou ' + nome + ' (' + nicho + '). Fiz o diagnóstico no site da CAPI: score ' + score + '/16 e ~' + brl + '/mês em risco. Quero falar com a Capi. 🦫');
 
-  if (window.umami) {
-  window.umami.track('formulario_enviado');
-  window.umami.track('resultado_gerado', { score: score, nicho: nicho });
-}
-  
-  this.classList.add('hidden');
+  document.getElementById('diag-form').classList.add('hidden');
   var res = document.getElementById('diag-result');
   res.classList.remove('hidden');
   res.scrollIntoView({ behavior: 'smooth', block: 'start' });
