@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CAPI CRM para Saúde | Menos faltas, mais pacientes em tratamento</title>
+<title>CAPI CRM para Saúde | Nenhuma agenda vazia, nenhum paciente esquecido</title>
 <meta name="description" content="CRM com IA para psicólogos, psiquiatras e profissionais de saúde: confirme consultas, reduza faltas e recupere pacientes — com sigilo e LGPD." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235B7553'/%3E%3Ctext x='30' y='45' font-family='Sora,Arial,sans-serif' font-size='34' font-weight='800' text-anchor='middle' fill='%23F5F2EB'%3EC%3C/text%3E%3Ccircle cx='50' cy='46' r='6' fill='%23CC5500'/%3E%3C/svg%3E" />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -11,64 +11,70 @@
 <link rel="stylesheet" href="style.css" />
 <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
 <style>
-  /* LP Saúde — paleta invertida (base escura) */
-  .card-dark { background: rgba(245,242,235,0.06); border: 1px solid rgba(245,242,235,0.15); }
+  /* LP Saúde — camada de cores unificada das LPs */
+  .card-dark { background: rgba(245,242,235,0.08); border: 1px solid rgba(245,242,235,0.18); }
   .btn-ghost { background: transparent; color: #F5F2EB; border: 2px solid rgba(245,242,235,0.6); font-weight: 600; transition: background .2s ease; }
   .btn-ghost:hover { background: rgba(245,242,235,0.1); }
-  .sage-light { color: #A9C3A0; }
+  .cream-soft { color: #C9D8C2; }
 </style>
 </head>
-<body style="background: var(--brand-dark); color: #F5F2EB;">
+<body style="background: var(--brand-primary-dark); color: #F5F2EB;">
 
-<!-- HEADER (dark) -->
-<header class="sticky top-0 z-50 backdrop-blur" style="background: rgba(44,44,44,.92); border-bottom: 1px solid rgba(245,242,235,.12);">
+<!-- HEADER -->
+<header class="sticky top-0 z-50 backdrop-blur" style="background: rgba(70,88,63,.92); border-bottom: 1px solid rgba(245,242,235,.15);">
   <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
     <a href="index.html" class="flex items-baseline font-display" aria-label="CAPI CRM">
       <span style="color:#F5F2EB;font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;">CAPI</span>
-      <span class="sage-light" style="font-weight:600;font-size:1.4rem;margin-left:.35rem;">CRM</span>
+      <span class="cream-soft" style="font-weight:600;font-size:1.4rem;margin-left:.35rem;">CRM</span>
       <span style="color:var(--brand-cta);font-weight:800;font-size:1.4rem;">.</span>
     </a>
     <a href="diagnostico.html?nicho=saude" class="btn-primary rounded-xl px-6 py-3" data-umami-event="cta_diagnostico" data-umami-event-origem="lp_saude_header">Diagnóstico gratuito</a>
   </div>
 </header>
 
-<!-- HERO (grafite) -->
+<!-- HERO -->
 <section class="relative overflow-hidden">
-  <div class="hero-blob-sage" style="background: rgba(91,117,83,.25);" aria-hidden="true"></div>
   <div class="hero-blob-terra" aria-hidden="true"></div>
+  <div class="hero-blob-sage" style="background: rgba(44,44,44,.35); top:auto; bottom:-160px; right:-100px;" aria-hidden="true"></div>
   <div class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center relative">
-    <span class="eyebrow-pill" style="background: transparent; border-color: var(--brand-primary); color: #A9C3A0;">🩺&nbsp; Para psicólogos, psiquiatras e profissionais de saúde</span>
+    <span class="eyebrow-pill" style="background: transparent; border-color: rgba(245,242,235,.5); color: #C9D8C2;">🩺&nbsp; Para psicólogos, psiquiatras e profissionais de saúde</span>
     <h1 class="font-display font-extrabold text-4xl lg:text-6xl leading-[1.12] mt-6" style="color: #F5F2EB;">
-      Nenhum paciente esquecido.<br />
-      <span class="hl-underline sage-light">Nenhuma agenda vazia.</span>
+      O paciente chamou. Você estava em atendimento.<br />
+      <span class="hl-underline cream-soft">A IA respondeu. A consulta voltou.</span>
     </h1>
-    <p class="mt-6 text-lg leading-relaxed mx-auto max-w-2xl" style="color: rgba(245,242,235,0.8);">
-      O CAPI CRM centraliza WhatsApp, Instagram e agenda do seu consultório ou clínica. O Motor UAI confirma consultas, lembra retornos, reagenda faltas e preenche o CRM — com o sigilo que a saúde exige.
+    <p class="mt-6 text-lg leading-relaxed mx-auto max-w-2xl" style="color: rgba(245,242,235,0.85);">
+      O CAPI CRM centraliza WhatsApp, Instagram e e-mail do consultório ou clínica. O Motor UAI confirma consultas, lembra retornos, reagenda faltas e preenche o CRM — com o sigilo que a saúde exige.
     </p>
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
       <a href="diagnostico.html?nicho=saude" class="btn-primary rounded-xl px-8 py-4" data-umami-event="cta_diagnostico" data-umami-event-origem="lp_saude_hero">Ver quanto minha agenda está vazando</a>
       <a href="#planos" class="btn-ghost rounded-xl px-8 py-4">Ver planos</a>
     </div>
-    <p class="mt-6 text-sm" style="color: rgba(245,242,235,0.6);">✔ LGPD e sigilo do paciente&nbsp;&nbsp;✔ API oficial do WhatsApp&nbsp;&nbsp;✔ Implantação em 7 dias</p>
+    <p class="mt-6 text-sm" style="color: rgba(245,242,235,0.65);">✔ LGPD e sigilo do paciente&nbsp;&nbsp;✔ API oficial do WhatsApp&nbsp;&nbsp;✔ Implantação em 7 dias</p>
 
-    <div class="grid sm:grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto">
-      <div class="card-dark rounded-xl p-5"><p class="font-display font-extrabold text-2xl sage-light">−38%</p><p class="text-xs mt-1" style="color: rgba(245,242,235,0.6);">de faltas com confirmação automática*</p></div>
-      <div class="card-dark rounded-xl p-5"><p class="font-display font-extrabold text-2xl sage-light">94%</p><p class="text-xs mt-1" style="color: rgba(245,242,235,0.6);">das consultas confirmadas pela IA*</p></div>
-      <div class="card-dark rounded-xl p-5"><p class="font-display font-extrabold text-2xl" style="color: var(--cta-on-dark);">2s</p><p class="text-xs mt-1" style="color: rgba(245,242,235,0.6);">para responder um paciente novo*</p></div>
+    <div class="flex flex-wrap justify-center gap-3 mt-8">
+      <span class="card-dark rounded-full px-5 py-2 text-sm">🛋️ Psicólogo(a)</span>
+      <span class="card-dark rounded-full px-5 py-2 text-sm">🩺 Psiquiatra</span>
+      <span class="card-dark rounded-full px-5 py-2 text-sm">🧠 Terapeutas e saúde</span>
+    </div>
+
+    <div class="grid sm:grid-cols-3 gap-4 mt-10 max-w-2xl mx-auto">
+      <div class="card-dark rounded-xl p-5"><p class="font-display font-extrabold text-2xl cream-soft">−38%</p><p class="text-xs mt-1" style="color: rgba(245,242,235,0.65);">de faltas com confirmação automática*</p></div>
+      <div class="card-dark rounded-xl p-5"><p class="font-display font-extrabold text-2xl cream-soft">94%</p><p class="text-xs mt-1" style="color: rgba(245,242,235,0.65);">das consultas confirmadas pela IA*</p></div>
+      <div class="card-dark rounded-xl p-5"><p class="font-display font-extrabold text-2xl" style="color: var(--cta-on-dark);">2s</p><p class="text-xs mt-1" style="color: rgba(245,242,235,0.65);">para responder um paciente novo*</p></div>
     </div>
     <p class="text-xs mt-3" style="color: rgba(245,242,235,0.45);">* Exemplo demonstrativo • Métricas variam por operação</p>
   </div>
 </section>
 
-<!-- DOR (sálvia escuro) -->
-<section style="background: var(--brand-primary-dark);">
+<!-- DOR (grafite) -->
+<section style="background: var(--brand-dark);">
   <div class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="font-display font-bold text-2xl lg:text-4xl text-center" style="color: #F5F2EB;">Cada horário vazio custa receita — e cuidado.</h2>
+    <h2 class="font-display font-bold text-2xl lg:text-4xl text-center" style="color: #F5F2EB;">Cada falta é um horário — e um cuidado — que se perde.</h2>
     <div class="grid sm:grid-cols-2 gap-4 mt-10">
-      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.08); border: 1px solid rgba(245,242,235,0.18);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">Falta sem reagendamento: o horário morre vazio.</p></div>
-      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.08); border: 1px solid rgba(245,242,235,0.18);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">Paciente novo chama às 21h — e marca com quem responder primeiro.</p></div>
-      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.08); border: 1px solid rgba(245,242,235,0.18);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">A recepção responde "aceita meu convênio?" pela 5ª vez no dia.</p></div>
-      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.08); border: 1px solid rgba(245,242,235,0.18);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">Paciente some no 3º mês de tratamento — e ninguém percebe.</p></div>
+      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.07); border: 1px solid rgba(245,242,235,0.15);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">Falta sem reagendamento: o horário morre vazio.</p></div>
+      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.07); border: 1px solid rgba(245,242,235,0.15);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">Paciente novo chama às 21h — e marca com quem responder primeiro.</p></div>
+      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.07); border: 1px solid rgba(245,242,235,0.15);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">A recepção responde "aceita meu convênio?" pela 5ª vez no dia.</p></div>
+      <div class="rounded-xl p-5" style="background: rgba(245,242,235,0.07); border: 1px solid rgba(245,242,235,0.15);"><p style="color: var(--cta-on-dark);">✕</p><p class="mt-1" style="color: rgba(245,242,235,0.9);">Paciente some no 3º mês de tratamento — e ninguém percebe.</p></div>
     </div>
   </div>
 </section>
@@ -76,9 +82,9 @@
 <!-- SOLUÇÃO (ilha clara) -->
 <section style="background: var(--bg-cream); color: var(--brand-dark);">
   <div class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="font-display font-bold text-2xl lg:text-4xl text-center">Cuidado na frente. Inteligência nos bastidores.</h2>
+    <h2 class="font-display font-bold text-2xl lg:text-4xl text-center">Você no paciente. A IA na agenda.</h2>
     <div class="grid md:grid-cols-2 gap-6 mt-12">
-      <div class="card-elevated rounded-2xl p-6"><h3 class="font-display font-semibold">Recepção unificada</h3><p class="text-sm mt-2" style="color: rgba(44,44,44,0.7);">WhatsApp, Instagram e agenda em uma tela. Cada conversa vira ficha do paciente, com histórico e próxima ação.</p></div>
+      <div class="card-elevated rounded-2xl p-6"><h3 class="font-display font-semibold">Recepção unificada</h3><p class="text-sm mt-2" style="color: rgba(44,44,44,0.7);">WhatsApp, Instagram e e-mail em uma tela. Cada conversa vira ficha do paciente, com histórico e próxima ação.</p></div>
       <div class="card-elevated rounded-2xl p-6"><h3 class="font-display font-semibold">IA só no administrativo</h3><p class="text-sm mt-2" style="color: rgba(44,44,44,0.7);">Horários, valores, convênios e pagamento. Assunto clínico vai sempre para um humano. Ética em primeiro lugar.</p></div>
       <div class="card-elevated rounded-2xl p-6"><h3 class="font-display font-semibold">Falta que volta pra agenda</h3><p class="text-sm mt-2" style="color: rgba(44,44,44,0.7);">Confirma 48h antes, lembra na véspera e reagenda quem falta — sem a recepção tocar no telefone.</p></div>
       <div class="card-elevated rounded-2xl p-6"><h3 class="font-display font-semibold">Follow-up que acolhe</h3><p class="text-sm mt-2" style="color: rgba(44,44,44,0.7);">Reaproxima quem abandonou o tratamento e chama a lista de espera quando um horário abre.</p></div>
@@ -87,22 +93,22 @@
   </div>
 </section>
 
-<!-- PLANOS (grafite) -->
-<section id="planos" style="background: var(--brand-dark);">
-  <div class="max-w-6xl mx-auto px-6 py-20">
-    <h2 class="font-display font-bold text-2xl lg:text-4xl text-center" style="color: #F5F2EB;">Planos para cada fase do seu cuidado</h2>
+<!-- PLANOS (base sálvia) -->
+<section id="planos" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="font-display font-bold text-2xl lg:text-4xl text-center" style="color: #F5F2EB;">Planos pra cada fase do seu cuidado</h2>
     <div class="grid lg:grid-cols-3 gap-6 mt-12 items-stretch">
-      <div class="card-dark rounded-2xl p-7 flex flex-col">
-        <h3 class="font-display font-bold text-lg" style="color:#F5F2EB;">Solo</h3>
-        <p class="text-sm mt-1" style="color: rgba(245,242,235,0.65);">Consultório individual.</p>
-        <p class="font-display font-extrabold text-3xl mt-4" style="color:#F5F2EB;">R$ 197<span class="text-sm font-medium" style="color: rgba(245,242,235,0.55);">/mês</span></p>
-        <ul class="mt-5 space-y-2 text-sm flex-1" style="color: rgba(245,242,235,0.85);">
+      <div class="rounded-2xl p-7 flex flex-col" style="background: #F5F2EB; color: var(--brand-dark);">
+        <h3 class="font-display font-bold text-lg">Solo</h3>
+        <p class="text-sm mt-1" style="color: rgba(44,44,44,0.65);">Consultório individual.</p>
+        <p class="font-display font-extrabold text-3xl mt-4">R$ 197<span class="text-sm font-medium" style="color: rgba(44,44,44,0.55);">/mês</span></p>
+        <ul class="mt-5 space-y-2 text-sm flex-1" style="color: rgba(44,44,44,0.85);">
           <li>✔ 1 usuário e 1 canal • teste grátis 7 dias</li>
           <li>✔ Jornada do paciente (triagem → alta)</li>
           <li>✔ Confirmação, lembrete e reagendamento</li>
           <li>✔ Follow-up básico de retorno e espera</li>
         </ul>
-        <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Solo" class="btn-ghost rounded-xl px-6 py-3 text-center mt-6" data-umami-event="plano" data-umami-event-plano="solo" data-umami-event-origem="lp_saude">Escolher Solo</a>
+        <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Solo" class="btn-secondary rounded-xl px-6 py-3 text-center mt-6" data-umami-event="plano" data-umami-event-plano="solo" data-umami-event-origem="lp_saude">Escolher Solo</a>
       </div>
       <div class="rounded-2xl p-7 flex flex-col relative" style="background: #F5F2EB; color: var(--brand-dark); border: 2px solid var(--brand-cta);">
         <span class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold" style="background: var(--brand-cta); color:#F5F2EB;">Mais escolhido</span>
@@ -117,28 +123,28 @@
         </ul>
         <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Pro" class="btn-primary rounded-xl px-6 py-3 text-center mt-6" data-umami-event="plano" data-umami-event-plano="pro" data-umami-event-origem="lp_saude">Escolher Pro</a>
       </div>
-      <div class="card-dark rounded-2xl p-7 flex flex-col">
-        <h3 class="font-display font-bold text-lg" style="color:#F5F2EB;">Escala</h3>
-        <p class="text-sm mt-1" style="color: rgba(245,242,235,0.65);">Clínicas multiprofissionais.</p>
-        <p class="font-display font-extrabold text-3xl mt-4" style="color:#F5F2EB;">R$ 1.197<span class="text-sm font-medium" style="color: rgba(245,242,235,0.55);">/mês</span></p>
-        <ul class="mt-5 space-y-2 text-sm flex-1" style="color: rgba(245,242,235,0.85);">
+      <div class="rounded-2xl p-7 flex flex-col" style="background: #F5F2EB; color: var(--brand-dark);">
+        <h3 class="font-display font-bold text-lg">Escala</h3>
+        <p class="text-sm mt-1" style="color: rgba(44,44,44,0.65);">Clínicas multiprofissionais.</p>
+        <p class="font-display font-extrabold text-3xl mt-4">R$ 1.197<span class="text-sm font-medium" style="color: rgba(44,44,44,0.55);">/mês</span></p>
+        <ul class="mt-5 space-y-2 text-sm flex-1" style="color: rgba(44,44,44,0.85);">
           <li>✔ Tudo do Pro • 5 usuários e 3 canais</li>
           <li>✔ Agente IA incluído (confirma e preenche)</li>
           <li>✔ IA treinada com protocolos da clínica</li>
           <li>✔ Café mensal de resultados</li>
         </ul>
-        <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Escala" class="btn-ghost rounded-xl px-6 py-3 text-center mt-6" data-umami-event="plano" data-umami-event-plano="escala" data-umami-event-origem="lp_saude">Escolher Escala</a>
+        <a href="http://app.averuz.ia.br/enrollment/new?product=CAPI+Escala" class="btn-secondary rounded-xl px-6 py-3 text-center mt-6" data-umami-event="plano" data-umami-event-plano="escala" data-umami-event-origem="lp_saude">Escolher Escala</a>
       </div>
     </div>
-    <p class="text-center text-sm mt-8" style="color: rgba(245,242,235,0.55);">Contatos e mensagens ilimitados em todos os planos. • Adicionais: usuário +R$ 147 (teto +1 Solo / +2 Pro) • canal +R$ 97 • Agente IA R$ 697 (só Pro) • redes sociais R$ 97 (só Pro).</p>
+    <p class="text-center text-sm mt-8" style="color: rgba(245,242,235,0.6);">Contatos e mensagens ilimitados em todos os planos. • Adicionais: usuário +R$ 147 (teto +1 Solo / +2 Pro) • canal +R$ 97 • Agente IA R$ 697 (só Pro) • redes sociais R$ 97 (só Pro).</p>
   </div>
 </section>
 
-<!-- CTA FINAL (sálvia) -->
-<section class="text-center" style="background: var(--brand-primary);">
+<!-- CTA FINAL (grafite) -->
+<section class="text-center" style="background: var(--brand-dark);">
   <div class="max-w-3xl mx-auto px-6 py-20">
     <h2 class="font-display font-extrabold text-3xl lg:text-5xl" style="color: #F5F2EB;">Agenda cheia. Pacientes cuidados. Recepção em paz.</h2>
-    <p class="mt-5" style="color: rgba(245,242,235,0.85);">Em 60 segundos você descobre quanto está vazando da sua agenda hoje.</p>
+    <p class="mt-5" style="color: rgba(245,242,235,0.8);">Em 60 segundos você descobre quanto está vazando da sua agenda hoje.</p>
     <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
       <a href="diagnostico.html?nicho=saude" class="btn-primary rounded-xl px-10 py-5" data-umami-event="cta_diagnostico" data-umami-event-origem="lp_saude_final">Fazer meu diagnóstico gratuito</a>
       <a href="https://wa.me/5531984470001" target="_blank" rel="noopener" class="btn-ghost rounded-xl px-8 py-5" data-umami-event="whatsapp" data-umami-event-origem="lp_saude">Falar no WhatsApp</a>
