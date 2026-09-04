@@ -189,5 +189,50 @@ document.getElementById('diag-form').addEventListener('submit', function (e) {
 <footer class="py-10 text-center text-sm" style="background:#232323; color: rgba(245,242,235,0.6);">
   <p>© 2026 CAPI CRM • Atendimento que vende. Escala que cresce.</p>
 </footer>
+
+  <script>
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const nicho = params.get('nicho');
+    const perda = params.get('perda');
+
+    // 1. Pré-seleciona o Nicho
+    if (nicho) {
+        // Se for um <select id="nicho">
+        const selectNicho = document.getElementById('nicho');
+        if (selectNicho) selectNicho.value = nicho;
+        
+        // Se for Radio Button <input name="nicho">
+        const radioNicho = document.querySelector(`input[name="nicho"][value="${nicho}"]`);
+        if (radioNicho) radioNicho.checked = true;
+    }
+
+    // 2. Exibe a Mágica da Perda Calculada
+    if (perda && parseFloat(perda) > 0) {
+        const perdaFmt = parseFloat(perda).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+        
+        // Cria um campo oculto pra mandar pro Motor UAI / Backend
+        const form = document.querySelector('form'); // Ajuste o seletor do seu form se necessário
+        if (form) {
+            const hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = 'perda_vinda_calculadora';
+            hidden.value = perda;
+            form.appendChild(hidden);
+        }
+
+        // Injeta um alerta visual no topo do formulário (Usando a paleta de Alerta do Master Doc)
+        const alerta = document.createElement('div');
+        alerta.style.cssText = "background:#FBEDE6; border:1px solid #E5B49A; color:#B3400F; padding:1.2rem; border-radius:10px; margin-bottom:1.5rem; font-family:'Lexend',sans-serif; font-size:0.95rem; line-height:1.5;";
+        alerta.innerHTML = `💸 <strong>Opa! Vi que a conta da calculadora deu ${perdaFmt}/mês.</strong><br>Agora que a gente sabe o tamanho do rombo, preenche o diagnóstico abaixo. A Capi vai traçar o plano exato pra estancar esse sangramento.`;
+        
+        // Insere o alerta logo após o H1 da página
+        const h1 = document.querySelector('h1');
+        if(h1) {
+            h1.parentNode.insertBefore(alerta, h1.nextSibling);
+        }
+    }
+})();
+</script>
 </body>
 </html>
