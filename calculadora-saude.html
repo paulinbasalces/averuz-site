@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de No-Show | CAPI CRM</title>
+    
+    <!-- Tipografia CAPI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
+
+    <style>
+        :root {
+            /* Paleta CAPI */
+            --sage: #5B7553;
+            --sage-dark: #46583F;
+            --sage-light: #A9C3A0;
+            --cream: #F5F2EB;
+            --tint: #F0F4EE;
+            --terracotta: #CC5500;
+            --terracotta-hover: #A84500;
+            --graphite: #2C2C2C;
+            --border: #E7E1D6;
+            --alert-bg: #FBEDE6;
+            --alert-text: #B3400F;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: var(--cream);
+            color: var(--sage-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--graphite);
+        }
+        .logo span.crm { color: var(--sage); font-weight: 500; }
+        .logo span.dot { color: var(--terracotta); }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            color: var(--graphite);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--sage-dark);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--sage-dark);
+        }
+
+        input {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 1rem;
+            background: var(--tint);
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(91, 117, 83, 0.15);
+        }
+
+        /* REGRA DE OURO: Terracota SÓ para conversão principal */
+        .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            background: var(--terracotta);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--terracotta-hover);
+        }
+
+        /* Tela de Resultado */
+        .hidden { display: none; }
+
+        .result-card {
+            background: var(--alert-bg);
+            border: 1px solid #E5B49A;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .result-value {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--alert-text);
+            margin: 0.5rem 0;
+        }
+
+        .result-sub {
+            font-size: 1.2rem;
+            color: var(--alert-text);
+            font-weight: 500;
+        }
+
+        .result-text {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Botão secundário (WhatsApp) em Grafite/Sálvia para não brigar com o Terracota */
+        .btn-whats {
+            width: 100%;
+            padding: 1rem;
+            background: var(--sage-dark);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .btn-whats:hover {
+            background: var(--graphite);
+        }
+
+        .capi-quote {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--sage);
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CAPI<span class="crm"> CRM</span><span class="dot">.</span></div>
+    </header>
+
+    <!-- CARD 1: FORMULÁRIO -->
+    <div class="card" id="form-card">
+        <h1>Quanto a agenda vazia tá te custando?</h1>
+        <p class="subtitle">Opa! Bora fazer uma conta rápida na ponta do lápis? A Capi preparou essa calculadora pra você ver, sem julgamento, quanto o no-show e a falta de controle tão custando pro seu consultório. É rapidinho!</p>
+        
+        <form id="calc-form">
+            <div class="form-group">
+                <label for="noshow">Quantos pacientes não aparecem (No-Show) por mês?</label>
+                <input type="number" id="noshow" placeholder="Ex: 10" min="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="vazio">Quantas consultas na agenda ficam vazias por mês?</label>
+                <input type="number" id="vazio" placeholder="Ex: 5" min="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ticket">Qual o valor médio da sua consulta?</label>
+                <input type="number" id="ticket" placeholder="Ex: 250" min="0" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Calcular meu prejuízo</button>
+        </form>
+        <p class="capi-quote">"Deixa com a Capi. A conta a gente faz, o lucro você guarda."</p>
+    </div>
+
+    <!-- CARD 2: RESULTADO (Escondido inicialmente) -->
+    <div class="card hidden" id="result-card">
+        <h1>A conta fechou e doeu no bolso! 💸</h1>
+        <p class="subtitle">Olha só o tamanho do rombo que a gente tá falando:</p>
+        
+        <div class="result-card">
+            <p>Prejuízo mensal estimado:</p>
+            <div class="result-value" id="res-mensal">R$ 0</div>
+            <p class="result-sub">Isso dá <strong id="res-anual">R$ 0</strong> por ano!</p>
+        </div>
+
+        <p class="result-text">
+            Dinheiro saindo pela culatra, né? Mas ó, não se preocupa. A Capi não tá aqui pra julgar, tá aqui pra resolver. A gente tem um jeito de estancar esse sangramento e transformar essa agenda vazia em paciente na cadeira.
+        </p>
+
+        <p class="result-text">
+            Clica no botão abaixo, deixa seu WhatsApp e a Capi já te manda um papo reto pra gente reverter esse jogo.
+        </p>
+
+        <a href="#" id="btn-whats" class="btn-whats" target="_blank">
+            💬 Falar com a Capi no WhatsApp
+        </a>
+        
+        <p class="capi-quote">"Papo reto, sem enrolação. Deixa com a Capi!"</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('calc-form');
+        const formCard = document.getElementById('form-card');
+        const resultCard = document.getElementById('result-card');
+        const btnWhats = document.getElementById('btn-whats');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // 1. Pega os dados
+            const noshow = parseInt(document.getElementById('noshow').value) || 0;
+            const vazio = parseInt(document.getElementById('vazio').value) || 0;
+            const ticket = parseFloat(document.getElementById('ticket').value) || 0;
+
+            // 2. Calcula a dor (Lógica matemática simples e implacável)
+            const totalPerdas = noshow + vazio;
+            const perdaMensal = totalPerdas * ticket;
+            const perdaAnual = perdaMensal * 12;
+
+            // 3. Formata para moeda BR
+            const formatBRL = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // 4. Exibe o resultado
+            document.getElementById('res-mensal').innerText = formatBRL(perdaMensal);
+            document.getElementById('res-anual').innerText = formatBRL(perdaAnual);
+
+            // 5. Prepara o link do WhatsApp com a mensagem personalizada (Fluxo Assíncrono)
+            const msgWhats = encodeURIComponent(`Opa, Capi! Fiz a calculadora aqui e vi que meu consultório tá perdendo ${formatBRL(perdaMensal)} por mês. Bora estancar esse sangramento?`);
+            // Número do CAPI conforme Master Doc
+            btnWhats.href = `https://wa.me/5531984470001?text=${msgWhats}`;
+
+            // 6. Analytics (Umami) - Rastreia a conversão com o valor exato
+            if (typeof umami !== 'undefined') {
+                umami.track('calculadora_finalizada', { 
+                    nicho: 'saude', 
+                    perda_estimada: perdaMensal 
+                });
+            }
+
+            // 7. Troca os cards
+            formCard.classList.add('hidden');
+            resultCard.classList.remove('hidden');
+            
+            // Rola pro topo do card de resultado
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
