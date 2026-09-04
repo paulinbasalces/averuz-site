@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Prejuízo | CAPI CRM</title>
+    <meta name="description" content="Descubra em 30 segundos quanto dinheiro você está perdendo por mês. Ferramenta gratuita da CAPI CRM.">
+
+    <!-- Tipografia CAPI (Master Doc §1) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Umami Analytics (Master Doc §4) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
+
+    <style>
+        /* ========================================
+           TOKENS CAPI (Master Doc §1)
+           ======================================== */
+        :root {
+            --sage: #5B7553;
+            --sage-dark: #46583F;
+            --sage-light: #A9C3A0;
+            --cream: #F5F2EB;
+            --tint: #F0F4EE;
+            --terracotta: #CC5500;
+            --terracotta-hover: #A84500;
+            --graphite: #2C2C2C;
+            --graphite-footer: #232323;
+            --border: #E7E1D6;
+            --alert-bg: #FBEDE6;
+            --alert-border: #E5B49A;
+            --alert-text: #B3400F;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: var(--cream);
+            color: var(--sage-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* ========================================
+           HEADER (Minimalista - Micro-página)
+           ======================================== */
+        header {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--graphite);
+            text-decoration: none;
+        }
+        .logo .crm { color: var(--sage); font-weight: 500; }
+        .logo .dot { color: var(--terracotta); }
+
+        /* ========================================
+           MAIN
+           ======================================== */
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 560px;
+            padding: 2.5rem 1.25rem 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--tint);
+            color: var(--sage);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--graphite);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            color: var(--sage-dark);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+           CARD (Formulário + Resultado)
+           ======================================== */
+        .card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+            color: var(--sage-dark);
+        }
+
+        label .hint {
+            font-weight: 300;
+            color: var(--sage);
+            font-size: 0.8rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 1rem;
+            background: var(--tint);
+            transition: border 0.2s, box-shadow 0.2s;
+            color: var(--graphite);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(91, 117, 83, 0.15);
+        }
+
+        /* Botão principal da calculadora: Sálvia Escuro (Terracota é SÓ pro CTA da LP/diagnóstico) */
+        .btn-calc {
+            width: 100%;
+            padding: 1rem;
+            background: var(--sage-dark);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+        .btn-calc:hover { background: var(--graphite); }
+
+        /* ========================================
+           RESULTADO
+           ======================================== */
+        .hidden { display: none !important; }
+
+        .result-alert {
+            background: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--alert-text);
+            font-weight: 500;
+        }
+
+        .result-value {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: var(--alert-text);
+            margin: 0.3rem 0;
+            line-height: 1.2;
+        }
+
+        .result-annual {
+            font-size: 1.1rem;
+            color: var(--alert-text);
+            font-weight: 500;
+        }
+
+        .result-copy {
+            font-size: 0.92rem;
+            color: var(--sage-dark);
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Principal: Terracota (AQUI pode, porque esta página NÃO tem outro CTA terracota.
+           A conversão principal desta micro-página É o diagnóstico.) */
+        .btn-cta {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--terracotta);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s;
+            margin-bottom: 0.75rem;
+        }
+        .btn-cta:hover { background: var(--terracotta-hover); }
+
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 0.85rem;
+            background: transparent;
+            color: var(--sage-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'Lexend', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-secondary:hover {
+            background: var(--tint);
+            border-color: var(--sage);
+        }
+
+        .capi-quote {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--sage);
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ========================================
+           FOOTER (Minimalista)
+           ======================================== */
+        footer {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--sage);
+            border-top: 1px solid var(--border);
+            background: #fff;
+        }
+        footer a { color: var(--sage-dark); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* ========================================
+           SELETOR DE NICHO (quando ?nicho= não é passado)
+           ======================================== */
+        .nicho-selector {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .nicho-btn {
+            display: block;
+            padding: 1rem 1.25rem;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.95rem;
+            color: var(--sage-dark);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: left;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .nicho-btn:hover {
+            border-color: var(--sage);
+            background: var(--tint);
+        }
+        .nicho-btn strong {
+            font-family: 'Sora', sans-serif;
+            color: var(--graphite);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="/" class="logo">CAPI<span class="crm"> CRM</span><span class="dot">.</span></a>
+    </header>
+
+    <main>
+
+        <!-- ============================================
+             TELA 0: SELETOR DE NICHO (fallback)
+             Aparece quando a URL não tem ?nicho=
+             ============================================ -->
+        <div id="tela-nicho" class="hidden">
+            <span class="badge">Ferramenta Gratuita</span>
+            <h1>Descubra quanto dinheiro você tá deixando na mesa</h1>
+            <p class="subtitle">Escolha seu nicho e a Capi calcula seu prejuízo em 30 segundos. Sem cadastro, sem pegadinha.</p>
+            <div class="nicho-selector">
+                <a href="?nicho=saude" class="nicho-btn">🏥 <strong>Saúde</strong> — No-Show e agenda vazia</a>
+                <a href="?nicho=corretor" class="nicho-btn">🏠 <strong>Corretores</strong> — Comissão perdida por demora no Zap</a>
+                <a href="?nicho=advogado" class="nicho-btn">⚖️ <strong>Advogados</strong> — Lead mal qualificado</a>
+            </div>
+        </div>
+
+        <!-- ============================================
+             TELA 1: FORMULÁRIO (dinâmico por nicho)
+             ============================================ -->
+        <div id="tela-form" class="hidden">
+            <span class="badge" id="badge-nicho">Ferramenta Gratuita</span>
+            <h1 id="titulo-form">Quanto a agenda vazia tá te custando?</h1>
+            <p class="subtitle" id="sub-form">Preencha os 3 campos abaixo e descubra o rombo no seu bolso.</p>
+
+            <div class="card">
+                <form id="calc-form">
+                    <!-- Os campos são injetados via JS conforme o nicho -->
+                    <div id="campos-dinamicos"></div>
+                    <button type="submit" class="btn-calc" id="btn-calcular">Calcular meu prejuízo</button>
+                </form>
+                <p class="capi-quote">"Deixa com a Capi. A conta a gente faz, o lucro você guarda."</p>
+            </div>
+        </div>
+
+        <!-- ============================================
+             TELA 2: RESULTADO
+             ============================================ -->
+        <div id="tela-resultado" class="hidden">
+            <span class="badge">Resultado</span>
+            <h1>A conta fechou e doeu no bolso! 💸</h1>
+            <p class="subtitle">Olha só o tamanho do rombo:</p>
+
+            <div class="card">
+                <div class="result-alert">
+                    <p class="result-label">Prejuízo mensal estimado:</p>
+                    <div class="result-value" id="res-mensal">R$ 0</div>
+                    <p class="result-annual">Isso dá <strong id="res-anual">R$ 0</strong> por ano!</p>
+                </div>
+
+                <p class="result-copy" id="copy-resultado">
+                    Dinheiro saindo pelo ralo, né? Mas ó, não se desespera. A Capi não tá aqui pra julgar, tá aqui pra resolver.
+                </p>
+
+                <!-- CTA PRINCIPAL: Terracota (conversão principal DESTA página = ir pro diagnóstico) -->
+                <a href="#" id="btn-diagnostico" class="btn-cta"
+                   data-umami-event="cta_diagnostico"
+                   data-umami-event-origem="calculadora">
+                    🔍 Fazer o Diagnóstico Completo e Estancar Isso
+                </a>
+
+                <!-- CTA Secundário: WhatsApp direto (opção para quem não quer formulário) -->
+                <a href="#" id="btn-whats" class="btn-secondary" target="_blank"
+                   data-umami-event="whatsapp"
+                   data-umami-event-origem="calculadora">
+                    💬 Ou falar direto com a Capi no WhatsApp
+                </a>
+
+                <p class="capi-quote">"Papo reto, sem enrolação. Deixa com a Capi!"</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="/">CAPI CRM</a> · CNPJ 58.345.111/0001-10 ·
+        <a href="/termos-de-uso.html">Termos</a> ·
+        <a href="/politica-de-privacidade.html">Privacidade</a>
+    </footer>
+
+    <script>
+    (function() {
+        /* ========================================
+           CONFIGURAÇÃO DOS NICHOS
+           Cada nicho define: campos, lógica de cálculo, copy e links
+           ======================================== */
+        const NICHOS = {
+            saude: {
+                badge: '🏥 Saúde',
+                titulo: 'Quanto o No-Show tá comendo do seu lucro?',
+                sub: 'Preencha os 3 campos abaixo. A conta é rápida e o susto é garantido.',
+                campos: [
+                    { id: 'noshow', label: 'Pacientes que não aparecem por mês', hint: 'No-Show', placeholder: 'Ex: 10', type: 'number' },
+                    { id: 'vazio', label: 'Horários vazios na agenda por mês', hint: 'buracos na grade', placeholder: 'Ex: 5', type: 'number' },
+                    { id: 'ticket', label: 'Valor médio da consulta (R$)', hint: '', placeholder: 'Ex: 250', type: 'number' }
+                ],
+                calcular: (d) => {
+                    const total = (d.noshow + d.vazio) * d.ticket;
+                    return total;
+                },
+                copy: 'Agenda vazia é dinheiro que você já gastou (aluguel, equipe, luz) e não voltou. A Capi automatiza confirmações e lembretes pra estancar esse sangramento.'
+            },
+            corretor: {
+                badge: '🏠 Corretores',
+                titulo: 'Quanto a demora no Zap tá te custando em comissão?',
+                sub: 'Lead de imóvel esfria em minutos. Veja quanto você perde por não responder na hora.',
+                campos: [
+                    { id: 'leads', label: 'Leads que chegam por mês', hint: 'WhatsApp, portais, site', placeholder: 'Ex: 60', type: 'number' },
+                    { id: 'tempo', label: 'Tempo médio pra responder (minutos)', hint: 'seja honesto!', placeholder: 'Ex: 25', type: 'number' },
+                    { id: 'comissao', label: 'Comissão média por venda (R$)', hint: '', placeholder: 'Ex: 5000', type: 'number' }
+                ],
+                calcular: (d) => {
+                    // Benchmark: responder em <5min = conversão boa.
+                    // Cada 5min de atraso além de 5min = ~12% de leads perdidos (dado de mercado).
+                    // Taxa de conversão base estimada: 8% (imobiliário).
+                    if (d.tempo <= 5) return 0;
+                    const blocosAtraso = Math.ceil((d.tempo - 5) / 5);
+                    const pctPerda = Math.min(blocosAtraso * 0.12, 0.80); // cap em 80%
+                    const leadsPerdidos = d.leads * pctPerda;
+                    const conversaoBase = 0.08;
+                    const vendasPerdidas = leadsPerdidos * conversaoBase;
+                    return vendasPerdidas * d.comissao;
+                },
+                copy: 'Lead de imóvel não espera. Enquanto você demora 20min pra responder, o concorrente já agendou a visita. A Capi responde em segundos, 24/7.'
+            },
+            advogado: {
+                badge: '⚖️ Advogados',
+                titulo: 'Quanto o lead mal qualificado custa pro seu escritório?',
+                sub: 'Atender curioso que não vira cliente é jogar dinheiro de tráfego no lixo.',
+                campos: [
+                    { id: 'leads', label: 'Leads que chegam por mês', hint: 'tráfego pago, site, indicação', placeholder: 'Ex: 40', type: 'number' },
+                    { id: 'desqualificados', label: '% que NÃO vira cliente', hint: 'curiosos, sem perfil', placeholder: 'Ex: 70', type: 'number' },
+                    { id: 'custo_lead', label: 'Custo por lead (R$)', hint: 'quanto você paga no tráfego', placeholder: 'Ex: 25', type: 'number' },
+                    { id: 'ticket', label: 'Valor médio do contrato (R$)', hint: '', placeholder: 'Ex: 3000', type: 'number' }
+                ],
+                calcular: (d) => {
+                    const pct = d.desqualificados / 100;
+                    // Custo jogado fora em tráfego
+                    const custoJogado = d.leads * pct * d.custo_lead;
+                    // Receita perdida (estimando que 10% dos desqualificados poderiam ser salvos com triagem)
+                    const receitaPerdida = d.leads * pct * 0.10 * d.ticket;
+                    return custoJogado + receitaPerdida;
+                },
+                copy: 'Seu tempo é caro demais pra ficar atendendo curioso no WhatsApp. A Capi faz a triagem automática e só passa pro advogado quem realmente tem perfil.'
+            }
+        };
+
+        /* ========================================
+           INICIALIZAÇÃO
+           ======================================== */
+        const params = new URLSearchParams(window.location.search);
+        const nicho = params.get('nicho');
+
+        const telaNicho = document.getElementById('tela-nicho');
+        const telaForm = document.getElementById('tela-form');
+        const telaResultado = document.getElementById('tela-resultado');
+
+        // Se não tem nicho na URL, mostra o seletor
+        if (!nicho || !NICHOS[nicho]) {
+            telaNicho.classList.remove('hidden');
+            return;
+        }
+
+        const config = NICHOS[nicho];
+
+        // Popula a tela do formulário
+        document.getElementById('badge-nicho').textContent = config.badge;
+        document.getElementById('titulo-form').textContent = config.titulo;
+        document.getElementById('sub-form').textContent = config.sub;
+        document.title = `${config.titulo} | CAPI CRM`;
+
+        // Injeta os campos dinamicamente
+        const container = document.getElementById('campos-dinamicos');
+        config.campos.forEach(c => {
+            const div = document.createElement('div');
+            div.className = 'form-group';
+            div.innerHTML = `
+                <label for="${c.id}">${c.label} ${c.hint ? `<span class="hint">(${c.hint})</span>` : ''}</label>
+                <input type="${c.type}" id="${c.id}" placeholder="${c.placeholder}" min="0" step="any" required>
+            `;
+            container.appendChild(div);
+        });
+
+        telaForm.classList.remove('hidden');
+
+        /* ========================================
+           CÁLCULO
+           ======================================== */
+        document.getElementById('calc-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Coleta os dados dinamicamente
+            const dados = {};
+            config.campos.forEach(c => {
+                dados[c.id] = parseFloat(document.getElementById(c.id).value) || 0;
+            });
+
+            // Calcula
+            const perdaMensal = Math.round(config.calcular(dados));
+            const perdaAnual = perdaMensal * 12;
+
+            // Formata
+            const fmt = (v) => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+
+            // Exibe
+            document.getElementById('res-mensal').textContent = fmt(perdaMensal);
+            document.getElementById('res-anual').textContent = fmt(perdaAnual);
+            document.getElementById('copy-resultado').textContent = config.copy;
+
+            // Links de conversão (Master Doc §2 e §5)
+            // CTA Diagnóstico: joga pro diagnostico.html com nicho e perda
+            const diagUrl = `/diagnostico.html?nicho=${nicho}&perda=${perdaMensal}`;
+            document.getElementById('btn-diagnostico').href = diagUrl;
+
+            // WhatsApp: mensagem pré-preenchida com a dor (Fluxo Assíncrono §5)
+            const msg = encodeURIComponent(
+                `Opa, Capi! Fiz a calculadora de ${config.badge.replace(/[^\w\s]/g, '').trim()} e vi que tô perdendo ${fmt(perdaMensal)}/mês. [TAG: CALCULADORA_${nicho.toUpperCase()}] Quero fazer o diagnóstico completo.`
+            );
+            document.getElementById('btn-whats').href = `https://wa.me/5531984470001?text=${msg}`;
+
+            // Umami (Master Doc §4) - reutiliza evento oficial
+            if (typeof umami !== 'undefined') {
+                umami.track('resultado_gerado', {
+                    tipo: 'calculadora',
+                    nicho: nicho,
+                    perda_estimada: perdaMensal,
+                    score: 0
+                });
+            }
+
+            // Troca telas
+            telaForm.classList.add('hidden');
+            telaResultado.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    })();
+    </script>
+</body>
+</html>
