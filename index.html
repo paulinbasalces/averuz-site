@@ -86,7 +86,7 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#planos">Planos</a>
     </nav>
-    <button id="dark-toggle" aria-label="Alternar modo escuro">🌙</button>
+    <button id="dark-toggle" aria-label="Alternar modo escuro"></button>
     <a href="#planos" class="btn-primary" data-umami-event="cta_planos" data-umami-event-origem="header">Assinar</a>
   </header>
 
@@ -97,130 +97,132 @@
       <div class="hero-blob-terra"></div>
       
       <div class="container" style="position: relative; z-index: 2; padding: 4rem 2rem;">
-        <span class="eyebrow-pill animate-fade-in-up">
-          <span class="pulse-glow" style="width: 8px; height: 8px; background: var(--brand-cta); border-radius: 50%; display: inline-block;"></span>
-          Atendimento que vende. Escala que cresce.
-        </span>
-        
-        <h1 class="font-display animate-fade-in-up" style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--heading); margin: 1.5rem 0 1rem; line-height: 1.1;">
-          Nenhum lead esquecido.<br>
-          <span class="hl-underline">Nenhuma conversa perdida.</span>
-        </h1>
-        
-        <p class="animate-fade-in-up" style="font-size: 1.15rem; color: var(--text-body); max-width: 600px; margin-bottom: 2rem;">
-          O CAPI CRM centraliza seu WhatsApp e Instagram em um só painel.<br>
-          O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.
-        </p>
-        
-        <div class="animate-fade-in-up" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-          <a href="diagnostico.html" class="btn-primary" 
-             data-umami-event="cta_diagnostico" 
-             data-umami-event-origem="hero">
-             Agendar diagnóstico gratuito
-          </a>
-          <a href="#planos" class="btn-secondary" 
-             data-umami-event="cta_planos" 
-             data-umami-event-origem="hero">
-             Ver planos
-          </a>
-        </div>
-        
-        <div class="trust-strip animate-fade-in-up">
-          ✔ API oficial do WhatsApp &nbsp;&nbsp; ✔ Implantação em 7 dias &nbsp;&nbsp; ✔ Suporte mineiro, de gente
-        </div>
-        
-        <!-- Dashboard Mockup Animado -->
-        <div class="card-elevated animate-fade-in-up" style="margin-top: 3rem; padding: 2rem; position: relative;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <span class="eyebrow-pill" style="font-size: 0.75rem;">Sistema ativo</span>
-              <p style="font-size: 0.85rem; color: var(--text-soft); margin-top: 0.5rem;">Atualizado agora</p>
-            </div>
-            <p style="font-size: 0.8rem; color: var(--text-faint); font-style: italic;">* Exemplo demonstrativo • Métricas variam por operação</p>
-          </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
           
-          <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-            <div style="text-align: center;">
-              <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-primary);">0</div>
-              <p style="font-size: 0.9rem; color: var(--text-soft);">Conversas hoje</p>
+          <!-- Texto do Hero -->
+          <div>
+            <span class="eyebrow-pill animate-fade-in-up">
+              <span class="pulse-glow" style="width: 8px; height: 8px; background: var(--brand-cta); border-radius: 50%; display: inline-block;"></span>
+              Atendimento que vende. Escala que cresce.
+            </span>
+            
+            <h1 class="font-display animate-fade-in-up" style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--heading); margin: 1.5rem 0 1rem; line-height: 1.1;">
+              Nenhum lead esquecido.<br>
+              <span class="hl-underline">Nenhuma conversa perdida.</span>
+            </h1>
+            
+            <p class="animate-fade-in-up" style="font-size: 1.15rem; color: var(--text-body); max-width: 600px; margin-bottom: 2rem;">
+              O CAPI CRM centraliza seu WhatsApp e Instagram em um só painel.
+              O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.
+            </p>
+            
+            <div class="animate-fade-in-up" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+              <a href="diagnostico.html" class="btn-primary" 
+                 data-umami-event="cta_diagnostico" 
+                 data-umami-event-origem="hero">
+                 Agendar diagnóstico gratuito
+              </a>
+              <a href="#planos" class="btn-secondary" 
+                 data-umami-event="cta_planos" 
+                 data-umami-event-origem="hero">
+                 Ver planos
+              </a>
             </div>
-            <div style="text-align: center;">
-              <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-cta);">0%</div>
-              <p style="font-size: 0.9rem; color: var(--text-soft);">Resolvidas por IA</p>
-            </div>
-            <div style="text-align: center;">
-              <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-primary-dark);">R$ 0k</div>
-              <p style="font-size: 0.9rem; color: var(--text-soft);">Vendas geradas</p>
+            
+            <div class="trust-strip animate-fade-in-up">
+              ✔ API oficial do WhatsApp &nbsp;&nbsp; ✔ Implantação em 7 dias &nbsp;&nbsp; ✔ Suporte mineiro, de gente
             </div>
           </div>
           
-          <!-- Chat Mockup -->
-          <div style="background: var(--bg-tint); border-radius: 12px; padding: 1.5rem; space-y: 1rem;">
-            <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-soft);">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--heading);">MC - Maria Clara</strong>
-                <span style="font-size: 0.8rem; color: var(--text-soft);">IA respondeu</span>
+          <!-- Dashboard Mockup Animado -->
+          <div class="card-elevated animate-fade-in-up" style="padding: 2rem; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <span class="eyebrow-pill" style="font-size: 0.75rem;">Sistema ativo</span>
+                <p style="font-size: 0.85rem; color: var(--text-soft); margin-top: 0.5rem;">Atualizado agora</p>
               </div>
-              <p style="color: var(--text-body); margin-top: 0.5rem;">Quero saber mais sobre o plano Pro...</p>
+              <p style="font-size: 0.8rem; color: var(--text-faint); font-style: italic;">* Exemplo demonstrativo • Métricas variam por operação</p>
             </div>
-            <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-soft);">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--heading);">RF - Ricardo Ferreira</strong>
-                <span style="font-size: 0.8rem; color: var(--brand-primary);">Negociação</span>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+              <div style="text-align: center;">
+                <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-primary);">847</div>
+                <p style="font-size: 0.9rem; color: var(--text-soft);">Conversas hoje</p>
               </div>
-              <p style="color: var(--text-body); margin-top: 0.5rem;">Fechado! Vou assinar o anual...</p>
+              <div style="text-align: center;">
+                <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-cta);">94%</div>
+                <p style="font-size: 0.9rem; color: var(--text-soft);">Resolvidas por IA</p>
+              </div>
+              <div style="text-align: center;">
+                <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--brand-primary-dark);">R$ 48k</div>
+                <p style="font-size: 0.9rem; color: var(--text-soft);">Vendas geradas</p>
+              </div>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="color: var(--heading);">JL - Julia Lima</strong>
-                <span style="font-size: 0.8rem; color: var(--brand-cta);">● IA respondeu em 2s</span>
+            
+            <!-- Chat Mockup -->
+            <div style="background: var(--bg-tint); border-radius: 12px; padding: 1.5rem;">
+              <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-soft);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: var(--heading);">MC - Maria Clara</strong>
+                  <span style="font-size: 0.8rem; color: var(--text-soft);">IA respondeu</span>
+                </div>
+                <p style="color: var(--text-body); margin-top: 0.5rem; font-size: 0.9rem;">Quero saber mais sobre o plano Pro...</p>
               </div>
-              <p style="color: var(--text-body); margin-top: 0.5rem;">Quanto custa o plano Pro?</p>
+              <div style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-soft);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: var(--heading);">RF - Ricardo Ferreira</strong>
+                  <span style="font-size: 0.8rem; color: var(--brand-primary);">Negociação</span>
+                </div>
+                <p style="color: var(--text-body); margin-top: 0.5rem; font-size: 0.9rem;">Fechado! Vou assinar o anual...</p>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: var(--heading);">JL - Julia Lima</strong>
+                  <span style="font-size: 0.8rem; color: var(--brand-cta);">● IA respondeu em 2s</span>
+                </div>
+                <p style="color: var(--text-body); margin-top: 0.5rem; font-size: 0.9rem;">Quanto custa o plano Pro?</p>
+              </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
 
-    <!-- DIVISOR -->
-    <div class="divider">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0 C400,120 800,120 1200,0 L1200,120 L0,120 Z" fill="var(--bg-cream)"></path>
-      </svg>
-    </div>
-
     <!-- BANNER PIONEIRO -->
-    <section style="background: var(--alert-bg); padding: 2rem; text-align: center;">
+    <section style="padding: 2rem 0;">
       <div class="container">
-        <p style="color: var(--alert-text); font-weight: 600; margin-bottom: 1rem;">
-           Programa Pioneiro: 5 vagas com 50% no setup + garantia de 30 dias.
-        </p>
-        <a href="diagnostico.html" class="btn-primary" 
-           data-umami-event="cta_pioneiro" 
-           data-umami-event-origem="banner_pioneiro">
-           Quero ser pioneiro
-        </a>
+        <div class="card-elevated" style="background: var(--alert-bg); border: 1px solid var(--alert-border); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <p style="color: var(--alert-text); font-weight: 600; margin: 0;">
+             Programa Pioneiro: 5 vagas com 50% no setup + garantia de 30 dias.
+          </p>
+          <a href="diagnostico.html" class="btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;"
+             data-umami-event="cta_pioneiro" 
+             data-umami-event-origem="banner_pioneiro">
+             Quero ser pioneiro
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- NICHOS -->
-    <section style="padding: 3rem 0; text-align: center;">
+    <section style="padding: 2rem 0; text-align: center;">
       <div class="container">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 2rem;">
+        <h2 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin-bottom: 1.5rem;">
           A CAPI fala a língua do seu negócio:
         </h2>
-        <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
-          <a href="corretores.html" class="card-elevated" style="padding: 1.5rem; text-decoration: none; color: var(--brand-primary-dark); font-weight: 600;" 
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="corretores.html" class="card-elevated" style="padding: 1rem 1.5rem; text-decoration: none; color: var(--brand-primary-dark); font-weight: 600;" 
              data-umami-event="cta_nicho" 
              data-umami-event-nicho="corretor">
-             🏠 Corretores e imobiliárias
+              Corretores e imobiliárias
           </a>
-          <a href="saude.html" class="card-elevated" style="padding: 1.5rem; text-decoration: none; color: var(--brand-primary-dark); font-weight: 600;" 
+          <a href="saude.html" class="card-elevated" style="padding: 1rem 1.5rem; text-decoration: none; color: var(--brand-primary-dark); font-weight: 600;" 
              data-umami-event="cta_nicho" 
              data-umami-event-nicho="saude">
              🦷 Clínicas e saúde
           </a>
-          <a href="diagnostico.html" class="card-elevated" style="padding: 1.5rem; text-decoration: none; color: var(--brand-primary-dark); font-weight: 600;" 
+          <a href="diagnostico.html" class="card-elevated" style="padding: 1rem 1.5rem; text-decoration: none; color: var(--brand-primary-dark); font-weight: 600;" 
              data-umami-event="cta_diagnostico" 
              data-umami-event-origem="nicho_outro">
              💬 Meu nicho não está aqui
@@ -229,24 +231,17 @@
       </div>
     </section>
 
-    <!-- DIVISOR -->
-    <div class="divider">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,120 C400,0 800,0 1200,120 L1200,0 L0,0 Z" fill="var(--bg-cream)"></path>
-      </svg>
-    </div>
-
     <!-- SOLUÇÕES (4 Pilares) -->
     <section id="solucoes" style="padding: 3rem 0;">
       <div class="container">
         <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 1rem; text-align: center;">
           Um sistema completo para vender mais – sem perder nenhum contato pelo caminho
         </h2>
-        <p class="sub" style="text-align: center; color: var(--text-soft); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        <p style="text-align: center; color: var(--text-soft); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
           Quatro pilares integrados que tiram o peso operacional da sua equipe e transformam atendimento em vendas previsíveis.
         </p>
         
-        <div class="grid-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
           <div class="card-elevated" style="padding: 1.5rem;">
             <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.75rem;">💬 Centralize conversas</h3>
             <p style="color: var(--text-body); font-size: 0.95rem;">Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel e cada mensagem já fica ligada ao contato certo no CRM.</p>
@@ -268,27 +263,49 @@
     </section>
 
     <!-- DOR (Sistema Sobrecarregado) -->
-    <section style="background: var(--brand-dark); color: #F5F2EB; padding: 3rem 0;">
+    <section style="background: var(--brand-dark); color: #F5F2EB; padding: 4rem 0;">
       <div class="container">
-        <div style="background: var(--alert-bg); border: 1px solid var(--alert-border); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-          <h3 style="color: var(--alert-text); font-family: 'Sora', sans-serif; margin-bottom: 1rem;">️ Sistema sobrecarregado</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-            <div><strong>127 mensagens não lidas</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">Lead esperando há 4h</span></div>
-            <div><strong>Sem resposta</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">Follow-up não enviado</span></div>
-            <div><strong>Cliente perdido</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">Equipe sobrecarregada</span></div>
-            <div><strong>Tempo médio: 3h por resposta</strong><br><span style="font-size: 0.85rem; opacity: 0.8;">Cliente frustrado</span></div>
+        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
+          
+          <!-- Sistema Sobrecarregado -->
+          <div>
+            <div class="card-elevated" style="background: var(--alert-bg); border: 1px solid var(--alert-border); padding: 1.5rem;">
+              <h3 style="color: var(--alert-text); font-family: 'Sora', sans-serif; margin-bottom: 1rem; font-size: 1.1rem;">⚠️ Sistema sobrecarregado</h3>
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="background: rgba(204,85,0,0.1); padding: 0.75rem; border-radius: 8px; border-left: 3px solid var(--alert-text);">
+                  <strong style="color: var(--alert-text); font-size: 0.9rem;">127 mensagens não lidas</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-body); margin: 0.25rem 0 0;">Lead esperando há 4h</p>
+                </div>
+                <div style="background: rgba(204,85,0,0.1); padding: 0.75rem; border-radius: 8px; border-left: 3px solid var(--alert-text);">
+                  <strong style="color: var(--alert-text); font-size: 0.9rem;">Sem resposta</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-body); margin: 0.25rem 0 0;">Follow-up não enviado</p>
+                </div>
+                <div style="background: rgba(204,85,0,0.1); padding: 0.75rem; border-radius: 8px; border-left: 3px solid var(--alert-text);">
+                  <strong style="color: var(--alert-text); font-size: 0.9rem;">Cliente perdido</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-body); margin: 0.25rem 0 0;">Equipe sobrecarregada</p>
+                </div>
+                <div style="background: rgba(204,85,0,0.1); padding: 0.75rem; border-radius: 8px; border-left: 3px solid var(--alert-text);">
+                  <strong style="color: var(--alert-text); font-size: 0.9rem;">Tempo médio: 3h por resposta</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-body); margin: 0.25rem 0 0;">"Já perguntei isso 3 vezes..."</p>
+                </div>
+              </div>
+            </div>
           </div>
+          
+          <!-- Texto da Dor -->
+          <div>
+            <h2 class="font-display" style="color: #F5F2EB; text-align: left; margin-bottom: 2rem; font-size: 2rem;">
+              O atendimento virou o gargalo do crescimento.
+            </h2>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+              <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1.05rem; color: #F5F2EB;">✕ Leads sem resposta que viram vendas perdidas</li>
+              <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1.05rem; color: #F5F2EB;">✕ Follow-ups esquecidos que custam dinheiro</li>
+              <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1.05rem; color: #F5F2EB;">✕ Equipe sobrecarregada sem tempo para vender</li>
+              <li style="padding: 0.75rem 0; font-size: 1.05rem; color: #F5F2EB;">✕ Clientes frustrados que não voltam mais</li>
+            </ul>
+          </div>
+          
         </div>
-        
-        <h2 class="font-display" style="color: #F5F2EB; text-align: center; margin-bottom: 2rem;">
-          O atendimento virou o gargalo do crescimento.
-        </h2>
-        <ul style="list-style: none; max-width: 600px; margin: 0 auto; padding: 0;">
-          <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1.05rem;">✕ Leads sem resposta que viram vendas perdidas</li>
-          <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1.05rem;">✕ Follow-ups esquecidos que custam dinheiro</li>
-          <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1.05rem;">✕ Equipe sobrecarregada sem tempo para vender</li>
-          <li style="padding: 0.75rem 0; font-size: 1.05rem;">✕ Clientes frustrados que não voltam mais</li>
-        </ul>
       </div>
     </section>
 
@@ -299,7 +316,10 @@
           CAPI CRM resolve isso.
         </h2>
         <p style="max-width: 700px; margin: 0 auto; font-size: 1.05rem; color: var(--text-body);">
-          Seus canais conectados. Sua IA preenchendo o CRM e organizando o funil. Seu atendimento rodando com follow-ups automáticos. Você focado em conversar e fechar vendas, não em caçar informação.
+          Seus canais conectados. Sua IA preenchendo o CRM e organizando o funil. Seu atendimento rodando com follow-ups automáticos.
+        </p>
+        <p style="max-width: 700px; margin: 1rem auto 0; font-size: 1.05rem; color: var(--brand-cta); font-weight: 600;">
+          Você focado em conversar e fechar vendas, não em caçar informação.
         </p>
       </div>
     </section>
@@ -310,7 +330,7 @@
         <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 2rem; text-align: center;">
           O que você recebe
         </h2>
-        <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
           <div>
             <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Central de conversas unificada</h3>
             <p style="color: var(--text-body); font-size: 0.95rem;">Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
@@ -348,7 +368,7 @@
         <p style="text-align: center; color: var(--text-soft); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
           A CAPI CRM integra seus canais, usa IA para manter o CRM em dia e automatiza partes do fluxo de vendas, para que sua equipe foque onde faz mais diferença: nas conversas.
         </p>
-        <div class="steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
           <div style="text-align: center;">
             <span style="display: inline-block; background: var(--brand-primary); color: #fff; width: 40px; height: 40px; line-height: 40px; border-radius: 50%; font-weight: 700; margin-bottom: 1rem;">01</span>
             <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Seus canais conectados</h3>
@@ -379,8 +399,11 @@
         <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 1rem; text-align: center;">
           Onboarding guiado e fluxos feitos para o seu jeito de vender
         </h2>
-        <p style="max-width: 700px; margin: 0 auto 2rem; text-align: center; color: var(--text-body);">
+        <p style="max-width: 700px; margin: 0 auto 1.5rem; text-align: center; color: var(--text-body);">
           Você não precisa descobrir tudo sozinho. No onboarding, montamos junto com você os fluxos de atendimento e vendas, os campos essenciais do CRM e os modelos de mensagens que fazem sentido para o seu jeito de falar.
+        </p>
+        <p style="max-width: 700px; margin: 0 auto 2rem; text-align: center; color: var(--text-body);">
+          Em seguida, ajustamos a inteligência artificial para preencher o CRM do jeito que sua operação precisa. À medida que você usa a plataforma, revisamos seus fluxos, afinamos automações e simplificamos mensagens para manter tudo acessível, rápido e fácil de entender.
         </p>
         <div style="text-align: center; margin-bottom: 3rem;">
           <a href="#contato" class="btn-secondary" data-umami-event="cta_onboarding" data-umami-event-origem="secao_onboarding">
@@ -400,17 +423,29 @@
       </div>
     </section>
 
+    <!-- CAPI CRM NÃO É MAIS UM CHATBOT -->
+    <section style="background: var(--brand-dark); color: #F5F2EB; padding: 3rem 0; text-align: center;">
+      <div class="container">
+        <h2 class="font-display" style="font-size: 1.75rem; color: #F5F2EB; margin-bottom: 1rem;">
+          CAPI CRM não é mais um chatbot.
+        </h2>
+        <p style="max-width: 700px; margin: 0 auto; font-size: 1.05rem; color: var(--cta-on-dark); font-weight: 600;">
+          Automatize tarefas repetitivas e entregue à sua equipe leads com contexto, histórico e próximo passo definido.
+        </p>
+      </div>
+    </section>
+
     <!-- PLANOS -->
     <section id="planos" style="padding: 3rem 0;">
       <div class="container">
         <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 1rem; text-align: center;">
           Escolha seu plano
         </h2>
-        <p class="sub" style="text-align: center; color: var(--text-soft); margin-bottom: 2rem;">
+        <p style="text-align: center; color: var(--text-soft); margin-bottom: 2rem;">
           Crescimento planejado. Transparência total. Sem surpresas.
         </p>
         
-        <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
           <!-- Plano Solo -->
           <div class="card-elevated" style="padding: 2rem; text-align: center;">
             <h3 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem;">Solo</h3>
@@ -528,7 +563,7 @@
         <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 2rem; text-align: center;">
           Segurança e conformidade
         </h2>
-        <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
           <div>
             <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">🔒 LGPD e dados</h3>
             <p style="color: var(--text-body); font-size: 0.95rem;">Seus dados e os de seus clientes são tratados conforme a Lei Geral de Proteção de Dados. Você é o controlador; nós somos operadores. Exportação e eliminação de dados disponíveis a qualquer momento.</p>
