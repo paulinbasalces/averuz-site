@@ -1,569 +1,413 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAPI CRM | Atendimento que vende. Escala que cresce.</title>
-  <meta name="description" content="O CAPI CRM centraliza seu WhatsApp e Instagram. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time. Diagnóstico gratuito em 60 segundos." />
-  <meta name="keywords" content="CRM, WhatsApp, atendimento, vendas, IA, automação, follow-up, CAPI CRM, Motor UAI" />
-  <meta name="author" content="CAPI CRM" />
-  
-  <link rel="canonical" href="https://capicrm.ia.br/" />
-  <link rel="icon" type="image/svg+xml" href="/favicon-capi.svg" />
-  <link rel="apple-touch-icon" href="/favicon-capi.svg" />
-  
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://capicrm.ia.br/" />
-  <meta property="og:title" content="CAPI CRM | Atendimento que vende. Escala que cresce." />
-  <meta property="og:description" content="O CAPI CRM centraliza seu WhatsApp e Instagram. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time." />
-  <meta property="og:image" content="https://capicrm.ia.br/assets/og-image-capi.jpg" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="CAPI CRM" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CAPI CRM | Atendimento que vende." />
-  <meta name="twitter:description" content="Nenhum lead esquecido. Nenhuma conversa perdida." />
-  <meta name="twitter:image" content="https://capicrm.ia.br/assets/og-image-capi.jpg" />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css" />
-
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "CAPI CRM",
-        "url": "https://capicrm.ia.br",
-        "logo": "https://capicrm.ia.br/logo-capi-clara.svg",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+55-31-98447-0001",
-          "contactType": "customer service",
-          "availableLanguage": "Portuguese"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "CAPI CRM",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "O CAPI CRM centraliza seu WhatsApp e Instagram. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.",
-        "offers": {
-          "@type": "Offer",
-          "price": "197.00",
-          "priceCurrency": "BRL"
-        }
-      }
-    ]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPI CRM | Atendimento que vende. Escala que cresce.</title>
+    <meta name="description" content="O CAPI CRM centraliza seu WhatsApp e Instagram em um só painel. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Umami Analytics (Master Doc) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
 </head>
-
 <body>
 
-  <header class="site-header">
-    <a href="#top" class="logo">CAPI<span class="crm"> CRM</span><span class="dot">.</span></a>
-    <nav>
-      <a href="#solucoes">Soluções</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#planos">Planos</a>
-    </nav>
-    <button id="dark-toggle" aria-label="Alternar modo escuro">🌙</button>
-    <a href="#planos" class="btn-primary" data-umami-event="cta_planos" data-umami-event-origem="header">Assinar</a>
-  </header>
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="#" class="logo">CAPI <span class="crm">CRM</span><span class="dot">.</span></a>
+        <nav>
+            <a href="#solucoes">Soluções</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#planos">Planos</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button id="dark-toggle" aria-label="Alternar tema">🌙</button>
+            <a href="#planos" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Assinar</a>
+        </div>
+    </header>
 
-  <main>
     <!-- HERO -->
-    <section class="hero-bg" id="top">
-      <div class="hero-blob-sage"></div>
-      <div class="hero-blob-terra"></div>
-      
-      <div class="container" style="position: relative; z-index: 2; padding: 4rem 2rem;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-          
-          <div>
-            <span class="eyebrow-pill animate-fade-in-up">
-              <span class="pulse-glow" style="width: 8px; height: 8px; background: var(--brand-cta); border-radius: 50%; display: inline-block;"></span>
-              Atendimento que vende. Escala que cresce.
-            </span>
+    <section class="hero">
+        <div class="container">
+            <span class="badge">Atendimento que vende. Escala que cresce.</span>
+            <h1>Nenhum lead esquecido.<br><span class="hl-underline">Nenhuma conversa perdida.</span></h1>
+            <p class="lead">O CAPI CRM centraliza seu WhatsApp e Instagram em um só painel. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.</p>
             
-            <h1 class="font-display animate-fade-in-up" style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--heading); margin: 1.5rem 0 1rem; line-height: 1.1;">
-              Nenhum lead esquecido.<br>
-              <span class="hl-underline">Nenhuma conversa perdida.</span>
-            </h1>
-            
-            <p class="animate-fade-in-up" style="font-size: 1.15rem; color: var(--text-body); max-width: 600px; margin-bottom: 2rem;">
-              O CAPI CRM centraliza seu WhatsApp e Instagram em um só painel.
-              O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.
-            </p>
-            
-            <div class="animate-fade-in-up" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-              <a href="diagnostico.html" class="btn-primary" 
-                 data-umami-event="cta_diagnostico" 
-                 data-umami-event-origem="hero">
-                 Agendar diagnóstico gratuito
-              </a>
-              <a href="#planos" class="btn-secondary" 
-                 data-umami-event="cta_planos" 
-                 data-umami-event-origem="hero">
-                 Ver planos
-              </a>
+            <div class="hero-ctas">
+                <a href="diagnostico.html" class="btn-primary" data-umami-event="cta_diagnostico" data-umami-event-origem="hero">Agendar diagnóstico gratuito</a>
+                <a href="#planos" class="btn-secondary">Ver planos</a>
             </div>
             
-            <div class="trust-strip animate-fade-in-up">
-              ✔ API oficial do WhatsApp &nbsp;&nbsp; ✔ Implantação em 7 dias &nbsp;&nbsp; ✔ Suporte mineiro, de gente
+            <div class="trust-badges">
+                <span>✔ API oficial do WhatsApp</span>
+                <span>✔ Implantação em 7 dias</span>
+                <span>✔ Suporte mineiro, de gente</span>
             </div>
-          </div>
-          
-          <div class="card-elevated animate-fade-in-up" style="padding: 1.5rem; position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div>
-                <span class="eyebrow-pill" style="font-size: 0.75rem;">Sistema ativo</span>
-                <p style="font-size: 0.8rem; color: var(--text-soft); margin-top: 0.25rem;">Atualizado agora</p>
-              </div>
-              <p style="font-size: 0.75rem; color: var(--text-faint); font-style: italic; text-align: right;">* Exemplo demonstrativo<br>Métricas variam por operação</p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
-              <div style="text-align: center;">
-                <div class="font-display" style="font-size: 1.75rem; font-weight: 800; color: var(--brand-primary);">847</div>
-                <p style="font-size: 0.75rem; color: var(--text-soft);">Conversas hoje</p>
-              </div>
-              <div style="text-align: center;">
-                <div class="font-display" style="font-size: 1.75rem; font-weight: 800; color: var(--brand-cta);">94%</div>
-                <p style="font-size: 0.75rem; color: var(--text-soft);">Resolvidas por IA</p>
-              </div>
-              <div style="text-align: center;">
-                <div class="font-display" style="font-size: 1.75rem; font-weight: 800; color: var(--brand-primary-dark);">R$ 48k</div>
-                <p style="font-size: 0.75rem; color: var(--text-soft);">Vendas geradas</p>
-              </div>
-            </div>
-            
-            <div style="background: var(--bg-tint); border-radius: 8px; padding: 1rem;">
-              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border-soft);">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div style="width: 24px; height: 24px; background: var(--brand-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 700;">MC</div>
-                  <div>
-                    <strong style="font-size: 0.8rem; color: var(--heading);">Maria Clara</strong>
-                    <p style="font-size: 0.75rem; color: var(--text-body); margin: 0;">Quero saber mais sobre o plano Pro...</p>
-                  </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="dashboard-mockup">
+                <div class="mockup-header">
+                    <span class="mockup-status">● Sistema ativo</span>
+                    <span class="mockup-note">* Exemplo demonstrativo</span>
                 </div>
-                <span style="font-size: 0.7rem; color: var(--text-soft);">IA respondeu</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border-soft);">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div style="width: 24px; height: 24px; background: var(--brand-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 700;">RF</div>
-                  <div>
-                    <strong style="font-size: 0.8rem; color: var(--heading);">Ricardo Ferreira</strong>
-                    <p style="font-size: 0.75rem; color: var(--text-body); margin: 0;">Fechado! Vou assinar o anual...</p>
-                  </div>
+                <div class="mockup-stats">
+                    <div class="stat"><strong>847</strong><span>Conversas hoje</span></div>
+                    <div class="stat"><strong>94%</strong><span>Resolvidas por IA</span></div>
+                    <div class="stat"><strong>R$ 48k</strong><span>Vendas geradas</span></div>
                 </div>
-                <span style="font-size: 0.7rem; color: var(--brand-primary);">Negociação</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <div style="width: 24px; height: 24px; background: var(--brand-primary-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.7rem; font-weight: 700;">JL</div>
-                  <div>
-                    <strong style="font-size: 0.8rem; color: var(--heading);">Julia Lima</strong>
-                    <p style="font-size: 0.75rem; color: var(--text-body); margin: 0;">Quanto custa o plano Pro?</p>
-                  </div>
+                <div class="mockup-chats">
+                    <div class="chat-bubble">
+                        <strong>Maria Clara</strong>
+                        <p>Quero saber mais sobre o plano Pro...</p>
+                        <span class="chat-tag">IA respondeu</span>
+                    </div>
+                    <div class="chat-bubble">
+                        <strong>Ricardo Ferreira</strong>
+                        <p>Fechado! Vou assinar o anual...</p>
+                        <span class="chat-tag tag-neg">Negociação</span>
+                    </div>
+                    <div class="chat-bubble">
+                        <strong>Julia Lima</strong>
+                        <p>Quanto custa o plano Pro?</p>
+                        <span class="chat-tag">● IA respondeu em 2s</span>
+                    </div>
                 </div>
-                <span style="font-size: 0.7rem; color: var(--brand-cta);">● IA respondeu em 2s</span>
-              </div>
             </div>
-          </div>
-          
         </div>
-      </div>
     </section>
 
-    <!-- DIVISOR -->
-    <div class="divider">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,0 C400,120 800,120 1200,0 L1200,120 L0,120 Z" fill="var(--bg-cream)"></path>
-      </svg>
-    </div>
-
-    <!-- PIONEIRO -->
-    <section>
-      <div class="container" style="padding: 2rem;">
-        <div class="card-elevated" style="background: var(--alert-bg); border: 1px solid var(--alert-border); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-          <p style="color: var(--alert-text); font-weight: 600; margin: 0;">⚡ Programa Pioneiro: 5 vagas com 50% no setup + garantia de 30 dias.</p>
-          <a href="diagnostico.html" class="btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;"
-             data-umami-event="cta_pioneiro" 
-             data-umami-event-origem="banner_pioneiro">
-             Quero ser pioneiro
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- NICHOS -->
-    <section style="text-align: center; padding: 2rem 0;">
-      <div class="container">
-        <h2 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin-bottom: 1.5rem;">A CAPI fala a língua do seu negócio:</h2>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="corretores.html" class="eyebrow-pill" style="text-decoration: none;" 
-             data-umami-event="cta_nicho" data-umami-event-nicho="corretor">🏠 Corretores e imobiliárias</a>
-          <a href="saude.html" class="eyebrow-pill" style="text-decoration: none;" 
-             data-umami-event="cta_nicho" data-umami-event-nicho="saude"> Clínicas e saúde</a>
-          <a href="diagnostico.html" class="eyebrow-pill" style="text-decoration: none;" 
-             data-umami-event="cta_diagnostico" data-umami-event-origem="nicho_outro">💬 Meu nicho não está aqui</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- DIVISOR -->
-    <div class="divider">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,120 C400,0 800,0 1200,120 L1200,0 L0,0 Z" fill="var(--bg-cream)"></path>
-      </svg>
-    </div>
-
-    <!-- SOLUÇÕES -->
-    <section id="solucoes">
-      <div class="container" style="padding: 3rem 2rem;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); text-align: center; margin-bottom: 1rem;">Um sistema completo para vender mais – sem perder nenhum contato pelo caminho</h2>
-        <p style="text-align: center; color: var(--text-soft); max-width: 700px; margin: 0 auto 2rem;">Quatro pilares integrados que tiram o peso operacional da sua equipe e transformam atendimento em vendas previsíveis.</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <div style="width: 40px; height: 40px; background: var(--bg-tint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem;">💬</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Centralize conversas</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel e cada mensagem já fica ligada ao contato certo no CRM.</p>
-          </div>
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <div style="width: 40px; height: 40px; background: var(--bg-tint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem;">📊</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Organize o funil</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Visualize cada lead do primeiro contato ao fechamento. A IA ajuda a manter o CRM atualizado, mostrando onde cada venda está e qual é o próximo passo.</p>
-          </div>
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <div style="width: 40px; height: 40px; background: var(--bg-tint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem;">⚙️</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Automatize follow-ups</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos. Você define as regras; a CAPI CRM lembra, envia e movimenta o funil.</p>
-          </div>
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <div style="width: 40px; height: 40px; background: var(--bg-tint); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem;">🤖</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Ative a IA</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Treine um agente com seus produtos e forma de vender. Ele responde dúvidas comuns, qualifica leads e entrega para sua equipe apenas as conversas com real chance de fechar.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DOR -->
-    <section style="background: var(--brand-dark); color: #F5F2EB;">
-      <div class="container" style="padding: 4rem 2rem;">
-        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center;">
-          <div class="card-elevated" style="background: var(--alert-bg); border: 1px solid var(--alert-border); padding: 1.5rem;">
-            <h3 style="color: var(--alert-text); font-family: 'Sora', sans-serif; margin-bottom: 1rem; font-size: 1rem;">⚠️ Sistema sobrecarregado</h3>
-            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-              <div style="background: rgba(255,255,255,0.5); padding: 0.75rem; border-radius: 6px; border-left: 3px solid var(--alert-text);">
-                <strong style="color: var(--alert-text); font-size: 0.85rem;">127 mensagens não lidas</strong>
-                <p style="font-size: 0.75rem; color: var(--text-body); margin: 0.25rem 0 0;">Lead esperando há 4h</p>
-              </div>
-              <div style="background: rgba(255,255,255,0.5); padding: 0.75rem; border-radius: 6px; border-left: 3px solid var(--alert-text);">
-                <strong style="color: var(--alert-text); font-size: 0.85rem;">Sem resposta</strong>
-                <p style="font-size: 0.75rem; color: var(--text-body); margin: 0.25rem 0 0;">Follow-up não enviado</p>
-              </div>
-              <div style="background: rgba(255,255,255,0.5); padding: 0.75rem; border-radius: 6px; border-left: 3px solid var(--alert-text);">
-                <strong style="color: var(--alert-text); font-size: 0.85rem;">Cliente perdido</strong>
-                <p style="font-size: 0.75rem; color: var(--text-body); margin: 0.25rem 0 0;">Equipe sobrecarregada</p>
-              </div>
-              <div style="background: rgba(255,255,255,0.5); padding: 0.75rem; border-radius: 6px; border-left: 3px solid var(--alert-text);">
-                <strong style="color: var(--alert-text); font-size: 0.85rem;">Tempo médio: 3h por resposta</strong>
-                <p style="font-size: 0.75rem; color: var(--text-body); margin: 0.25rem 0 0;">"Já perguntei isso 3 vezes..."</p>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <h2 class="font-display" style="color: #F5F2EB; margin-bottom: 2rem; font-size: 2rem;">O atendimento virou o gargalo do crescimento.</h2>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-              <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1rem; color: #F5F2EB;">✕ Leads sem resposta que viram vendas perdidas</li>
-              <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1rem; color: #F5F2EB;">✕ Follow-ups esquecidos que custam dinheiro</li>
-              <li style="padding: 0.75rem 0; border-bottom: 1px solid rgba(245,242,235,0.1); font-size: 1rem; color: #F5F2EB;">✕ Equipe sobrecarregada sem tempo para vender</li>
-              <li style="padding: 0.75rem 0; font-size: 1rem; color: #F5F2EB;">✕ Clientes frustrados que não voltam mais</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOLUÇÃO -->
-    <section style="background: var(--brand-dark); color: #F5F2EB; text-align: center; padding: 3rem 2rem;">
-      <div class="container">
-        <h2 class="font-display" style="color: #F5F2EB; margin-bottom: 1rem;">CAPI CRM resolve isso.</h2>
-        <p style="max-width: 700px; margin: 0 auto; color: #F5F2EB;">Seus canais conectados. Sua IA preenchendo o CRM e organizando o funil. Seu atendimento rodando com follow-ups automáticos.</p>
-        <p style="max-width: 700px; margin: 1rem auto 0; color: var(--cta-on-dark); font-weight: 600;">Você focado em conversar e fechar vendas, não em caçar informação.</p>
-      </div>
-    </section>
-
-    <!-- O QUE VOCÊ RECEBE -->
-    <section>
-      <div class="container" style="padding: 3rem 2rem;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); text-align: center; margin-bottom: 2rem;">O que você recebe</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Central de conversas unificada</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Agente de atendimento com IA</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Responde perguntas comuns, qualifica leads identificando intenção de compra e atualiza o cadastro no CRM com dados relevantes, encaminhando conversas prontas para sua equipe fechar.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">CRM completo para vendas</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Cada lead vira um registro com histórico de conversas, etapa no funil e próximas ações. A IA ajuda a manter esses dados atualizados à medida que as conversas acontecem.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Funil de conversão visual</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Veja quantos leads estão em cada etapa: novo contato, em negociação, proposta enviada, fechamento. Identifique gargalos e ajuste sua estratégia.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Automações programáveis</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Crie sequências automáticas: envie lembretes após 24h sem resposta, mova leads entre etapas, dispare mensagens de boas-vindas. Trabalha sozinho 24/7.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Relatórios de desempenho</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Acompanhe volume de conversas, tempo médio de resposta, taxa de conversão por canal, leads gerados e vendas fechadas. Dados atualizados em tempo real.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMO FUNCIONA -->
-    <section id="como-funciona">
-      <div class="container" style="padding: 3rem 2rem;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); text-align: center; margin-bottom: 1rem;">Como a CAPI CRM trabalha por você</h2>
-        <p style="text-align: center; color: var(--text-soft); max-width: 700px; margin: 0 auto 2rem;">A CAPI CRM integra seus canais, usa IA para manter o CRM em dia e automatiza partes do fluxo de vendas, para que sua equipe foque onde faz mais diferença: nas conversas.</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
-          <div style="text-align: center;">
-            <div style="width: 40px; height: 40px; background: var(--brand-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1rem;">01</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Seus canais conectados</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Mensagens unificadas de múltiplos canais em um único painel. Cada novo contato vira um registro no CRM sem esforço manual.</p>
-          </div>
-          <div style="text-align: center;">
-            <div style="width: 40px; height: 40px; background: var(--brand-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1rem;">02</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">IA treinada no seu negócio</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">A IA aprende seus produtos, preços, objeções mais comuns e forma de falar. A partir disso, extrai dados das conversas e preenche os campos importantes do CRM e do funil.</p>
-          </div>
-          <div style="text-align: center;">
-            <div style="width: 40px; height: 40px; background: var(--brand-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1rem;">03</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Atendimento automático funcionando</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Respostas instantâneas, leads qualificados e fluxos de follow-up disparando sozinhos. Você acompanha o funil em tempo real e intervém quando faz diferença.</p>
-          </div>
-          <div style="text-align: center;">
-            <div style="width: 40px; height: 40px; background: var(--brand-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 1rem;">04</div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">Você vendendo mais</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Sua equipe recebe leads quentes, com histórico e contexto organizados. Menos tempo alimentando sistema, mais tempo conversando e fechando negócios.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ONBOARDING -->
-    <section>
-      <div class="container" style="padding: 3rem 2rem; text-align: center;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 1rem;">Onboarding guiado e fluxos feitos para o seu jeito de vender</h2>
-        <p style="max-width: 700px; margin: 0 auto 1.5rem; color: var(--text-body);">Você não precisa descobrir tudo sozinho. No onboarding, montamos junto com você os fluxos de atendimento e vendas, os campos essenciais do CRM e os modelos de mensagens que fazem sentido para o seu jeito de falar.</p>
-        <p style="max-width: 700px; margin: 0 auto 2rem; color: var(--text-body);">Em seguida, ajustamos a inteligência artificial para preencher o CRM do jeito que sua operação precisa. À medida que você usa a plataforma, revisamos seus fluxos, afinamos automações e simplificamos mensagens para manter tudo acessível, rápido e fácil de entender.</p>
-        <a href="#contato" class="btn-secondary" data-umami-event="cta_onboarding" data-umami-event-origem="secao_onboarding">Quero configurar meu fluxo com ajuda da CAPI CRM</a>
-        
-        <h3 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin: 3rem 0 1rem;">Veja a CAPI CRM em ação em poucos minutos</h3>
-        <p style="color: var(--text-soft); margin-bottom: 2rem;">Assista a uma demonstração rápida e veja como a IA preenche o CRM, organiza o funil e ajuda sua equipe a responder mais rápido sem burocracia.</p>
-        <div class="card-elevated" style="padding: 4rem 2rem; color: var(--text-soft);">▶ Seu vídeo de demonstração entra aqui</div>
-      </div>
-    </section>
-
-    <!-- NÃO É CHATBOT -->
-    <section style="background: var(--brand-dark); color: #F5F2EB; text-align: center; padding: 3rem 2rem;">
-      <div class="container">
-        <h2 class="font-display" style="color: #F5F2EB; margin-bottom: 1rem;">CAPI CRM não é mais um chatbot.</h2>
-        <p style="max-width: 700px; margin: 0 auto; color: var(--cta-on-dark); font-weight: 600;">Automatize tarefas repetitivas e entregue à sua equipe leads com contexto, histórico e próximo passo definido.</p>
-      </div>
-    </section>
-
-    <!-- PLANOS -->
-    <section id="planos">
-      <div class="container" style="padding: 3rem 2rem;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); text-align: center; margin-bottom: 1rem;">Escolha seu plano</h2>
-        <p style="text-align: center; color: var(--text-soft); margin-bottom: 2rem;">Crescimento planejado. Transparência total. Sem surpresas.</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: start;">
-          <div class="card-elevated" style="padding: 2rem; text-align: center;">
-            <h3 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem;">Solo</h3>
-            <p style="color: var(--text-soft); font-size: 0.9rem;">Para começar com o essencial, sem caos.</p>
-            <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--heading); margin: 1rem 0;">R$ 197<span style="font-size: 1rem; font-weight: 500; color: var(--text-soft);">/mês</span></div>
-            <ul style="list-style: none; padding: 0; margin: 1.5rem 0; text-align: left;">
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Teste gratuito de 7 dias com 1 usuário e 1 canal.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ CRM com funil de vendas e central de conversas integrada ao WhatsApp.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Automações simples de configurar para follow-ups e lembretes.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Agente IA para responder dúvidas e preencher campos do CRM.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Cadência básica para nunca perder o fio da meada.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Contatos e mensagens ilimitados.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Suporte por e-mail e WhatsApp com SLA de até 24h úteis.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; font-weight: 600; color: var(--text-body);">＋ Expansível: +1 usuário adicional (R$ 147).</li>
-            </ul>
-            <a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Solo" class="btn-secondary" style="width: 100%; display: block; box-sizing: border-box;" 
-               data-umami-event="plano" data-umami-event-plano="Solo">Escolher Solo</a>
-          </div>
-
-          <div class="card-elevated" style="padding: 2rem; text-align: center; position: relative; border: 2px solid var(--brand-cta);">
-            <span style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--brand-cta); color: #fff; padding: 0.25rem 1rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">Mais escolhido</span>
-            <h3 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem;">Pro</h3>
-            <p style="color: var(--text-soft); font-size: 0.9rem;">Para times que querem acelerar vendas.</p>
-            <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--heading); margin: 1rem 0;">R$ 597<span style="font-size: 1rem; font-weight: 500; color: var(--text-soft);">/mês</span></div>
-            <ul style="list-style: none; padding: 0; margin: 1.5rem 0; text-align: left;">
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Tudo do plano Solo.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ 3 usuários e 2 canais incluídos.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Conversões avançadas e etapas de funil avançadas.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Relatórios estratégicos e acompanhamento de implementação.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Suporte prioritário no WhatsApp.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Agente IA (Motor UAI) como adicional por R$ 697.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Gestão de redes sociais como adicional por R$ 97.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; font-weight: 600; color: var(--text-body);">＋ Expansível: +2 usuários adicionais (R$ 147 cada).</li>
-            </ul>
-            <a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Pro" class="btn-primary" style="width: 100%; display: block; box-sizing: border-box;" 
-               data-umami-event="plano" data-umami-event-plano="Pro">Escolher Pro</a>
-          </div>
-
-          <div class="card-elevated" style="padding: 2rem; text-align: center;">
-            <h3 class="font-display" style="font-size: 1.5rem; color: var(--heading); margin-bottom: 0.5rem;">Escala</h3>
-            <p style="color: var(--text-soft); font-size: 0.9rem;">Para operações que precisam de mais fôlego.</p>
-            <div class="font-display" style="font-size: 2.5rem; font-weight: 800; color: var(--heading); margin: 1rem 0;">R$ 1.197<span style="font-size: 1rem; font-weight: 500; color: var(--text-soft);">/mês</span></div>
-            <ul style="list-style: none; padding: 0; margin: 1.5rem 0; text-align: left;">
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Tudo do plano Pro.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ 5 usuários e 3 canais incluídos.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Agente IA (Motor UAI) incluído — qualifica e preenche o CRM sozinho.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Gestão de redes sociais incluída.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Treinamento e ajustes de IA sob medida para o seu time.</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Café mensal de resultados (acompanhamento estratégico).</li>
-              <li style="padding: 0.5rem 0; font-size: 0.9rem; color: var(--text-body);">✔ Expansão conforme o time cresce.</li>
-            </ul>
-            <a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Escala" class="btn-secondary" style="width: 100%; display: block; box-sizing: border-box;" 
-               data-umami-event="plano" data-umami-event-plano="Escala">Escolher Escala</a>
-          </div>
-        </div>
-        
-        <p style="text-align: center; margin-top: 2rem; color: var(--text-soft); font-size: 0.9rem;">Todos os planos incluem contatos e mensagens. • Você começa simples. O crescimento acontece no seu ritmo.</p>
-      </div>
-    </section>
-
-    <!-- ADICIONAIS -->
-    <section>
-      <div class="container" style="padding: 3rem 2rem; text-align: center;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 1rem;">Adicionais</h2>
-        <p style="color: var(--text-soft); margin-bottom: 2rem;">Personalize a CAPI CRM conforme sua operação cresce.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <strong style="display: block; color: var(--heading); margin-bottom: 0.5rem;">Usuário adicional</strong>
-            <div style="color: var(--brand-cta); font-weight: 700; font-size: 1.1rem;">+R$ 147</div>
-            <p style="font-size: 0.8rem; color: var(--text-soft); margin-top: 0.5rem;">Limite de usuários: +1 Solo • +2 Pro</p>
-          </div>
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <strong style="display: block; color: var(--heading); margin-bottom: 0.5rem;">Canal adicional</strong>
-            <div style="color: var(--brand-cta); font-weight: 700; font-size: 1.1rem;">+R$ 97</div>
-          </div>
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <strong style="display: block; color: var(--heading); margin-bottom: 0.5rem;">Agente IA (só Pro)</strong>
-            <div style="color: var(--brand-cta); font-weight: 700; font-size: 1.1rem;">R$ 697</div>
-          </div>
-          <div class="card-elevated" style="padding: 1.5rem;">
-            <strong style="display: block; color: var(--heading); margin-bottom: 0.5rem;">Redes sociais (só Pro)</strong>
-            <div style="color: var(--brand-cta); font-weight: 700; font-size: 1.1rem;">R$ 97</div>
-          </div>
-        </div>
-        <div style="margin-top: 2rem;">
-          <a href="diagnostico.html" class="btn-text" data-umami-event="cta_diagnostico" data-umami-event-origem="adicionais">Precisa de algo sob medida? Fale com a gente →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEGURANÇA -->
-    <section style="background: var(--bg-tint);">
-      <div class="container" style="padding: 3rem 2rem;">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); text-align: center; margin-bottom: 2rem;">Segurança e conformidade</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">🔒 LGPD e dados</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Seus dados e os de seus clientes são tratados conforme a Lei Geral de Proteção de Dados. Você é o controlador; nós somos operadores. Exportação e eliminação de dados disponíveis a qualquer momento.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">🔐 Criptografia e backups</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Dados criptografados em trânsito (HTTPS) e em repouso. Backups diários automáticos com retenção de 30 dias. Infraestrutura em data centers brasileiros.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">✅ API oficial do WhatsApp</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Integração via Meta Business Platform oficial. Sem risco de banimento por uso de WhatsApp não-oficial. Sua conta comercial protegida.</p>
-          </div>
-          <div>
-            <h3 class="font-display" style="color: var(--heading); margin-bottom: 0.5rem;">📋 Conformidade</h3>
-            <p style="color: var(--text-body); font-size: 0.9rem;">Termos de Uso, Política de Privacidade e Declaração de Acessibilidade publicados. Suporte humano por WhatsApp e e-mail com SLA definido por plano.</p>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem; color: var(--text-soft);">Dúvidas sobre segurança? <a href="mailto:contato@capicrm.ia.br" style="color: var(--brand-primary-dark);">Fale conosco</a></p>
-      </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section style="text-align: center; padding: 4rem 2rem;">
-      <div class="container">
-        <h2 class="font-display" style="font-size: 1.75rem; color: var(--heading); margin-bottom: 1rem;">Comece a vender melhor hoje – sem sobrecarregar seu time.</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-body);">Ative sua operação em minutos e deixe a IA cuidar do CRM e do funil para você.</p>
-        <a href="diagnostico.html" class="btn-primary" data-umami-event="cta_diagnostico" data-umami-event-origem="footer_cta">Agendar diagnóstico gratuito</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer style="background: var(--brand-dark); color: #F5F2EB; padding: 3rem 2rem 1.5rem;">
+    <!-- Banner Pioneiro -->
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-        <div>
-          <h4 class="font-display" style="margin-bottom: 1rem; color: #F5F2EB;">CAPI CRM.</h4>
-          <p style="color: rgba(245,242,235,0.7); font-size: 0.9rem;">Plataforma completa de atendimento e vendas com inteligência artificial para empresas que querem crescer.</p>
+        <div class="banner-pioneiro">
+            <p> Programa Pioneiro: 5 vagas com 50% no setup + garantia de 30 dias.</p>
+            <a href="diagnostico.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Quero ser pioneiro</a>
         </div>
-        <div>
-          <h4 class="font-display" style="margin-bottom: 1rem; color: #F5F2EB;">Navegação</h4>
-          <a href="#solucoes" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Soluções</a>
-          <a href="#como-funciona" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Como funciona</a>
-          <a href="#planos" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Planos</a>
-          <a href="#contato" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Contato</a>
-        </div>
-        <div>
-          <h4 class="font-display" style="margin-bottom: 1rem; color: #F5F2EB;">Institucional</h4>
-          <a href="/termos-de-uso.html" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Termos de Uso</a>
-          <a href="/politica-de-privacidade.html" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Política de Privacidade</a>
-          <a href="/acessibilidade.html" style="display: block; color: rgba(245,242,235,0.7); text-decoration: none; padding: 0.3rem 0; font-size: 0.9rem;">Acessibilidade</a>
-        </div>
-        <div>
-          <h4 class="font-display" style="margin-bottom: 1rem; color: #F5F2EB;">Novidades</h4>
-          <p style="color: rgba(245,242,235,0.7); font-size: 0.9rem;">Receba atualizações sobre o produto.</p>
-          <form style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-            <input type="email" placeholder="seu@email.com" required style="flex: 1; padding: 0.6rem; border: 1px solid rgba(245,242,235,0.3); border-radius: 6px; background: rgba(245,242,235,0.1); color: #F5F2EB;">
-            <button type="submit" style="padding: 0.6rem 1rem; background: var(--brand-cta); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Assinar</button>
-          </form>
-        </div>
-      </div>
-      <div style="border-top: 1px solid rgba(245,242,235,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <p style="font-size: 0.85rem; color: rgba(245,242,235,0.7);">© 2026 CAPI CRM. Todos os direitos reservados. • CNPJ: 58.345.111/0001-10</p>
-        <a href="#top" style="color: rgba(245,242,235,0.7); text-decoration: none; font-size: 0.85rem;">Voltar ao topo ↑</a>
-      </div>
     </div>
-  </footer>
 
-  <a href="https://wa.me/5531984470001" class="whats-float" target="_blank" aria-label="Falar no WhatsApp"
-     data-umami-event="whatsapp" data-umami-event-origem="flutuante"></a>
+    <!-- Nichos -->
+    <section class="nichos">
+        <div class="container">
+            <p style="margin-bottom: 1rem; color: var(--text-soft);">A CAPI fala a língua do seu negócio:</p>
+            <div class="nicho-grid" style="max-width: 600px;">
+                <a href="corretores.html" class="card-nicho">🏠 Corretores e imobiliárias</a>
+                <a href="saude.html" class="card-nicho">🩺 Clínicas e saúde</a>
+                <a href="diagnostico.html" class="card-nicho" style="border-style: dashed;">💬 Meu nicho não está aqui</a>
+            </div>
+        </div>
+    </section>
 
-  <script src="main.js" defer></script>
+    <!-- 4 Pilares -->
+    <section id="solucoes">
+        <div class="container">
+            <h2>Um sistema completo para vender mais –<br>sem perder nenhum contato pelo caminho</h2>
+            <p class="sub">Quatro pilares integrados que tiram o peso operacional da sua equipe e transformam atendimento em vendas previsíveis.</p>
+            
+            <div class="grid-4">
+                <div class="card-feature">
+                    <h3>💬 Centralize conversas</h3>
+                    <p>Unifique WhatsApp, Instagram, chat e email. Todas as conversas fluem para um único painel e cada mensagem já fica ligada ao contato certo no CRM.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>📊 Organize o funil</h3>
+                    <p>Visualize cada lead do primeiro contato ao fechamento. A IA ajuda a manter o CRM atualizado, mostrando onde cada venda está e qual é o próximo passo.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>⚙️ Automatize follow-ups</h3>
+                    <p>Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos. Você define as regras; a CAPI CRM lembra, envia e movimenta o funil.</p>
+                </div>
+                <div class="card-feature">
+                    <h3> Ative a IA</h3>
+                    <p>Treine um agente com seus produtos e forma de vender. Ele responde dúvidas comuns, qualifica leads e entrega para sua equipe apenas as conversas com real chance de fechar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dor (Seção Escura) -->
+    <section class="dor">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div class="dor-visual">
+                <div class="dor-card">
+                    <strong>⚠️ Sistema sobrecarregado</strong>
+                    <span>127 mensagens não lidas</span>
+                    <ul>
+                        <li>Lead esperando há 4h <span>Sem resposta</span></li>
+                        <li>Follow-up não enviado <span>Cliente perdido</span></li>
+                        <li>Equipe sobrecarregada <span>Tempo médio: 3h</span></li>
+                        <li>"Já perguntei isso 3 vezes..." <span>Cliente frustrado</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h2 style="text-align: left; color: #F5F2EB;">O atendimento virou o gargalo do crescimento.</h2>
+                <ul class="lista-dor">
+                    <li>✕ Leads sem resposta que viram vendas perdidas</li>
+                    <li>✕ Follow-ups esquecidos que custam dinheiro</li>
+                    <li>✕ Equipe sobrecarregada sem tempo para vender</li>
+                    <li>✕ Clientes frustrados que não voltam mais</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solução -->
+    <section class="solucao">
+        <div class="container">
+            <h2>CAPI CRM resolve isso.</h2>
+            <p>Seus canais conectados. Sua IA preenchendo o CRM e organizando o funil. Seu atendimento rodando com follow-ups automáticos. <strong>Você focado em conversar e fechar vendas, não em caçar informação.</strong></p>
+        </div>
+    </section>
+
+    <!-- O que você recebe -->
+    <section>
+        <div class="container">
+            <h2>O que você recebe</h2>
+            <div class="grid-2">
+                <div class="card-feature">
+                    <h3>Central de conversas unificada</h3>
+                    <p>Todas as mensagens de WhatsApp, Instagram, chat do site e email aparecem em uma única tela. Sua equipe não precisa mais alternar entre aplicativos.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>Agente de atendimento com IA</h3>
+                    <p>Responde perguntas comuns, qualifica leads identificando intenção de compra e atualiza o cadastro no CRM com dados relevantes.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>CRM completo para vendas</h3>
+                    <p>Cada lead vira um registro com histórico de conversas, etapa no funil e próximas ações. A IA ajuda a manter esses dados atualizados.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>Funil de conversão visual</h3>
+                    <p>Veja quantos leads estão em cada etapa: novo contato, em negociação, proposta enviada, fechamento. Identifique gargalos e ajuste sua estratégia.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>Automações programáveis</h3>
+                    <p>Crie sequências automáticas: envie lembretes após 24h sem resposta, mova leads entre etapas, dispare mensagens de boas-vindas. Trabalha sozinho 24/7.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>Relatórios de desempenho</h3>
+                    <p>Acompanhe volume de conversas, tempo médio de resposta, taxa de conversão por canal, leads gerados e vendas fechadas. Dados em tempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section id="como-funciona" style="background: var(--bg-tint);">
+        <div class="container">
+            <h2>Como a CAPI CRM trabalha por você</h2>
+            <p class="sub">A CAPI CRM integra seus canais, usa IA para manter o CRM em dia e automatiza partes do fluxo de vendas.</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <span>01</span>
+                    <h3>Seus canais conectados</h3>
+                    <p>Mensagens unificadas de múltiplos canais em um único painel. Cada novo contato vira um registro no CRM sem esforço manual.</p>
+                </div>
+                <div class="step">
+                    <span>02</span>
+                    <h3>IA treinada no seu negócio</h3>
+                    <p>A IA aprende seus produtos, preços e forma de falar. A partir disso, extrai dados das conversas e preenche os campos importantes.</p>
+                </div>
+                <div class="step">
+                    <span>03</span>
+                    <h3>Atendimento automático</h3>
+                    <p>Respostas instantâneas, leads qualificados e fluxos de follow-up disparando sozinhos. Você acompanha o funil em tempo real.</p>
+                </div>
+                <div class="step">
+                    <span>04</span>
+                    <h3>Você vendendo mais</h3>
+                    <p>Sua equipe recebe leads quentes, com histórico e contexto organizados. Menos tempo alimentando sistema, mais tempo fechando.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding e Vídeo -->
+    <section class="onboarding-video">
+        <div class="container">
+            <h2>Onboarding guiado e fluxos feitos para o seu jeito de vender</h2>
+            <p>Você não precisa descobrir tudo sozinho. No onboarding, montamos junto com você os fluxos de atendimento e vendas, os campos essenciais do CRM e os modelos de mensagens. Em seguida, ajustamos a IA para preencher o CRM do jeito que sua operação precisa.</p>
+            <a href="diagnostico.html" class="btn-secondary">Quero configurar meu fluxo com ajuda da CAPI CRM</a>
+            
+            <h2 style="margin-top: 4rem;">Veja a CAPI CRM em ação em poucos minutos</h2>
+            <p>Assista a uma demonstração rápida e veja como a IA preenche o CRM, organiza o funil e ajuda sua equipe a responder mais rápido.</p>
+            <div class="video-placeholder">
+                ▶ Seu vídeo de demonstração entra aqui
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Intermediário -->
+    <section class="dor" style="padding: 2rem 0;">
+        <div class="container text-center">
+            <h2 style="color: #F5F2EB;">CAPI CRM não é mais um chatbot.</h2>
+            <p style="color: var(--cta-on-dark); font-weight: 600;">Automatize tarefas repetitivas e entregue à sua equipe leads com contexto, histórico e próximo passo definido.</p>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos">
+        <div class="container">
+            <h2>Escolha seu plano</h2>
+            <p class="sub">Crescimento planejado. Transparência total. Sem surpresas.</p>
+            
+            <div class="grid-3">
+                <!-- Solo -->
+                <div class="card-plano">
+                    <h3>Solo</h3>
+                    <p class="desc">Para começar com o essencial, sem caos.</p>
+                    <div class="preco">R$ 197<span>/mês</span></div>
+                    <ul class="lista-planos">
+                        <li>✔ Teste gratuito de 7 dias (1u/1ch)</li>
+                        <li>✔ CRM com funil e central de conversas</li>
+                        <li>✔ Automações simples de follow-ups</li>
+                        <li>✔ Agente IA para responder dúvidas</li>
+                        <li>✔ Cadência básica para não perder o fio</li>
+                        <li>✔ Contatos e mensagens ilimitados</li>
+                        <li>✔ Suporte e-mail/WhatsApp (SLA 24h)</li>
+                        <li style="color: var(--text-soft); font-size: 0.85rem;">＋ +1 usuário adicional (R$ 147)</li>
+                    </ul>
+                    <a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Solo" class="btn-secondary" style="width:100%; text-align:center; box-sizing:border-box;">Escolher Solo</a>
+                </div>
+                
+                <!-- Pro -->
+                <div class="card-plano destaque">
+                    <span class="badge-destaque">Mais escolhido</span>
+                    <h3>Pro</h3>
+                    <p class="desc">Para times que querem acelerar vendas.</p>
+                    <div class="preco">R$ 597<span>/mês</span></div>
+                    <ul class="lista-planos">
+                        <li>✔ Tudo do plano Solo</li>
+                        <li>✔ 3 usuários e 2 canais incluídos</li>
+                        <li>✔ Conversões e etapas de funil avançadas</li>
+                        <li>✔ Relatórios estratégicos</li>
+                        <li>✔ Suporte prioritário no WhatsApp</li>
+                        <li>✔ Agente IA (Motor UAI) +R$ 697</li>
+                        <li>✔ Gestão de redes sociais +R$ 97</li>
+                        <li style="color: var(--text-soft); font-size: 0.85rem;">＋ +2 usuários adicionais (R$ 147 cada)</li>
+                    </ul>
+                    <a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Pro" class="btn-primary" style="width:100%; text-align:center; box-sizing:border-box;">Escolher Pro</a>
+                </div>
+
+                <!-- Escala -->
+                <div class="card-plano">
+                    <h3>Escala</h3>
+                    <p class="desc">Para operações que precisam de mais fôlego.</p>
+                    <div class="preco">R$ 1.197<span>/mês</span></div>
+                    <ul class="lista-planos">
+                        <li>✔ Tudo do plano Pro</li>
+                        <li>✔ 5 usuários e 3 canais incluídos</li>
+                        <li>✔ Agente IA (Motor UAI) incluído</li>
+                        <li>✔ Gestão de redes sociais incluída</li>
+                        <li>✔ Treinamento e ajustes de IA sob medida</li>
+                        <li>✔ Café mensal de resultados</li>
+                        <li>✔ Expansão conforme o time cresce</li>
+                    </ul>
+                    <a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Escala" class="btn-secondary" style="width:100%; text-align:center; box-sizing:border-box;">Escolher Escala</a>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-soft); font-size: 0.9rem;">Todos os planos incluem contatos e mensagens. • Você começa simples. O crescimento acontece no seu ritmo.</p>
+
+            <!-- Add-ons -->
+            <h3 style="text-align: center; margin-top: 3rem; font-family: 'Sora', sans-serif;">Adicionais</h3>
+            <p style="text-align: center; color: var(--text-soft); margin-bottom: 1rem;">Personalize a CAPI CRM conforme sua operação cresce.</p>
+            <div class="grid-add-ons">
+                <div><strong>Usuário adicional</strong>+R$ 147<br><span style="font-size:0.8rem; color:var(--text-soft);">Limite: +1 Solo • +2 Pro</span></div>
+                <div><strong>Canal adicional</strong>+R$ 97</div>
+                <div><strong>Agente IA (só Pro)</strong>R$ 697</div>
+                <div><strong>Redes sociais (só Pro)</strong>R$ 97</div>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="diagnostico.html" class="btn-text">Precisa de algo sob medida? Fale com a gente →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segurança -->
+    <section class="seguranca">
+        <div class="container">
+            <h2>Segurança e conformidade</h2>
+            <div class="grid-2">
+                <div class="card-feature">
+                    <h3>🔒 LGPD e dados</h3>
+                    <p>Seus dados e os de seus clientes são tratados conforme a LGPD. Você é o controlador; nós somos operadores. Exportação e eliminação disponíveis a qualquer momento.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>🔐 Criptografia e backups</h3>
+                    <p>Dados criptografados em trânsito (HTTPS) e em repouso. Backups diários automáticos com retenção de 30 dias. Infraestrutura em data centers brasileiros.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>✅ API oficial do WhatsApp</h3>
+                    <p>Integração via Meta Business Platform oficial. Sem risco de banimento por uso de WhatsApp não-oficial. Sua conta comercial protegida.</p>
+                </div>
+                <div class="card-feature">
+                    <h3>📋 Conformidade</h3>
+                    <p>Termos de Uso, Política de Privacidade e Declaração de Acessibilidade publicados. Suporte humano por WhatsApp e e-mail com SLA definido.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-soft); font-size: 0.9rem;">Dúvidas sobre segurança? <a href="mailto:contato@capicrm.ia.br" style="color: var(--brand-primary);">Fale conosco</a></p>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Comece a vender melhor hoje –<br>sem sobrecarregar seu time.</h2>
+            <p>Ative sua operação em minutos e deixe a IA cuidar do CRM e do funil para você.</p>
+            <a href="diagnostico.html" class="btn-primary" data-umami-event="cta_diagnostico" data-umami-event-origem="footer">Agendar diagnóstico gratuito</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>CAPI CRM.</h4>
+                    <p>Plataforma completa de atendimento e vendas com inteligência artificial para empresas que querem crescer.</p>
+                </div>
+                <div>
+                    <h4>Navegação</h4>
+                    <a href="#solucoes">Soluções</a>
+                    <a href="#como-funciona">Como funciona</a>
+                    <a href="#planos">Planos</a>
+                    <a href="diagnostico.html">Contato</a>
+                </div>
+                <div>
+                    <h4>Institucional</h4>
+                    <a href="/termos-de-uso.html">Termos de Uso</a>
+                    <a href="/politica-de-privacidade.html">Política de Privacidade</a>
+                    <a href="/acessibilidade.html">Acessibilidade</a>
+                </div>
+                <div>
+                    <h4>Novidades</h4>
+                    <p>Receba atualizações sobre o produto.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Obrigado por assinar!');">
+                        <input type="email" placeholder="Digite seu e-mail" required>
+                        <button type="submit">Assinar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 CAPI CRM. Todos os direitos reservados. • CNPJ: 58.345.111/0001-10</p>
+                <a href="#top">Voltar ao topo ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5531984470001" class="whats-flutuante" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <script src="main.js"></script>
 </body>
 </html>
