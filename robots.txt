@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://capicrm.ia.br/sitemap.xml
