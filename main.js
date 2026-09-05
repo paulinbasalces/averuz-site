@@ -127,3 +127,12 @@ if (darkToggle) {
     document.body.classList.add('dark');
   }
 }
+
+
+// Ícone mineiro rotativo no footer
+const mineiroIcons = ['💜', '🧀', '☕', '🫘', '', '🐄', '', '🍯', '', '⛏️'];
+const mineiroEl = document.getElementById('mineiro-icon');
+if (mineiroEl) {
+    const randomIcon = mineiroIcons[Math.floor(Math.random() * mineiroIcons.length)];
+    mineiroEl.textContent = randomIcon;
+}
