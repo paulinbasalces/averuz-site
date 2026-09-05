@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   // 1. CONFIGURAÇÕES
   const CONFIG = {
-    WEBHOOK_URL: 'https://script.google.com/macros/s/SEU_CODIGO_AQUI/exec', // ⚠️ TROQUE AQUI
+    WEBHOOK_URL: 'https://script.google.com/macros/s/1me6_txbUCL_HC-HlLD71bfncgzpOOlhLcnOsTktnxAFi5GDTsSR_MNBm/exec', // ⚠️ TROQUE AQUI
     WHATSAPP: '5531984470001'
   };
 
