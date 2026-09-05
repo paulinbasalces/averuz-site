@@ -112,3 +112,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Lógica do Dark Mode Toggle
+const darkToggle = document.getElementById('dark-toggle');
+if (darkToggle) {
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    // Salva preferência (opcional)
+    localStorage.setItem('capi-dark-mode', document.body.classList.contains('dark'));
+  });
+
+  // Restaura preferência ao carregar
+  if (localStorage.getItem('capi-dark-mode') === 'true') {
+    document.body.classList.add('dark');
+  }
+}
