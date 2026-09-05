@@ -1,162 +1,594 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagnóstico gratuito | CAPI CRM</title>
-  <meta name="description" content="Descubra em 60 segundos quanto dinheiro está escapando pelo seu WhatsApp. Diagnóstico gratuito CAPI CRM." />
-  
-  <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon-capi.svg" />
-<link rel="apple-touch-icon" href="/favicon-capi.svg" /> <!-- Para iOS -->
-
-<link rel="canonical" href="https://capicrm.ia.br/diagnostico.html" />
-  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://capicrm.ia.br/" /> <!-- Mude para diagnostico.html na outra página -->
-<meta property="og:title" content="CAPI CRM | Atendimento que vende. Escala que cresce." />
-<meta property="og:description" content="O CAPI CRM centraliza seu WhatsApp e Instagram. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time." />
-<meta property="og:image" content="https://capicrm.ia.br/assets/og-image-capi.jpg" /> <!-- Crie uma imagem 1200x630px -->
-<meta property="og:locale" content="pt_BR" />
-<meta property="og:site_name" content="CAPI CRM" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="CAPI CRM | Atendimento que vende." />
-<meta name="twitter:description" content="Nenhum lead esquecido. Nenhuma conversa perdida." />
-<meta name="twitter:image" content="https://capicrm.ia.br/assets/og-image-capi.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <!-- Umami Analytics (Master Doc §4) -->
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Diagnóstico gratuito | CAPI CRM</title>
+    <meta name="description" content="Descubra quanto dinheiro está escapando pelo seu WhatsApp em 60 segundos. 8 perguntas, resultado na hora. Sem reunião, sem vendedor.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://capicrm.ia.br/diagnostico">
+    <meta property="og:title" content="Diagnóstico gratuito | CAPI CRM">
+    <meta property="og:description" content="Quanto dinheiro está escapando pelo seu WhatsApp? Descubra em 60 segundos.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="CAPI CRM">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Diagnóstico gratuito | CAPI CRM">
+    <meta property="twitter:description" content="Quanto dinheiro está escapando pelo seu WhatsApp? Descubra em 60 segundos.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon-capi.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
+    
+    <style>
+        /* Estilos específicos da página de diagnóstico */
+        .diag-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .diag-header {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-soft);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .diag-header .logo {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--brand-dark);
+            text-decoration: none;
+        }
+        
+        .diag-header .logo .crm {
+            color: var(--brand-primary);
+            font-weight: 500;
+        }
+        
+        .diag-header .logo .dot {
+            color: var(--brand-cta);
+        }
+        
+        .back-link {
+            color: var(--brand-primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--brand-cta);
+        }
+        
+        .diag-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            flex: 1;
+        }
+        
+        .diag-intro {
+            margin-bottom: 2.5rem;
+        }
+        
+        .diag-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-soft);
+            margin-bottom: 1rem;
+        }
+        
+        .diag-intro h1 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--heading);
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
+        
+        .diag-intro p {
+            color: var(--text-body);
+            font-size: 1rem;
+            max-width: 600px;
+        }
+        
+        /* Formulário */
+        .diag-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--heading);
+            font-size: 0.95rem;
+        }
+        
+        .form-group label .required {
+            color: var(--brand-cta);
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--border-soft);
+            border-radius: 8px;
+            font-family: 'Lexend', sans-serif;
+            font-size: 1rem;
+            background: var(--card-bg);
+            color: var(--text-body);
+            transition: border-color 0.2s;
+            max-width: 400px;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+        }
+        
+        .form-group input::placeholder {
+            color: var(--text-faint);
+        }
+        
+        /* Radio buttons personalizados */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--card-bg);
+            border: 2px solid var(--border-soft);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .radio-option:hover {
+            border-color: var(--brand-primary);
+            background: var(--bg-tint);
+        }
+        
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--brand-cta);
+            margin: 0;
+        }
+        
+        .radio-option label {
+            cursor: pointer;
+            flex: 1;
+            color: var(--text-body);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* Botão de submit */
+        .submit-section {
+            margin-top: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-soft);
+        }
+        
+        .btn-submit {
+            background: var(--brand-cta);
+            color: #F5F2EB;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+            width: 100%;
+            transition: all 0.2s;
+            box-shadow: 0 10px 25px -10px rgba(204,85,0,0.4);
+            font-family: 'Lexend', sans-serif;
+        }
+        
+        .btn-submit:hover {
+            background: var(--brand-cta-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -10px rgba(204,85,0,0.5);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+        
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Footer do diagnóstico */
+        .diag-footer {
+            background: var(--brand-dark);
+            color: #F5F2EB;
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .diag-footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: rgba(245,242,235,0.7);
+        }
+        
+        .privacy-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-soft);
+        }
+        
+        .privacy-note a {
+            color: var(--brand-primary);
+            text-decoration: underline;
+        }
+        
+        .conservative-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-faint);
+            font-style: italic;
+        }
+        
+        /* WhatsApp CTA final */
+        .whats-cta-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--bg-tint);
+            border-radius: 12px;
+        }
+        
+        .whats-cta-section h3 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: var(--heading);
+            margin-bottom: 0.5rem;
+        }
+        
+        .whats-cta-section p {
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+        
+        /* Dark mode */
+        body.dark .diag-header {
+            background: rgba(35,35,35,0.92);
+            border-bottom-color: #3D3D3D;
+        }
+        
+        body.dark .diag-header .logo {
+            color: #F5F2EB;
+        }
+        
+        body.dark .diag-header .logo .crm {
+            color: #A9C3A0;
+        }
+        
+        body.dark .back-link {
+            color: #A9C3A0;
+        }
+        
+        body.dark .back-link:hover {
+            color: #E58A4E;
+        }
+        
+        body.dark .form-group input[type="text"],
+        body.dark .form-group input[type="email"],
+        body.dark .form-group input[type="tel"] {
+            background: #2E2E2E;
+            border-color: #3D3D3D;
+            color: #F5F2EB;
+        }
+        
+        body.dark .form-group input:focus {
+            border-color: #A9C3A0;
+        }
+        
+        body.dark .radio-option {
+            background: #2E2E2E;
+            border-color: #3D3D3D;
+        }
+        
+        body.dark .radio-option:hover {
+            border-color: #A9C3A0;
+            background: #2A2C28;
+        }
+        
+        body.dark .radio-option label {
+            color: rgba(245,242,235,0.85);
+        }
+        
+        body.dark .whats-cta-section {
+            background: #2A2C28;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .diag-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .diag-intro h1 {
+                font-size: 1.5rem;
+            }
+            
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="tel"] {
+                max-width: 100%;
+            }
+            
+            .radio-option {
+                padding: 0.75rem;
+            }
+            
+            .btn-submit {
+                padding: 0.875rem 1.5rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-cream text-sage-dark">
-  <!-- HEADER -->
-  <header class="site-header">
-    <a href="index.html" class="logo">CAPI<span class="crm"> CRM</span><span class="dot">.</span></a>
-    <a href="index.html" class="btn-text">← Voltar ao site</a>
-  </header>
+<body class="diag-page">
 
-  <main class="page-diagnostico">
-    <div class="container-narrow">
-      
-      <div class="hero-diagnostico">
-        <span class="badge">🦫 Diagnóstico gratuito • 60 segundos</span>
-        <h1>Quanto dinheiro está escapando pelo seu WhatsApp?</h1>
-        <p class="lead">8 perguntas. A conta aparece na hora. Sem reunião, sem cadastro chato, sem vendedor em cima de você.</p>
-      </div>
+    <!-- Header -->
+    <header class="diag-header">
+        <a href="index.html" class="logo">CAPI <span class="crm">CRM</span><span class="dot">.</span></a>
+        <a href="index.html" class="back-link">← Voltar ao site</a>
+    </header>
 
-      <!-- FORMULÁRIO -->
-      <form id="diag-form" class="card-elevated rounded-2xl p-8 space-y-6">
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label class="text-sm font-semibold block mb-2" for="nome">Seu nome *</label>
-            <input id="nome" name="nome" required placeholder="Como te chamamos?" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
-          </div>
-          <div>
-            <label class="text-sm font-semibold block mb-2" for="whats">Seu WhatsApp *</label>
-            <input id="whats" name="telefone" required type="tel" placeholder="(31) 9 0000-0000" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
-          </div>
+    <!-- Conteúdo principal -->
+    <main class="diag-container">
+        <div class="diag-intro">
+            <div class="diag-badge">
+                🦫 Diagnóstico gratuito • 60 segundos
+            </div>
+            <h1>Quanto dinheiro está escapando pelo seu WhatsApp?</h1>
+            <p>8 perguntas. A conta aparece na hora. Sem reunião, sem cadastro chato, sem vendedor em cima de você.</p>
         </div>
 
-        <!-- NOVO CAMPO: E-mail -->
-        <div>
-          <label class="text-sm font-semibold block mb-2" for="email">Seu e-mail *</label>
-          <input id="email" name="email" required type="email" placeholder="seu@email.com" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
-        </div>
+        <form id="diag-form" class="diag-form">
+            <!-- Dados pessoais -->
+            <div class="form-group">
+                <label for="nome">Seu nome <span class="required">*</span></label>
+                <input type="text" id="nome" name="nome" placeholder="Como te chamamos?" required>
+            </div>
 
-        <div>
-          <label class="text-sm font-semibold block mb-2">Com o que você trabalha?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="radio-card"><input type="radio" name="nicho" value="corretor" required /> <span>🏠 Corretor(a) de imóveis</span></label>
-            <label class="radio-card"><input type="radio" name="nicho" value="saude" /> <span> Clínica / Saúde / Estética</span></label>
-            <label class="radio-card"><input type="radio" name="nicho" value="advogado" /> <span>⚖️ Advogado(a)</span></label>
-            <label class="radio-card"><input type="radio" name="nicho" value="contador" /> <span>🧮 Contador(a)</span></label>
-            <label class="radio-card"><input type="radio" name="nicho" value="outro" /> <span>💼 Outro profissional liberal</span></label>
-          </div>
-        </div>
+            <div class="form-group">
+                <label for="whats">Seu WhatsApp <span class="required">*</span></label>
+                <input type="tel" id="whats" name="whats" placeholder="(31) 9 0000-0000" required>
+            </div>
 
-        <div>
-          <label class="text-sm font-semibold block mb-2">Quantos leads chegam por mês, mais ou menos?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="radio-card"><input type="radio" name="leads" value="10" required /> <span>Até 10</span></label>
-            <label class="radio-card"><input type="radio" name="leads" value="30" /> <span>10 a 30</span></label>
-            <label class="radio-card"><input type="radio" name="leads" value="100" /> <span>30 a 100</span></label>
-            <label class="radio-card"><input type="radio" name="leads" value="100+" /> <span>Mais de 100</span></label>
-          </div>
-        </div>
+            <div class="form-group">
+                <label for="email">Seu e-mail <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+            </div>
 
-        <div>
-          <label class="text-sm font-semibold block mb-2">Sinceramente: quanto tempo pra responder quem chama fora do seu horário?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="radio-card"><input type="radio" name="resposta" value="1h" required /> <span>Menos de 1 hora</span></label>
-            <label class="radio-card"><input type="radio" name="resposta" value="4h" /> <span>Entre 1 e 4 horas</span></label>
-            <label class="radio-card"><input type="radio" name="resposta" value="24h" /> <span>No dia seguinte</span></label>
-            <!-- CORREÇÃO: Adicionado value="nunca" -->
-            <label class="radio-card"><input type="radio" name="resposta" value="nunca" /> <span>Às vezes nem respondo</span></label>
-          </div>
-        </div>
+            <!-- Nicho -->
+            <div class="form-group">
+                <label>Com o que você trabalha?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="nicho-corretor" name="nicho" value="corretor" required>
+                        <label for="nicho-corretor">🏠 Corretor(a) de imóveis</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="nicho-saude" name="nicho" value="saude">
+                        <label for="nicho-saude">🩺 Clínica / Saúde / Estética</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="nicho-advogado" name="nicho" value="advogado">
+                        <label for="nicho-advogado">⚖️ Advogado(a)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="nicho-contador" name="nicho" value="contador">
+                        <label for="nicho-contador">🧮 Contador(a)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="nicho-outro" name="nicho" value="outro">
+                        <label for="nicho-outro">💼 Outro profissional liberal</label>
+                    </div>
+                </div>
+            </div>
 
-        <div>
-          <label class="text-sm font-semibold block mb-2">Onde você organiza seus clientes hoje?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="radio-card"><input type="radio" name="crm" value="memoria" required /> <span> Memória + WhatsApp</span></label>
-            <label class="radio-card"><input type="radio" name="crm" value="planilha" /> <span>📊 Planilha</span></label>
-            <label class="radio-card"><input type="radio" name="crm" value="parado" /> <span>🛑 CRM parado</span></label>
-            <label class="radio-card"><input type="radio" name="crm" value="ativo" /> <span>✅ CRM ativo e atualizado</span></label>
-          </div>
-        </div>
+            <!-- Leads mensais -->
+            <div class="form-group">
+                <label>Quantos leads chegam por mês, mais ou menos?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="leads-10" name="leads" value="10" required>
+                        <label for="leads-10">Até 10</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="leads-30" name="leads" value="30">
+                        <label for="leads-30">10 a 30</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="leads-100" name="leads" value="100">
+                        <label for="leads-100">30 a 100</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="leads-mais" name="leads" value="mais">
+                        <label for="leads-mais">Mais de 100</label>
+                    </div>
+                </div>
+            </div>
 
-        <div>
-          <label class="text-sm font-semibold block mb-2">Sua comissão ou ticket médio?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="radio-card"><input type="radio" name="ticket" value="1000" required /> <span>Até R$ 1 mil</span></label>
-            <label class="radio-card"><input type="radio" name="ticket" value="5000" /> <span>R$ 1 a 5 mil</span></label>
-            <label class="radio-card"><input type="radio" name="ticket" value="10000" /> <span>R$ 5 a 10 mil</span></label>
-            <label class="radio-card"><input type="radio" name="ticket" value="10000+" /> <span>Acima de R$ 10 mil</span></label>
-          </div>
-        </div>
+            <!-- Tempo de resposta -->
+            <div class="form-group">
+                <label>Sinceramente: quanto tempo pra responder quem chama fora do seu horário?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="resposta-1h" name="resposta" value="1h" required>
+                        <label for="resposta-1h">Menos de 1 hora</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="resposta-4h" name="resposta" value="4h">
+                        <label for="resposta-4h">Entre 1 e 4 horas</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="resposta-24h" name="resposta" value="24h">
+                        <label for="resposta-24h">No dia seguinte</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="resposta-nunca" name="resposta" value="nunca">
+                        <label for="resposta-nunca">Às vezes nem respondo</label>
+                    </div>
+                </div>
+            </div>
 
-        <div>
-          <label class="text-sm font-semibold block mb-2">Quantos clientes você perdeu nos últimos 3 meses por não acompanhar?</label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="radio-card"><input type="radio" name="perdidos" value="0" required /> <span>Nenhum</span></label>
-            <label class="radio-card"><input type="radio" name="perdidos" value="3" /> <span>1 a 3</span></label>
-            <label class="radio-card"><input type="radio" name="perdidos" value="10" /> <span>4 a 10</span></label>
-            <label class="radio-card"><input type="radio" name="perdidos" value="nao_sei" /> <span>Não faço ideia</span></label>
-          </div>
-        </div>
+            <!-- Organização -->
+            <div class="form-group">
+                <label>Onde você organiza seus clientes hoje?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="crm-memoria" name="crm" value="memoria" required>
+                        <label for="crm-memoria">🧠 Memória + WhatsApp</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="crm-planilha" name="crm" value="planilha">
+                        <label for="crm-planilha">📊 Planilha</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="crm-parado" name="crm" value="parado">
+                        <label for="crm-parado">🛑 CRM parado</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="crm-ativo" name="crm" value="ativo">
+                        <label for="crm-ativo">✅ CRM ativo e atualizado</label>
+                    </div>
+                </div>
+            </div>
 
-        <div class="pt-4">
-          <button type="submit" class="btn-primary w-full">Ver meu diagnóstico agora</button>
-          <p class="text-xs text-center mt-4" style="color: var(--sage);">Ao enviar, você concorda com nossa <a href="/politica-de-privacidade" class="underline">Política de Privacidade</a>.</p>
-        </div>
-      </form>
+            <!-- Ticket médio -->
+            <div class="form-group">
+                <label>Sua comissão ou ticket médio?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="ticket-1k" name="ticket" value="1k" required>
+                        <label for="ticket-1k">Até R$ 1 mil</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ticket-5k" name="ticket" value="5k">
+                        <label for="ticket-5k">R$ 1 a 5 mil</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ticket-10k" name="ticket" value="10k">
+                        <label for="ticket-10k">R$ 5 a 10 mil</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="ticket-mais" name="ticket" value="mais">
+                        <label for="ticket-mais">Acima de R$ 10 mil</label>
+                    </div>
+                </div>
+            </div>
 
-      <div class="trust-block">
-        <p>Usamos números conservadores de propósito. Nada de conta milagrosa.</p>
-      </div>
+            <!-- Clientes perdidos -->
+            <div class="form-group">
+                <label>Quantos clientes você perdeu nos últimos 3 meses por não acompanhar?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="perdidos-0" name="perdidos" value="0" required>
+                        <label for="perdidos-0">Nenhum</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="perdidos-3" name="perdidos" value="3">
+                        <label for="perdidos-3">1 a 3</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="perdidos-10" name="perdidos" value="10">
+                        <label for="perdidos-10">4 a 10</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="perdidos-nao-sei" name="perdidos" value="nao_sei">
+                        <label for="perdidos-nao-sei">Não faço ideia</label>
+                    </div>
+                </div>
+            </div>
 
-      <div class="whats-cta">
-        <div class="whats-cta-content">
-          <div class="whats-cta-icon">🦫</div>
-          <div>
-            <h3>Receber esse diagnóstico no meu WhatsApp</h3>
+            <!-- Submit -->
+            <div class="submit-section">
+                <button type="submit" class="btn-submit">Ver meu diagnóstico agora</button>
+            </div>
+
+            <p class="privacy-note">
+                Ao enviar, você concorda com nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.
+            </p>
+            <p class="conservative-note">
+                Usamos números conservadores de propósito. Nada de conta milagrosa.
+            </p>
+        </form>
+
+        <!-- WhatsApp CTA -->
+        <div class="whats-cta-section">
+            <h3>🦫 Receber esse diagnóstico no meu WhatsApp</h3>
             <p>A Capi chama você em poucos minutos. Enquanto isso, respira: o problema tem solução.</p>
-          </div>
         </div>
-      </div>
+    </main>
 
-    </div>
-  </main>
+    <!-- Footer -->
+    <footer class="diag-footer">
+        <p>© 2026 CAPI CRM • Atendimento que vende. Escala que cresce.</p>
+    </footer>
 
-  <footer class="site-footer">
-    <p>© 2026 CAPI CRM • Atendimento que vende. Escala que cresce.</p>
-  </footer>
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5531984470001" class="whats-flutuante" target="_blank" aria-label="Fale conosco no WhatsApp">
+        
+    </a>
 
-  <!-- Script unificado (carrega o main.js) -->
-  <script src="main.js" defer></script>
+    <script src="main.js"></script>
 </body>
 </html>
