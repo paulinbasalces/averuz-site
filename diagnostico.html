@@ -1,406 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Diagnóstico gratuito | CAPI CRM</title>
-<meta name="description" content="Descubra em 60 segundos quanto dinheiro está escapando pelo seu WhatsApp. Diagnóstico gratuito, sem reunião e sem vendedor chato." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235B7553'/%3E%3Ctext x='30' y='45' font-family='Sora,Arial,sans-serif' font-size='34' font-weight='800' text-anchor='middle' fill='%23F5F2EB'%3EC%3C/text%3E%3Ccircle cx='50' cy='46' r='6' fill='%23CC5500'/%3E%3C/svg%3E" />
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
-<script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script></head>
-<body style="background: var(--bg-cream); color: var(--brand-dark);">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico gratuito | CAPI CRM</title>
+  <meta name="description" content="Descubra em 60 segundos quanto dinheiro está escapando pelo seu WhatsApp. Diagnóstico gratuito CAPI CRM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Umami Analytics (Master Doc §4) -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
+</head>
+<body class="bg-cream text-sage-dark">
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="logo">CAPI<span class="crm"> CRM</span><span class="dot">.</span></a>
+    <a href="index.html" class="btn-text">← Voltar ao site</a>
+  </header>
 
-<header class="sticky top-0 z-50 backdrop-blur" style="background: rgba(245,242,235,.95); border-bottom: 1px solid #E7E1D6;">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    <a href="index.html" class="flex items-baseline font-display" aria-label="CAPI CRM">
-      <span style="color:var(--brand-dark);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;">CAPI</span>
-      <span style="color:var(--brand-primary);font-weight:600;font-size:1.4rem;margin-left:.35rem;">CRM</span>
-      <span style="color:var(--brand-cta);font-weight:800;font-size:1.4rem;">.</span>
-    </a>
-    <a href="index.html" class="text-sm font-medium hover:opacity-70">← Voltar ao site</a>
-  </div>
-</header>
+  <main class="page-diagnostico">
+    <div class="container-narrow">
+      
+      <div class="hero-diagnostico">
+        <span class="badge">🦫 Diagnóstico gratuito • 60 segundos</span>
+        <h1>Quanto dinheiro está escapando pelo seu WhatsApp?</h1>
+        <p class="lead">8 perguntas. A conta aparece na hora. Sem reunião, sem cadastro chato, sem vendedor em cima de você.</p>
+      </div>
 
-<section class="hero-bg" style="background: var(--bg-cream);">
-  <div class="hero-blob-sage" aria-hidden="true"></div>
-  <div class="max-w-3xl mx-auto px-6 pt-16 pb-10 text-center relative">
-    <span class="eyebrow-pill">🦫&nbsp; Diagnóstico gratuito • 60 segundos</span>
-    <h1 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mt-6" style="color: var(--brand-dark);">
-      Quanto dinheiro está <span class="hl-underline" style="color: var(--brand-primary);">escapando</span> pelo seu WhatsApp?
-    </h1>
-    <p class="mt-4 text-lg" style="color: rgba(44,44,44,0.75);">8 perguntas. A conta aparece na hora. Sem reunião, sem cadastro chato, sem vendedor em cima de você.</p>
-  </div>
-
-  <div class="max-w-2xl mx-auto px-6 pb-20 relative">
-    <!-- FORMULÁRIO -->
-    <form id="diag-form" class="card-elevated rounded-2xl p-8 space-y-6">
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div>
-          <label class="text-sm font-semibold block mb-2" for="nome">Seu nome *</label>
-          <input id="nome" name="nome" required placeholder="Como te chamamos?" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
+      <!-- FORMULÁRIO -->
+      <form id="diag-form" class="card-elevated rounded-2xl p-8 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label class="text-sm font-semibold block mb-2" for="nome">Seu nome *</label>
+            <input id="nome" name="nome" required placeholder="Como te chamamos?" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold block mb-2" for="whats">Seu WhatsApp *</label>
+            <input id="whats" name="telefone" required type="tel" placeholder="(31) 9 0000-0000" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
+          </div>
         </div>
+
+        <!-- NOVO CAMPO: E-mail -->
         <div>
-          <label class="text-sm font-semibold block mb-2" for="whats">Seu WhatsApp *</label>
-          <input id="whats" name="telefone" required type="tel" placeholder="(31) 9 0000-0000" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
+          <label class="text-sm font-semibold block mb-2" for="email">Seu e-mail *</label>
+          <input id="email" name="email" required type="email" placeholder="seu@email.com" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;" />
         </div>
+
         <div>
-  <label class="text-sm font-semibold block mb-2" for="email">Seu e-mail *</label>
-  <input id="email" name="email" required type="email" placeholder="seu@email.com" 
-         class="w-full rounded-xl px-4 py-3 text-sm border" 
-         style="border-color:#E7E1D6; background:#fff;" />
-</div>
+          <label class="text-sm font-semibold block mb-2">Com o que você trabalha?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="radio-card"><input type="radio" name="nicho" value="corretor" required /> <span>🏠 Corretor(a) de imóveis</span></label>
+            <label class="radio-card"><input type="radio" name="nicho" value="saude" /> <span> Clínica / Saúde / Estética</span></label>
+            <label class="radio-card"><input type="radio" name="nicho" value="advogado" /> <span>⚖️ Advogado(a)</span></label>
+            <label class="radio-card"><input type="radio" name="nicho" value="contador" /> <span>🧮 Contador(a)</span></label>
+            <label class="radio-card"><input type="radio" name="nicho" value="outro" /> <span>💼 Outro profissional liberal</span></label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold block mb-2">Quantos leads chegam por mês, mais ou menos?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="radio-card"><input type="radio" name="leads" value="10" required /> <span>Até 10</span></label>
+            <label class="radio-card"><input type="radio" name="leads" value="30" /> <span>10 a 30</span></label>
+            <label class="radio-card"><input type="radio" name="leads" value="100" /> <span>30 a 100</span></label>
+            <label class="radio-card"><input type="radio" name="leads" value="100+" /> <span>Mais de 100</span></label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold block mb-2">Sinceramente: quanto tempo pra responder quem chama fora do seu horário?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="radio-card"><input type="radio" name="resposta" value="1h" required /> <span>Menos de 1 hora</span></label>
+            <label class="radio-card"><input type="radio" name="resposta" value="4h" /> <span>Entre 1 e 4 horas</span></label>
+            <label class="radio-card"><input type="radio" name="resposta" value="24h" /> <span>No dia seguinte</span></label>
+            <!-- CORREÇÃO: Adicionado value="nunca" -->
+            <label class="radio-card"><input type="radio" name="resposta" value="nunca" /> <span>Às vezes nem respondo</span></label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold block mb-2">Onde você organiza seus clientes hoje?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="radio-card"><input type="radio" name="crm" value="memoria" required /> <span> Memória + WhatsApp</span></label>
+            <label class="radio-card"><input type="radio" name="crm" value="planilha" /> <span>📊 Planilha</span></label>
+            <label class="radio-card"><input type="radio" name="crm" value="parado" /> <span>🛑 CRM parado</span></label>
+            <label class="radio-card"><input type="radio" name="crm" value="ativo" /> <span>✅ CRM ativo e atualizado</span></label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold block mb-2">Sua comissão ou ticket médio?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="radio-card"><input type="radio" name="ticket" value="1000" required /> <span>Até R$ 1 mil</span></label>
+            <label class="radio-card"><input type="radio" name="ticket" value="5000" /> <span>R$ 1 a 5 mil</span></label>
+            <label class="radio-card"><input type="radio" name="ticket" value="10000" /> <span>R$ 5 a 10 mil</span></label>
+            <label class="radio-card"><input type="radio" name="ticket" value="10000+" /> <span>Acima de R$ 10 mil</span></label>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-sm font-semibold block mb-2">Quantos clientes você perdeu nos últimos 3 meses por não acompanhar?</label>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="radio-card"><input type="radio" name="perdidos" value="0" required /> <span>Nenhum</span></label>
+            <label class="radio-card"><input type="radio" name="perdidos" value="3" /> <span>1 a 3</span></label>
+            <label class="radio-card"><input type="radio" name="perdidos" value="10" /> <span>4 a 10</span></label>
+            <label class="radio-card"><input type="radio" name="perdidos" value="nao_sei" /> <span>Não faço ideia</span></label>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit" class="btn-primary w-full">Ver meu diagnóstico agora</button>
+          <p class="text-xs text-center mt-4" style="color: var(--sage);">Ao enviar, você concorda com nossa <a href="/politica-de-privacidade" class="underline">Política de Privacidade</a>.</p>
+        </div>
+      </form>
+
+      <div class="trust-block">
+        <p>Usamos números conservadores de propósito. Nada de conta milagrosa.</p>
       </div>
 
-      <div>
-        <label class="text-sm font-semibold block mb-2" for="nicho">Com o que você trabalha?</label>
-        <select id="nicho" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
-          <option>Corretor(a) de imóveis</option>
-          <option>Clínica / Saúde / Estética</option>
-          <option>Advogado(a)</option>
-          <option>Contador(a)</option>
-          <option>Outro profissional liberal</option>
-        </select>
+      <div class="whats-cta">
+        <div class="whats-cta-content">
+          <div class="whats-cta-icon">🦫</div>
+          <div>
+            <h3>Receber esse diagnóstico no meu WhatsApp</h3>
+            <p>A Capi chama você em poucos minutos. Enquanto isso, respira: o problema tem solução.</p>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <label class="text-sm font-semibold block mb-2" for="leads">Quantos leads chegam por mês, mais ou menos?</label>
-        <select id="leads" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
-          <option value="5|1">Até 10</option>
-          <option value="20|2" selected>10 a 30</option>
-          <option value="65|3">30 a 100</option>
-          <option value="150|4">Mais de 100</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold block mb-2" for="resp">Sinceramente: quanto tempo pra responder quem chama fora do seu horário?</label>
-        <select id="resp" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
-          <option value="0.10|1">Menos de 1 hora</option>
-          <option value="0.20|2">Entre 1 e 4 horas</option>
-          <option value="0.30|3" selected>No dia seguinte</option>
-          <option value="0.40|4">Às vezes nem respondo</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold block mb-2" for="org">Onde você organiza seus clientes hoje?</label>
-        <select id="org" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
-          <option value="4">Memória + WhatsApp</option>
-          <option value="3" selected>Planilha</option>
-          <option value="2">CRM parado</option>
-          <option value="1">CRM ativo e atualizado</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold block mb-2" for="ticket">Sua comissão ou ticket médio?</label>
-        <select id="ticket" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
-          <option value="700">Até R$ 1 mil</option>
-          <option value="3000" selected>R$ 1 a 5 mil</option>
-          <option value="7500">R$ 5 a 10 mil</option>
-          <option value="15000">Acima de R$ 10 mil</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="text-sm font-semibold block mb-2" for="perd">Quantos clientes você perdeu nos últimos 3 meses por não acompanhar?</label>
-        <select id="perd" class="w-full rounded-xl px-4 py-3 text-sm border" style="border-color:#E7E1D6; background:#fff;">
-          <option value="1">Nenhum</option>
-          <option value="2">1 a 3</option>
-          <option value="3">4 a 10</option>
-          <option value="4" selected>Não faço ideia</option>
-        </select>
-      </div>
-
-      <button type="submit" class="btn-primary w-full rounded-xl px-8 py-4">Ver meu diagnóstico agora</button>
-      <p class="text-xs text-center" style="color: rgba(44,44,44,0.55);">Ao enviar, você concorda com nossa <a href="/politica-de-privacidade" style="color: var(--brand-primary-dark); text-decoration: underline;">Política de Privacidade</a>.</p>
-      <p class="text-xs text-center" style="color: rgba(44,44,44,0.5);">Usamos números conservadores de propósito. Nada de conta milagrosa.</p>
-    </form>
-
-    <!-- RESULTADO -->
-    <div id="diag-result" class="hidden card-elevated rounded-2xl p-8 mt-8">
-      <p id="r-verdict" class="font-display font-bold text-2xl" style="color: var(--brand-dark);"></p>
-      <p id="r-score" class="text-sm mt-2" style="color: rgba(44,44,44,0.6);"></p>
-      <div class="rounded-xl p-6 mt-6" style="background: var(--bg-tint);">
-        <p id="r-text" class="leading-relaxed" style="color: rgba(44,44,44,0.85);"></p>
-      </div>
-      <div id="r-ctas" class="grid sm:grid-cols-2 gap-4 mt-6"></div>
-      <a id="r-whats" target="_blank" rel="noopener" class="btn-secondary rounded-xl px-6 py-4 text-center block mt-4">🦫 Receber esse diagnóstico no meu WhatsApp</a>
-      <p class="text-xs text-center mt-4" style="color: rgba(44,44,44,0.5);">A Capi chama você em poucos minutos. Enquanto isso, respira: o problema tem solução.</p>
     </div>
-  </div>
-</section>
+  </main>
 
-<script>
-document.getElementById('diag-form').addEventListener('submit', function (e) {
-  e.preventDefault();
+  <footer class="site-footer">
+    <p>© 2026 CAPI CRM • Atendimento que vende. Escala que cresce.</p>
+  </footer>
 
-  var g = function (id) { return document.getElementById(id).value; };
-  var nome = (g('nome').split(' ')[0]) || 'visitante';
-  var nicho = g('nicho');
-
-  var L = g('leads').split('|'); var leadsMid = +L[0]; var leadsPts = +L[1];
-  var R = g('resp').split('|');  var fator = +R[0];    var respPts = +R[1];
-  var orgPts  = +g('org');
-  var ticket  = +g('ticket');
-  var perdPts = +g('perd');
-
-  var score = leadsPts + respPts + orgPts + perdPts;
-  var risco = Math.round(leadsMid * fator);
-  var recup = Math.max(1, Math.round(risco * 0.10));
-  var valor = recup * ticket;
-  var brl = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-
-  if (window.umami) {
-    window.umami.track('formulario_enviado');
-    window.umami.track('resultado_gerado', { score: score, nicho: nicho });
-  }
-
-  var verdict, cor, ctas;
-  if (score >= 12) {
-    verdict = '🔴 Alerta vermelho: seu WhatsApp está deixando dinheiro na mesa.';
-    cor = 'var(--alert-text)';
-    ctas = '<a href="https://wa.me/5531984470001" target="_blank" rel="noopener" class="btn-primary rounded-xl px-6 py-4 text-center">Garantir vaga de Pioneiro</a>' +
-           '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
-  } else if (score >= 8) {
-    verdict = '🟡 Tá escapando dinheiro — e follow-up resolveria.';
-    cor = 'var(--brand-cta)';
-    ctas = '<a href="http://app.capicrm.ia.br/enrollment/new?product=CAPI+Solo" class="btn-primary rounded-xl px-6 py-4 text-center">Começar teste grátis de 7 dias</a>' +
-           '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
-  } else {
-    verdict = '🟢 No controle — mas dá pra escalar sem sofrer.';
-    cor = 'var(--brand-primary-dark)';
-    ctas = '<a href="index.html#como-funciona" class="btn-primary rounded-xl px-6 py-4 text-center">Ver a CAPI em ação</a>' +
-           '<a href="index.html#planos" class="btn-secondary rounded-xl px-6 py-4 text-center">Ver planos</a>';
-  }
-
-  document.getElementById('r-verdict').textContent = verdict;
-  document.getElementById('r-verdict').style.color = cor;
-  document.getElementById('r-score').textContent = 'Score de risco: ' + score + '/16 • ' + nicho;
-  document.getElementById('r-text').innerHTML = nome + ', com ~<strong>' + leadsMid + ' leads/mês</strong> e esse tempo de resposta, cerca de <strong>' + risco + ' leads/mês ficam em risco</strong>. Se a CAPI recuperar só 1 em cada 10 — sendo bem conservador —, no seu ticket isso é ~<strong>' + brl + '/mês</strong>. O plano Solo custa R$ 197 — ou seja, esse resgate paga ' + Math.max(1, Math.round(valor / 197)) + 'x o investimento.';
-  document.getElementById('r-ctas').innerHTML = ctas;
-  document.getElementById('r-whats').href = 'https://wa.me/5531984470001?text=' + encodeURIComponent('Olá! Sou ' + nome + ' (' + nicho + '). Fiz o diagnóstico no site da CAPI: score ' + score + '/16 e ~' + brl + '/mês em risco. Quero falar com a Capi. 🦫');
-
-  document.getElementById('diag-form').classList.add('hidden');
-  var res = document.getElementById('diag-result');
-  res.classList.remove('hidden');
-  res.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-</script>
-
-<footer class="py-10 text-center text-sm" style="background:#232323; color: rgba(245,242,235,0.6);">
-  <p>© 2026 CAPI CRM • Atendimento que vende. Escala que cresce.</p>
-</footer>
-
-  <script>
-(function() {
-    const params = new URLSearchParams(window.location.search);
-    const nicho = params.get('nicho');
-    const perda = params.get('perda');
-
-    // 1. Pré-seleciona o Nicho
-    if (nicho) {
-        // Se for um <select id="nicho">
-        const selectNicho = document.getElementById('nicho');
-        if (selectNicho) selectNicho.value = nicho;
-        
-        // Se for Radio Button <input name="nicho">
-        const radioNicho = document.querySelector(`input[name="nicho"][value="${nicho}"]`);
-        if (radioNicho) radioNicho.checked = true;
-    }
-
-    // 2. Exibe a Mágica da Perda Calculada
-    if (perda && parseFloat(perda) > 0) {
-        const perdaFmt = parseFloat(perda).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-        
-        // Cria um campo oculto pra mandar pro Motor UAI / Backend
-        const form = document.querySelector('form'); // Ajuste o seletor do seu form se necessário
-        if (form) {
-            const hidden = document.createElement('input');
-            hidden.type = 'hidden';
-            hidden.name = 'perda_vinda_calculadora';
-            hidden.value = perda;
-            form.appendChild(hidden);
-        }
-
-        // Injeta um alerta visual no topo do formulário (Usando a paleta de Alerta do Master Doc)
-        const alerta = document.createElement('div');
-        alerta.style.cssText = "background:#FBEDE6; border:1px solid #E5B49A; color:#B3400F; padding:1.2rem; border-radius:10px; margin-bottom:1.5rem; font-family:'Lexend',sans-serif; font-size:0.95rem; line-height:1.5;";
-        alerta.innerHTML = `💸 <strong>Opa! Vi que a conta da calculadora deu ${perdaFmt}/mês.</strong><br>Agora que a gente sabe o tamanho do rombo, preenche o diagnóstico abaixo. A Capi vai traçar o plano exato pra estancar esse sangramento.`;
-        
-        // Insere o alerta logo após o H1 da página
-        const h1 = document.querySelector('h1');
-        if(h1) {
-            h1.parentNode.insertBefore(alerta, h1.nextSibling);
-        }
-    }
-})();
-</script>
-
-  <script>
-(function() {
-    const form = document.getElementById('form-diagnostico'); // Ajuste o ID do seu form
-    if (!form) return;
-
-    // URL do Webhook do Google Apps Script (TROQUE AQUI)
-    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzJ9_oMGm7XJyIcIzXxQwbz9ESwBl7OYNGb1VFA-thofxZdKVnWW9--SJb0-a_nQKn4/exec'; // <-- Cole sua URL aqui
-
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Impede o envio tradicional
-
-        // 1. Coleta os dados do formulário
-        const formData = new FormData(form);
-        const dados = {
-            nome: formData.get('nome') || '',
-            email: formData.get('email') || '',
-            telefone: formData.get('telefone') || '',
-            nicho: formData.get('nicho') || '',
-            leads_mensais: formData.get('leads_mensais') || '',
-            tempo_resposta_min: formData.get('tempo_resposta_min') || '',
-            score: formData.get('score') || '',
-            origem_url: window.location.href
-        };
-
-        // 2. Adiciona a perda vinda da calculadora (se existir na URL)
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('perda')) {
-            dados.perda_vinda_calculadora = params.get('perda');
-        }
-
-        // 3. Envia pro Webhook (Google Apps Script)
-        try {
-            // Mostra um loading no botão (opcional)
-            const btnSubmit = form.querySelector('button[type="submit"]');
-            const textoOriginal = btnSubmit.innerHTML;
-            btnSubmit.innerHTML = 'Salvando...';
-            btnSubmit.disabled = true;
-
-            const response = await fetch(WEBHOOK_URL, {
-                method: 'POST',
-                mode: 'no-cors', // Google Apps Script não suporta CORS, então usamos no-cors
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dados)
-            });
-
-            // 4. Analytics (Master Doc §4)
-            if (typeof umami !== 'undefined') {
-                umami.track('formulario_enviado', {
-                    score: dados.score,
-                    nicho: dados.nicho
-                });
-            }
-
-            // 5. Monta a mensagem do WhatsApp (Fluxo Assíncrono §5)
-            const perdaFmt = dados.perda_vinda_calculadora 
-                ? parseFloat(dados.perda_vinda_calculadora).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })
-                : '';
-            
-            const msgWhats = encodeURIComponent(
-                `Opa, Capi! Acabei de fazer o diagnóstico. Meu nome é ${dados.nome}, sou do nicho ${dados.nicho}. ${perdaFmt ? `Vi que tô perdendo ${perdaFmt}/mês.` : ''} Bora conversar?`
-            );
-
-            // 6. Abre o WhatsApp (ou redireciona pra página de obrigado)
-            window.open(`https://wa.me/5531984470001?text=${msgWhats}`, '_blank');
-
-            // 7. Reseta o botão
-            btnSubmit.innerHTML = textoOriginal;
-            btnSubmit.disabled = false;
-
-            // 8. (Opcional) Redireciona pra página de obrigado
-            // setTimeout(() => { window.location.href = '/obrigado.html'; }, 1000);
-
-        } catch (error) {
-            console.error('Erro ao salvar lead:', error);
-            
-            // Mesmo com erro, abre o WhatsApp (não deixa o usuário na mão)
-            const msgWhats = encodeURIComponent(`Opa, Capi! Tentei fazer o diagnóstico mas deu ruim aqui. Meu nome é ${dados.nome}. Bora conversar?`);
-            window.open(`https://wa.me/5531984470001?text=${msgWhats}`, '_blank');
-            
-            alert('Opa, deu ruim pra salvar seus dados, mas já abri o Zap pra gente conversar!');
-        }
-    });
-})();
-</script>
-  <script>
-(function() {
-  // ⚠️ COLE SUA URL DO APPS SCRIPT AQUI
-  const WEBHOOK_URL = 'https://script.google.com/macros/s/SEU_CODIGO_AQUI/exec';
-  
-  const form = document.getElementById('diag-form');
-  if (!form) return;
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const btnSubmit = form.querySelector('button[type="submit"]');
-    const textoOriginal = btnSubmit ? btnSubmit.textContent : 'Enviar';
-    
-    if(btnSubmit) {
-      btnSubmit.textContent = 'Enviando...';
-      btnSubmit.disabled = true;
-    }
-
-    // Coleta dados
-    const formData = new FormData(form);
-    const dados = {
-      nome: formData.get('nome') || '',
-      email: formData.get('email') || '',
-      telefone: formData.get('telefone') || '',
-      nicho: formData.get('nicho') || '',
-      leads_mensais: formData.get('leads_mensais') || '',
-      tempo_resposta_min: formData.get('tempo_resposta_min') || '',
-      organizacao: formData.get('organizacao') || '',
-      ticket_medio: formData.get('ticket_medio') || '',
-      clientes_perdidos: formData.get('clientes_perdidos') || '',
-      origem_url: window.location.href
-    };
-
-    // Pega perda da calculadora (se houver)
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('perda')) {
-      dados.perda_vinda_calculadora = params.get('perda');
-    }
-
-    // Envia para Google Sheet
-    try {
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados)
-      });
-    } catch (error) {
-      console.warn('Erro ao salvar:', error);
-    }
-
-    // Analytics (Master Doc §4)
-    if (typeof umami !== 'undefined') {
-      umami.track('formulario_enviado', { 
-        nicho: dados.nicho,
-        score: 0 // será calculado depois
-      });
-    }
-
-    // Abre WhatsApp
-    const perdaFmt = dados.perda_vinda_calculadora 
-      ? parseFloat(dados.perda_vinda_calculadora).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 })
-      : '';
-    
-    const msg = encodeURIComponent(
-      `Opa, Capi! Fiz o diagnóstico. Sou ${dados.nome}, trabalho com ${dados.nicho}. ${perdaFmt ? `Vi que tô perdendo ${perdaFmt}/mês.` : ''} Bora conversar?`
-    );
-    window.open(`https://wa.me/5531984470001?text=${msg}`, '_blank');
-
-    if(btnSubmit) {
-      btnSubmit.textContent = textoOriginal;
-      btnSubmit.disabled = false;
-    }
-  });
-})();
-</script>
+  <!-- Script unificado (carrega o main.js) -->
+  <script src="main.js" defer></script>
 </body>
 </html>
