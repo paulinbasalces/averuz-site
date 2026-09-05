@@ -420,12 +420,5 @@
   CSS CARREGADO? <span id="css-check">Verificando...</span>
 </div>
 
-<script>
-// Verifica se as variáveis CSS estão funcionando
-const test = getComputedStyle(document.documentElement).getPropertyValue('--brand-primary').trim();
-document.getElementById('css-check').textContent = test ? '✅ SIM' : '❌ NÃO';
-console.log('CSS Test:', test ? 'Carregado!' : 'NÃO carregado!');
-</script>
-
 </body>
 </html>
