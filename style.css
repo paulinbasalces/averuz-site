@@ -1,7 +1,3 @@
-/* ============================================
-   CAPI CRM - style.css completo
-   ============================================ */
-
 :root {
   --brand-primary: #5B7553;
   --brand-primary-dark: #46583F;
@@ -14,18 +10,15 @@
   --alert-bg: #FBEDE6;
   --alert-border: #E5B49A;
   --alert-text: #B3400F;
-  --border: #E7E1D6;
+  
+  /* Tokens de texto (para dark mode) */
+  --heading: #2C2C2C;
   --text-body: rgba(44,44,44,0.8);
   --text-soft: rgba(44,44,44,0.68);
+  --text-faint: rgba(44,44,44,0.55);
   --card-bg: #FFFFFF;
   --header-bg: rgba(245,242,235,0.95);
-}
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --border-soft: #E7E1D6;
 }
 
 html {
@@ -37,26 +30,15 @@ body {
   background: var(--bg-cream);
   color: var(--text-body);
   line-height: 1.6;
+  margin: 0;
 }
 
 .font-display {
   font-family: 'Sora', sans-serif;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.container-narrow {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
 /* ============================================
-   HEADER
+   HEADER (novo - para o HTML atual)
    ============================================ */
 .site-header {
   position: sticky;
@@ -68,7 +50,7 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 100;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .logo {
@@ -113,6 +95,94 @@ body {
 }
 
 /* ============================================
+   SEU CSS ORIGINAL (HERO VIVO, BLOBS, ANIMAÇÕES)
+   ============================================ */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg::before {
+  content: " ";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='440' viewBox='0 0 600 440' fill='none'%3E%3Cpath d='M0 320 Q150 260 300 320 T600 320' stroke='%23E7E1D6' stroke-width='1.5'/%3E%3Cpath d='M0 360 Q150 300 300 360 T600 360' stroke='%23E7E1D6' stroke-width='1.5'/%3E%3Cpath d='M0 400 Q150 340 300 400 T600 400' stroke='%23E7E1D6' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-position: center bottom;
+  opacity: .55;
+  pointer-events: none;
+}
+
+.hero-blob-sage,
+.hero-blob-terra {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-blob-sage {
+  width: 480px;
+  height: 480px;
+  background: rgba(91,117,83,.14);
+  top: -120px;
+  right: -80px;
+}
+
+.hero-blob-terra {
+  width: 380px;
+  height: 380px;
+  background: rgba(204,85,0,.10);
+  bottom: -140px;
+  left: -100px;
+}
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary-dark);
+  background: var(--bg-cream);
+  border-radius: 9999px;
+  padding: .4rem 1rem;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.hl-underline {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12' preserveAspectRatio='none'%3E%3Cpath d='M3 9 Q75 3 150 8 T297 6' stroke='%23CC5500' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left bottom / 100% .3em;
+  padding-bottom: .15em;
+}
+
+.trust-strip {
+  color: rgba(44,44,44,.65);
+  font-size: .85rem;
+}
+
+.capi-peek {
+  position: absolute;
+  width: 120px;
+  left: -30px;
+  bottom: -16px;
+  z-index: 5;
+}
+
+/* ============================================
+   DIVISORES DE SEÇÃO (curvas)
+   ============================================ */
+.divider {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================================
    BOTÕES
    ============================================ */
 .btn-primary {
@@ -123,7 +193,7 @@ body {
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: 0 10px 25px -10px rgba(204,85,0,0.4);
   border: none;
   cursor: pointer;
@@ -144,7 +214,7 @@ body {
   border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.2s;
+  transition: background 0.2s ease, transform 0.2s ease;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -166,8 +236,48 @@ body {
 }
 
 /* ============================================
-   HERO
+   ANIMAÇÕES
    ============================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-animation,
+  .animate-fade-in-up,
+  .pulse-glow {
+    animation: none;
+  }
+}
+
+/* ============================================
+   CLASSES NOVAS (para o HTML atual)
+   ============================================ */
+
+/* Hero simplificado */
 .hero {
   padding: 4rem 0 3rem;
   text-align: center;
@@ -188,7 +298,7 @@ body {
   font-family: 'Sora', sans-serif;
   font-weight: 800;
   font-size: 2.5rem;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -220,7 +330,7 @@ body {
 
 .dashboard-mockup {
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 3rem;
   margin-top: 2rem;
@@ -233,9 +343,7 @@ body {
   font-style: italic;
 }
 
-/* ============================================
-   BANNER PIONEIRO
-   ============================================ */
+/* Banner Pioneiro */
 .banner-pioneiro {
   background: var(--alert-bg);
   border: 1px solid var(--alert-border);
@@ -251,9 +359,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* ============================================
-   NICHOS
-   ============================================ */
+/* Nichos */
 .nichos {
   padding: 3rem 0;
   text-align: center;
@@ -263,7 +369,7 @@ body {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.75rem;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 2rem;
 }
 
@@ -277,7 +383,7 @@ body {
 
 .card-nicho {
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-soft);
   border-radius: 12px;
   padding: 1.5rem;
   text-decoration: none;
@@ -292,9 +398,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* ============================================
-   SEÇÕES GERAIS
-   ============================================ */
+/* Seções gerais */
 section {
   padding: 3rem 0;
 }
@@ -303,7 +407,7 @@ section h2 {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.75rem;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -317,9 +421,13 @@ section .sub {
   margin-right: auto;
 }
 
-/* ============================================
-   SOLUÇÕES (4 Pilares)
-   ============================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Soluções (4 pilares) */
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -329,7 +437,7 @@ section .sub {
 
 .card-feature {
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-soft);
   border-radius: 12px;
   padding: 1.5rem;
 }
@@ -337,7 +445,7 @@ section .sub {
 .card-feature h3 {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 0.75rem;
 }
 
@@ -346,9 +454,7 @@ section .sub {
   font-size: 0.95rem;
 }
 
-/* ============================================
-   DOR
-   ============================================ */
+/* Dor */
 .dor {
   background: var(--brand-dark);
   color: #F5F2EB;
@@ -371,9 +477,7 @@ section .sub {
   font-size: 1.05rem;
 }
 
-/* ============================================
-   SOLUÇÃO
-   ============================================ */
+/* Solução */
 .solucao {
   text-align: center;
   padding: 3rem 0;
@@ -385,9 +489,7 @@ section .sub {
   font-size: 1.05rem;
 }
 
-/* ============================================
-   FEATURES LIST
-   ============================================ */
+/* Features list */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -398,7 +500,7 @@ section .sub {
 .grid-2 h3 {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 0.5rem;
 }
 
@@ -407,9 +509,7 @@ section .sub {
   font-size: 0.95rem;
 }
 
-/* ============================================
-   COMO FUNCIONA
-   ============================================ */
+/* Como funciona */
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -436,7 +536,7 @@ section .sub {
 .step h3 {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 0.5rem;
 }
 
@@ -445,9 +545,7 @@ section .sub {
   font-size: 0.95rem;
 }
 
-/* ============================================
-   ONBOARDING & VÍDEO
-   ============================================ */
+/* Onboarding & Vídeo */
 .onboarding-video {
   text-align: center;
 }
@@ -459,7 +557,7 @@ section .sub {
 
 .video-placeholder {
   background: var(--card-bg);
-  border: 2px dashed var(--border);
+  border: 2px dashed var(--border-soft);
   border-radius: 12px;
   padding: 4rem 2rem;
   margin-top: 2rem;
@@ -467,9 +565,7 @@ section .sub {
   font-size: 1.1rem;
 }
 
-/* ============================================
-   PLANOS
-   ============================================ */
+/* Planos */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -479,7 +575,7 @@ section .sub {
 
 .card-plano {
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 2rem;
   text-align: center;
@@ -508,7 +604,7 @@ section .sub {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 0.5rem;
 }
 
@@ -522,7 +618,7 @@ section .sub {
   font-family: 'Sora', sans-serif;
   font-weight: 800;
   font-size: 2rem;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 1.5rem;
 }
 
@@ -548,11 +644,10 @@ section .sub {
 .card-plano .btn-secondary {
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* ============================================
-   ADICIONAIS
-   ============================================ */
+/* Adicionais */
 .grid-add-ons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -563,20 +658,18 @@ section .sub {
 
 .grid-add-ons div {
   background: var(--card-bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-soft);
   border-radius: 12px;
   padding: 1.5rem;
 }
 
 .grid-add-ons strong {
   display: block;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 0.5rem;
 }
 
-/* ============================================
-   SEGURANÇA
-   ============================================ */
+/* Segurança */
 .seguranca {
   background: var(--bg-tint);
 }
@@ -584,7 +677,7 @@ section .sub {
 .seguranca h3 {
   font-family: 'Sora', sans-serif;
   font-weight: 700;
-  color: var(--brand-dark);
+  color: var(--heading);
   margin-bottom: 0.5rem;
 }
 
@@ -598,9 +691,7 @@ section .sub {
   margin-top: 2rem;
 }
 
-/* ============================================
-   CTA FINAL
-   ============================================ */
+/* CTA Final */
 .cta-final {
   text-align: center;
   padding: 4rem 0;
@@ -616,9 +707,7 @@ section .sub {
   color: var(--text-body);
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
+/* Footer */
 .site-footer {
   background: var(--brand-dark);
   color: #F5F2EB;
@@ -702,9 +791,7 @@ section .sub {
   font-size: 0.85rem;
 }
 
-/* ============================================
-   WHATSAPP FLUTUANTE
-   ============================================ */
+/* WhatsApp Flutuante */
 .whats-flutuante {
   position: fixed;
   bottom: 2rem;
@@ -729,117 +816,20 @@ section .sub {
 }
 
 /* ============================================
-   DIAGNÓSTICO
-   ============================================ */
-.page-diagnostico {
-  padding: 3rem 0;
-}
-
-.hero-diagnostico {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.hero-diagnostico .badge {
-  display: inline-block;
-  background: var(--bg-tint);
-  color: var(--brand-primary);
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-}
-
-.hero-diagnostico h1 {
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  color: var(--brand-dark);
-  margin-bottom: 1rem;
-}
-
-.hero-diagnostico .lead {
-  color: var(--text-body);
-  font-size: 1.05rem;
-}
-
-.card-elevated {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.radio-card {
-  display: block;
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.radio-card:hover {
-  border-color: var(--brand-primary);
-  background: var(--bg-tint);
-}
-
-.radio-card input {
-  margin-right: 0.5rem;
-}
-
-.trust-block {
-  text-align: center;
-  margin-top: 2rem;
-  color: var(--text-soft);
-  font-size: 0.9rem;
-}
-
-.whats-cta {
-  background: var(--bg-tint);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-}
-
-.whats-cta-content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.whats-cta-icon {
-  font-size: 2rem;
-}
-
-.whats-cta h3 {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  color: var(--brand-dark);
-  margin-bottom: 0.3rem;
-}
-
-.whats-cta p {
-  color: var(--text-body);
-  font-size: 0.9rem;
-}
-
-/* ============================================
-   DARK MODE
+   TEMA ESCURO (preservando seu dark mode original)
    ============================================ */
 body.dark {
   --bg-cream: #232323;
   --bg-tint: #2A2C28;
   --brand-dark: #2E2E2E;
   --brand-primary-dark: #A9C3A0;
+  --heading: #F5F2EB;
   --text-body: rgba(245,242,235,0.85);
   --text-soft: rgba(245,242,235,0.7);
+  --text-faint: rgba(245,242,235,0.55);
   --card-bg: #2E2E2E;
   --header-bg: rgba(35,35,35,0.92);
-  --border: #3D3D3D;
+  --border-soft: #3D3D3D;
   --alert-bg: rgba(204,85,0,0.12);
   --alert-border: rgba(229,138,78,0.4);
   --alert-text: #E58A4E;
@@ -857,6 +847,15 @@ body.dark .site-header nav a {
   color: #A9C3A0;
 }
 
+body.dark .card-elevated,
+body.dark .card-feature,
+body.dark .card-nicho,
+body.dark .card-plano,
+body.dark .dashboard-mockup {
+  background: var(--card-bg);
+  border-color: var(--border-soft);
+}
+
 body.dark .btn-secondary {
   background: transparent;
   color: #C9D8C2;
@@ -867,13 +866,16 @@ body.dark .btn-secondary:hover {
   background: rgba(245,242,235,0.08);
 }
 
-body.dark .card-elevated,
-body.dark .card-feature,
-body.dark .card-nicho,
-body.dark .card-plano,
-body.dark .dashboard-mockup {
-  background: var(--card-bg);
-  border-color: var(--border);
+body.dark .hl-underline {
+  color: #A9C3A0;
+}
+
+body.dark .trust-strip {
+  color: rgba(245,242,235,0.65);
+}
+
+body.dark .divider {
+  display: none;
 }
 
 body.dark .whats-cta {
