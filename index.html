@@ -414,5 +414,18 @@
 
   <!-- Script principal unificado (Dark Mode + Futuras funções) -->
   <script src="main.js" defer></script>
+
+<!-- DEBUG: Remova após testar -->
+<div style="position: fixed; top: 10px; right: 10px; background: red; color: white; padding: 10px; z-index: 9999;">
+  CSS CARREGADO? <span id="css-check">Verificando...</span>
+</div>
+
+<script>
+// Verifica se as variáveis CSS estão funcionando
+const test = getComputedStyle(document.documentElement).getPropertyValue('--brand-primary').trim();
+document.getElementById('css-check').textContent = test ? '✅ SIM' : '❌ NÃO';
+console.log('CSS Test:', test ? 'Carregado!' : 'NÃO carregado!');
+</script>
+
 </body>
 </html>
