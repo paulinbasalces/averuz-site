@@ -266,6 +266,279 @@ body.dark .site-header nav a { color: #A9C3A0; }
 body.dark .btn-secondary { background: transparent; color: #C9D8C2; border-color: rgba(245,242,235,0.5); }
 body.dark .btn-secondary:hover { background: rgba(245,242,235,0.08); }
 
+/* ============================================
+PÁGINA DE DIAGNÓSTICO (estilos específicos)
+============================================ */
+.diagnostico-page {
+  background: var(--bg-cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.diag-header {
+  background: var(--header-bg);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.diag-header .logo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--brand-dark);
+  text-decoration: none;
+}
+
+.diag-header .logo .crm {
+  color: var(--brand-primary);
+  font-weight: 500;
+}
+
+.diag-header .logo .dot {
+  color: var(--brand-cta);
+}
+
+.back-link {
+  color: var(--brand-primary-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--brand-cta);
+}
+
+.diag-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  flex: 1;
+}
+
+.diag-header-section {
+  margin-bottom: 2.5rem;
+}
+
+.diag-header-section h1 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--heading);
+  margin: 1rem 0;
+  line-height: 1.2;
+}
+
+.diag-header-section p {
+  color: var(--text-body);
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+/* Formulário */
+.diag-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--heading);
+  font-size: 0.95rem;
+}
+
+.form-group label .required {
+  color: var(--brand-cta);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-soft);
+  border-radius: 8px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text-body);
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+/* Radio buttons personalizados */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-soft);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option:hover {
+  border-color: var(--brand-primary);
+  background: var(--bg-tint);
+}
+
+.radio-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--brand-cta);
+}
+
+.radio-option label {
+  cursor: pointer;
+  flex: 1;
+  color: var(--text-body);
+  font-size: 0.95rem;
+}
+
+/* Botão de submit */
+.submit-section {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.btn-submit {
+  background: var(--brand-cta);
+  color: #F5F2EB;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.05rem;
+  width: 100%;
+  transition: all 0.2s;
+  box-shadow: 0 10px 25px -10px rgba(204,85,0,0.4);
+}
+
+.btn-submit:hover {
+  background: var(--brand-cta-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(204,85,0,0.5);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* Footer do diagnóstico */
+.diag-footer {
+  background: var(--brand-dark);
+  color: #F5F2EB;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.diag-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(245,242,235,0.7);
+}
+
+/* Responsivo para diagnóstico */
+@media (max-width: 768px) {
+  .diag-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .diag-header-section h1 {
+    font-size: 1.5rem;
+  }
+  
+  .radio-option {
+    padding: 0.75rem;
+  }
+  
+  .btn-submit {
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Dark mode para diagnóstico */
+body.dark .diag-header {
+  background: rgba(35,35,35,0.92);
+  border-bottom-color: #3D3D3D;
+}
+
+body.dark .diag-header .logo {
+  color: #F5F2EB;
+}
+
+body.dark .diag-header .logo .crm {
+  color: #A9C3A0;
+}
+
+body.dark .back-link {
+  color: #A9C3A0;
+}
+
+body.dark .back-link:hover {
+  color: #E58A4E;
+}
+
+body.dark .form-group input[type="text"],
+body.dark .form-group input[type="email"],
+body.dark .form-group input[type="tel"] {
+  background: #2E2E2E;
+  border-color: #3D3D3D;
+  color: #F5F2EB;
+}
+
+body.dark .form-group input:focus {
+  border-color: #A9C3A0;
+}
+
+body.dark .radio-option {
+  background: #2E2E2E;
+  border-color: #3D3D3D;
+}
+
+body.dark .radio-option:hover {
+  border-color: #A9C3A0;
+  background: #2A2C28;
+}
+
+body.dark .radio-option label {
+  color: rgba(245,242,235,0.85);
+}
+
 /* RESPONSIVO */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2rem; }
