@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
     <title>CAPI CRM | Atendimento que vende. Escala que cresce.</title>
-    <meta name="description" content="O CAPI CRM centraliza seu WhatsApp e Instagram em um só painel. O Motor UAI preenche o CRM, faz o follow-up e entrega a venda quente pro seu time.">
+    <meta name="description" content="O CAPI CRM centraliza WhatsApp e Instagram em um só painel. IA preenche o CRM, faz follow-up e entrega venda quente. Teste 7 dias.">
+    <meta name="keywords" content="CRM, WhatsApp Business, automação, IA, atendimento, vendas, follow-up">
+    <meta name="author" content="CAPI CRM">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://capicrm.ia.br/">
+    <meta property="og:title" content="CAPI CRM | Atendimento que vende. Escala que cresce.">
+    <meta property="og:description" content="Nenhum lead esquecido. Nenhuma conversa perdida. IA que preenche CRM e faz follow-up automático.">
+    <meta property="og:image" content="https://capicrm.ia.br/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="CAPI CRM">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://capicrm.ia.br/">
+    <meta property="twitter:title" content="CAPI CRM | Atendimento que vende. Escala que cresce.">
+    <meta property="twitter:description" content="Nenhum lead esquecido. Nenhuma conversa perdida. IA que preenche CRM e faz follow-up automático.">
+    <meta property="twitter:image" content="https://capicrm.ia.br/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦫</text></svg>">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,14 +38,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Umami Analytics (Master Doc) -->
+    <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="77a30db0-6968-4a80-81aa-db897de08b65"></script>
 </head>
 <body>
 
     <!-- HEADER -->
     <header class="site-header">
-        <a href="#" class="logo">CAPI <span class="crm">CRM</span><span class="dot">.</span></a>
+        <a href="#top" class="logo">CAPI <span class="crm">CRM</span><span class="dot">.</span></a>
         <nav>
             <a href="#solucoes">Soluções</a>
             <a href="#como-funciona">Como funciona</a>
@@ -34,7 +58,7 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="top">
         <div class="container">
             <span class="badge">Atendimento que vende. Escala que cresce.</span>
             <h1>Nenhum lead esquecido.<br><span class="hl-underline">Nenhuma conversa perdida.</span></h1>
@@ -55,7 +79,7 @@
             <div class="dashboard-mockup">
                 <div class="mockup-header">
                     <span class="mockup-status">● Sistema ativo</span>
-                    <span class="mockup-note">* Exemplo demonstrativo</span>
+                    <span class="mockup-note">* Exemplo demonstrativo • Métricas variam por operação</span>
                 </div>
                 <div class="mockup-stats">
                     <div class="stat"><strong>847</strong><span>Conversas hoje</span></div>
@@ -64,18 +88,27 @@
                 </div>
                 <div class="mockup-chats">
                     <div class="chat-bubble">
-                        <strong>Maria Clara</strong>
-                        <p>Quero saber mais sobre o plano Pro...</p>
+                        <div class="chat-avatar">MC</div>
+                        <div class="chat-content">
+                            <strong>Maria Clara</strong>
+                            <p>Quero saber mais sobre o plano Pro...</p>
+                        </div>
                         <span class="chat-tag">IA respondeu</span>
                     </div>
                     <div class="chat-bubble">
-                        <strong>Ricardo Ferreira</strong>
-                        <p>Fechado! Vou assinar o anual...</p>
+                        <div class="chat-avatar">RF</div>
+                        <div class="chat-content">
+                            <strong>Ricardo Ferreira</strong>
+                            <p>Fechado! Vou assinar o anual...</p>
+                        </div>
                         <span class="chat-tag tag-neg">Negociação</span>
                     </div>
                     <div class="chat-bubble">
-                        <strong>Julia Lima</strong>
-                        <p>Quanto custa o plano Pro?</p>
+                        <div class="chat-avatar">JL</div>
+                        <div class="chat-content">
+                            <strong>Julia Lima</strong>
+                            <p>Quanto custa o plano Pro?</p>
+                        </div>
                         <span class="chat-tag">● IA respondeu em 2s</span>
                     </div>
                 </div>
@@ -86,7 +119,7 @@
     <!-- Banner Pioneiro -->
     <div class="container">
         <div class="banner-pioneiro">
-            <p> Programa Pioneiro: 5 vagas com 50% no setup + garantia de 30 dias.</p>
+            <p>⚡ Programa Pioneiro: 5 vagas com 50% no setup + garantia de 30 dias.</p>
             <a href="diagnostico.html" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Quero ser pioneiro</a>
         </div>
     </div>
@@ -95,7 +128,7 @@
     <section class="nichos">
         <div class="container">
             <p style="margin-bottom: 1rem; color: var(--text-soft);">A CAPI fala a língua do seu negócio:</p>
-            <div class="nicho-grid" style="max-width: 600px;">
+            <div class="nicho-grid" style="max-width: 600px; margin: 0 auto;">
                 <a href="corretores.html" class="card-nicho">🏠 Corretores e imobiliárias</a>
                 <a href="saude.html" class="card-nicho">🩺 Clínicas e saúde</a>
                 <a href="diagnostico.html" class="card-nicho" style="border-style: dashed;">💬 Meu nicho não está aqui</a>
@@ -123,7 +156,7 @@
                     <p>Crie fluxos que nutrem leads, enviam lembretes e ativam oportunidades sozinhos. Você define as regras; a CAPI CRM lembra, envia e movimenta o funil.</p>
                 </div>
                 <div class="card-feature">
-                    <h3> Ative a IA</h3>
+                    <h3>🤖 Ative a IA</h3>
                     <p>Treine um agente com seus produtos e forma de vender. Ele responde dúvidas comuns, qualifica leads e entrega para sua equipe apenas as conversas com real chance de fechar.</p>
                 </div>
             </div>
@@ -149,7 +182,7 @@
                 <h2 style="text-align: left; color: #F5F2EB;">O atendimento virou o gargalo do crescimento.</h2>
                 <ul class="lista-dor">
                     <li>✕ Leads sem resposta que viram vendas perdidas</li>
-                    <li>✕ Follow-ups esquecidos que custam dinheiro</li>
+                    <li> Follow-ups esquecidos que custam dinheiro</li>
                     <li>✕ Equipe sobrecarregada sem tempo para vender</li>
                     <li>✕ Clientes frustrados que não voltam mais</li>
                 </ul>
@@ -349,7 +382,7 @@
                     <p>Integração via Meta Business Platform oficial. Sem risco de banimento por uso de WhatsApp não-oficial. Sua conta comercial protegida.</p>
                 </div>
                 <div class="card-feature">
-                    <h3>📋 Conformidade</h3>
+                    <h3> Conformidade</h3>
                     <p>Termos de Uso, Política de Privacidade e Declaração de Acessibilidade publicados. Suporte humano por WhatsApp e e-mail com SLA definido.</p>
                 </div>
             </div>
@@ -405,7 +438,7 @@
 
     <!-- WhatsApp Flutuante -->
     <a href="https://wa.me/5531984470001" class="whats-flutuante" target="_blank" aria-label="Fale conosco no WhatsApp">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        💬
     </a>
 
     <script src="main.js"></script>
